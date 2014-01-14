@@ -1,7 +1,7 @@
 Version 1.0
 
 ---
-Name: 2014RobotProject
+Name: CurrentRobotProject
 Base: Robot
 Children:
 - Name: Subsystems
@@ -304,7 +304,7 @@ Children:
           value: '4'
         Reverse Direction: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Reverse Direction, validators: null, value: false}
-    - Name: Ultrasonic 1
+    - Name: Ultrasonic Sensor
       Base: Ultrasonic
       Children: []
       Properties:
@@ -379,7 +379,7 @@ Children:
           name: Input Module (Digital)
           validators: &id019 [DigitalChannel]
           value: '1'
-    - Name: Servo (Maybe)
+    - Name: Servo
       Base: Servo
       Children: []
       Properties:
@@ -710,7 +710,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Shooter}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Re-orient Arm
+  - Name: Reorient Arm
     Base: Command
     Children: []
     Properties:
