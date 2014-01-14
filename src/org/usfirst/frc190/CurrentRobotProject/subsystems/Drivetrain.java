@@ -42,4 +42,7 @@ public class Drivetrain extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    public void tankDrive(double leftAxis, double rightAxis) {
+        //To be written when we know if the robot will have 4 or 6 motor drive.
+    }
 }
