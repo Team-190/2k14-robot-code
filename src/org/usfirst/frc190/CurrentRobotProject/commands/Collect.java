@@ -40,4 +40,3 @@ public class  Collect extends Command {
     protected void interrupted() {
     }
 }
-//Testing push and pull with this comment...
