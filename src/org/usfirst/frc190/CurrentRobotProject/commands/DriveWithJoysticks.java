@@ -31,6 +31,9 @@ public class  DriveWithJoysticks extends Command {
     protected void execute() {
         Robot.drivetrain.tankDrive(Robot.oi.getLeftJoystick().getAxis(Joystick.AxisType.kY), 
                                    Robot.oi.getRightJoystick().getAxis(Joystick.AxisType.kY));
+        
+        //Turn on some sort of indicator on the robot. May or may not be needed.
+        Robot.drivetrain.setInPosistionIndicator(Robot.drivetrain.inPosition(0, 0)); 
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
