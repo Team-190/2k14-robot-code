@@ -44,7 +44,10 @@ public class Drivetrain extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     public void tankDrive(double leftAxis, double rightAxis) {
+        robotDrive4Motors.tankDrive(leftAxis, rightAxis);
+        robotDrive2Motors.tankDrive(leftAxis, rightAxis);
         //To be written when we know if the robot will have 4 or 6 motor drive.
+        //Squared inputs?
     }
     
     public double getLeftEncoderDistance(){
