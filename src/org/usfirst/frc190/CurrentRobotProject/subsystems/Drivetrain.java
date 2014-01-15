@@ -45,4 +45,19 @@ public class Drivetrain extends Subsystem {
     public void tankDrive(double leftAxis, double rightAxis) {
         //To be written when we know if the robot will have 4 or 6 motor drive.
     }
+    
+    public double getLeftEncoderDistance(){
+        return leftEncoder.getDistance();
+    }
+    
+    public double getRightEncoderDistance(){
+        return rightEncoder.getDistance();
+    }
+    
+    public void resetDriveEncoders(){
+        leftEncoder.reset();
+        rightEncoder.reset();
+    }
+    
 }
+
