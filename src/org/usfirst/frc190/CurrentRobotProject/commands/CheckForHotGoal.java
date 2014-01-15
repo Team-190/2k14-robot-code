@@ -13,8 +13,8 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
 /**
  *
  */
-public class  AutonomousCommand extends Command {
-    public AutonomousCommand() {
+public class  CheckForHotGoal extends Command {
+    public CheckForHotGoal() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 	
