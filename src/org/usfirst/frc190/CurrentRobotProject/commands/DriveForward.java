@@ -17,6 +17,11 @@ public class  DriveForward extends Command {
     private double driveForwardSpeed = .5;
     private double distance;
     
+    public DriveForward() {
+        distance = 0;
+        requires(Robot.drivetrain);
+    }
+    
     public DriveForward(double driveDistance) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
