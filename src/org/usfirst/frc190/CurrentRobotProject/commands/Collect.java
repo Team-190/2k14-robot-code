@@ -14,6 +14,7 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
  *
  */
 public class  Collect extends Command {
+    private double SPEED = .5;  //roller speed. test val of .5 
     public Collect() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -24,20 +25,24 @@ public class  Collect extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.collector.getFeederMotor().set(SPEED);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        
+        return Robot.collector.ifCollected();
     }
     // Called once after isFinished returns true
     protected void end() {
+        Robot.collector.stop();
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        end(); //may be edited later...
     }
 }
 //Testing push and pull with this comment...
