@@ -35,9 +35,19 @@ public class Shooter extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     public void extend() {
-        throw new java.lang.UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        shooterPiston1.set(DoubleSolenoid.Value.kForward);
+        shooterPiston2.set(DoubleSolenoid.Value.kForward);
     }
     public void retract() {
-        throw new java.lang.UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        shooterPiston1.set(DoubleSolenoid.Value.kReverse);
+        shooterPiston2.set(DoubleSolenoid.Value.kReverse);
+    }
+
+    public void unlatch() {
+        latchPiston.set(DoubleSolenoid.Value.kReverse);
+    }
+    
+    public void latch() {
+        latchPiston.set(DoubleSolenoid.Value.kForward);
     }
 }
