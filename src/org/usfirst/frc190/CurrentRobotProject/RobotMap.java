@@ -23,6 +23,7 @@ import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import java.util.Vector;
+import edu.wpi.first.wpilibj.DigitalOutput;
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -41,10 +42,12 @@ public class RobotMap {
     public static RobotDrive drivetrainRobotDrive4Motors;
     public static Encoder drivetrainLeftEncoder;
     public static Encoder drivetrainRightEncoder;
-    public static Ultrasonic drivetrainUltrasonicSensor;
-    public static SpeedController collectorFeederMotor;
-    public static DigitalInput collectorFeederLimitSwitch;
+    public static Ultrasonic drivetrainDistanceSensor;
+    public static DigitalOutput drivetrainInPositionIndicator;
+    public static SpeedController collectorRollerMotor;
+    public static DigitalInput collectorBallDetector;
     public static Servo collectorServo;
+    public static DoubleSolenoid collectorClawCylinder;
     public static DoubleSolenoid shooterShooterPiston1;
     public static DoubleSolenoid shooterShooterPiston2;
     public static DoubleSolenoid shooterLatchPiston;
@@ -94,24 +97,30 @@ public class RobotMap {
         drivetrainLeftEncoder = new Encoder(1, 2, 1, 3, false, EncodingType.k4X);
 	LiveWindow.addSensor("Drivetrain", "Left Encoder", drivetrainLeftEncoder);
         drivetrainLeftEncoder.setDistancePerPulse(1.0);
-        drivetrainLeftEncoder.setPIDSourceParameter(PIDSourceParameter.kRate);
+        drivetrainLeftEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
         drivetrainLeftEncoder.start();
         drivetrainRightEncoder = new Encoder(1, 4, 1, 5, false, EncodingType.k4X);
 	LiveWindow.addSensor("Drivetrain", "Right Encoder", drivetrainRightEncoder);
         drivetrainRightEncoder.setDistancePerPulse(1.0);
-        drivetrainRightEncoder.setPIDSourceParameter(PIDSourceParameter.kRate);
+        drivetrainRightEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
         drivetrainRightEncoder.start();
-        drivetrainUltrasonicSensor = new Ultrasonic(1, 6, 1, 7);
-	LiveWindow.addSensor("Drivetrain", "Ultrasonic Sensor", drivetrainUltrasonicSensor);
+        drivetrainDistanceSensor = new Ultrasonic(1, 6, 1, 7);
+	LiveWindow.addSensor("Drivetrain", "Distance Sensor", drivetrainDistanceSensor);
         
-        collectorFeederMotor = new Victor(1, 1);
-	LiveWindow.addActuator("Collector", "Feeder Motor", (Victor) collectorFeederMotor);
+        drivetrainInPositionIndicator = new DigitalOutput(1, 11);
+	
         
-        collectorFeederLimitSwitch = new DigitalInput(1, 14);
-	LiveWindow.addSensor("Collector", "Feeder Limit Switch", collectorFeederLimitSwitch);
+        collectorRollerMotor = new Victor(1, 1);
+	LiveWindow.addActuator("Collector", "Roller Motor", (Victor) collectorRollerMotor);
+        
+        collectorBallDetector = new DigitalInput(1, 14);
+	LiveWindow.addSensor("Collector", "Ball Detector", collectorBallDetector);
         
         collectorServo = new Servo(1, 2);
 	LiveWindow.addActuator("Collector", "Servo", collectorServo);
+        
+        collectorClawCylinder = new DoubleSolenoid(1, 7, 8);      
+	
         
         shooterShooterPiston1 = new DoubleSolenoid(1, 1, 2);      
 	

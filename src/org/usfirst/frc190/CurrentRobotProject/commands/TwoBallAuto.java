@@ -23,6 +23,6 @@ public class TwoBallAuto extends CommandGroup {
         addSequential(new MoveArmToPoint());
         addSequential(new Collect());
         addSequential(new Shoot());
-        addSequential(new DriveForward());
+        addSequential(new DriveForward(5));
     }
 }
