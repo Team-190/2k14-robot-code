@@ -30,6 +30,9 @@ public class Collector extends Subsystem {
     public SpeedController getFeederMotor(){
             return rollerMotor;
     }
+    public void setSpeed(double speed){
+        rollerMotor.set(speed);
+    }
     public void stop(){
         rollerMotor.set(0);
     }
