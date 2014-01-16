@@ -25,13 +25,13 @@ public class Collector extends Subsystem {
     
     // Put methods for controlling this subsystem
     public boolean ifCollected(){
-        return (feederLimitSwitch.get());
+        return (ballDetector.get());
     }
     public SpeedController getFeederMotor(){
-            return feederMotor;
+            return rollerMotor;
     }
     public void stop(){
-        feederMotor.set(0);
+        rollerMotor.set(0);
     }
     // here. Call these from Commands.
     public void initDefaultCommand() {
