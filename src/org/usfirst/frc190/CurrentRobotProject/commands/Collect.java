@@ -25,7 +25,7 @@ public class  Collect extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.collector.getFeederMotor().set(SPEED);
+        Robot.collector.setSpeed(SPEED);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
