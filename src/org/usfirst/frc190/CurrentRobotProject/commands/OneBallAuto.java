@@ -18,8 +18,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class OneBallAuto extends CommandGroup {
     
     public  OneBallAuto() {
-        addSequential(new MoveArmToPoint());
-        addSequential(new CheckForHotGoal());
-        addSequential(new Shoot()); 
+        
     }
 }

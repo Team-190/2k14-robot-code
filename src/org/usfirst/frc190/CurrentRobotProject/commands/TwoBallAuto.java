@@ -18,11 +18,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class TwoBallAuto extends CommandGroup {
     
     public  TwoBallAuto() {
-        addSequential(new MoveArmToPoint());
-        addSequential(new Shoot());
-        addSequential(new MoveArmToPoint());
-        addSequential(new Collect());
-        addSequential(new Shoot());
-        addSequential(new DriveForward(5));
+        
     }
 }
