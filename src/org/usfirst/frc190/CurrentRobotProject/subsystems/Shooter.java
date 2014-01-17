@@ -42,7 +42,6 @@ public class Shooter extends Subsystem {
         shooterPiston1.set(DoubleSolenoid.Value.kReverse);
         shooterPiston2.set(DoubleSolenoid.Value.kReverse);
     }
-
     public void unlatch() {
         latchPiston.set(DoubleSolenoid.Value.kReverse);
     }
