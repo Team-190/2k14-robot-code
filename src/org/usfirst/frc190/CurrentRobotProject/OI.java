@@ -67,7 +67,7 @@ public class OI {
         SmartDashboard.putData("Move Arm To Point", new MoveArmToPoint());
         SmartDashboard.putData("Check For Hot Goal", new CheckForHotGoal());
         SmartDashboard.putData("Two Ball Auto", new TwoBallAuto());
-        SmartDashboard.putData("Shoot", new Shoot());
+        SmartDashboard.putData("Shoot", new Shoot(true));
         SmartDashboard.putData("Collect", new Collect());
         SmartDashboard.putData("Pass", new Pass());
         SmartDashboard.putData("Fire", new Fire());
