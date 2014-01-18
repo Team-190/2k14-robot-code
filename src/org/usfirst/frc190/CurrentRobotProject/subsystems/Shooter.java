@@ -33,14 +33,31 @@ public class Shooter extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    public void extend() {
+    public void extendBoth() {
         shooterPiston1.set(DoubleSolenoid.Value.kForward);
         shooterPiston2.set(DoubleSolenoid.Value.kForward);
     }
-    public void retract() {
+    public void retractBoth() {
         shooterPiston1.set(DoubleSolenoid.Value.kReverse);
         shooterPiston2.set(DoubleSolenoid.Value.kReverse);
     }
+    
+    public void extend1(){
+        shooterPiston1.set(DoubleSolenoid.Value.kForward);
+    }
+    
+    public void retract1(){
+        shooterPiston1.set(DoubleSolenoid.Value.kReverse);
+    }
+    
+    public void pressurize2(){
+        shooterPiston2.set(DoubleSolenoid.Value.kForward);
+    }
+    
+    public void depressurize2(){
+        shooterPiston2.set(DoubleSolenoid.Value.kReverse);
+    }
+    
     public void unlatch() {
         latchPiston.set(DoubleSolenoid.Value.kReverse);
     }
