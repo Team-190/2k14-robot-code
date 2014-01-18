@@ -21,6 +21,7 @@ import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import java.util.Vector;
 import edu.wpi.first.wpilibj.DigitalOutput;
@@ -50,10 +51,10 @@ public class RobotMap {
     public static DoubleSolenoid collectorClawCylinder;
     public static DigitalInput collectorClawReedSwitch;
     public static DoubleSolenoid shooterShooterPiston1;
-    public static DoubleSolenoid shooterShooterPiston2;
     public static DoubleSolenoid shooterLatchPiston;
     public static DigitalInput shooterReedSwitch1;
     public static DigitalInput shooterReedSwitch2;
+    public static Solenoid shooterShooterPiston2;
     public static Compressor pneumaticsCompressor;
     public static DigitalInput elevatorTopLimitSwitch;
     public static DigitalInput elevatorLowerLimitSwitch;
@@ -128,9 +129,6 @@ public class RobotMap {
         shooterShooterPiston1 = new DoubleSolenoid(1, 1, 2);      
 	
         
-        shooterShooterPiston2 = new DoubleSolenoid(1, 3, 4);      
-	
-        
         shooterLatchPiston = new DoubleSolenoid(1, 5, 6);      
 	
         
@@ -139,6 +137,9 @@ public class RobotMap {
         
         shooterReedSwitch2 = new DigitalInput(1, 9);
 	LiveWindow.addSensor("Shooter", "Reed Switch 2", shooterReedSwitch2);
+        
+        shooterShooterPiston2 = new Solenoid(2, 1);
+	LiveWindow.addActuator("Shooter", "Shooter Piston 2", shooterShooterPiston2);
         
         pneumaticsCompressor = new Compressor(1, 1, 1, 1);
 	
