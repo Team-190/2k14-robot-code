@@ -23,6 +23,7 @@ import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.Gyro;
 import java.util.Vector;
 import edu.wpi.first.wpilibj.DigitalOutput;
 /**
@@ -45,6 +46,7 @@ public class RobotMap {
     public static Encoder drivetrainRightEncoder;
     public static Ultrasonic drivetrainDistanceSensor;
     public static DigitalOutput drivetrainInPositionIndicator;
+    public static Gyro drivetrainGyro;
     public static SpeedController collectorRollerMotor;
     public static DigitalInput collectorBallDetector;
     public static Servo collectorServo;
@@ -111,6 +113,9 @@ public class RobotMap {
         drivetrainInPositionIndicator = new DigitalOutput(1, 11);
 	
         
+        drivetrainGyro = new Gyro(1, 2);
+	LiveWindow.addSensor("Drivetrain", "Gyro", drivetrainGyro);
+        drivetrainGyro.setSensitivity(0.007);
         collectorRollerMotor = new Victor(1, 1);
 	LiveWindow.addActuator("Collector", "Roller Motor", (Victor) collectorRollerMotor);
         

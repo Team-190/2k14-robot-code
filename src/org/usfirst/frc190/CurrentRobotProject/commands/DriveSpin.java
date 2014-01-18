@@ -14,7 +14,12 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
  *
  */
 public class  DriveSpin extends Command {
+    
+    private double turnSpeed = 0.5;
+    private double spinAngle = 180;
+    
     public DriveSpin() {
+        
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 	
@@ -24,19 +29,23 @@ public class  DriveSpin extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.drivetrain.resetGyro();
+        Robot.drivetrain.tankDrive(turnSpeed, -turnSpeed);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return (spinAngle >= Robot.drivetrain.getGyro());
     }
     // Called once after isFinished returns true
     protected void end() {
+        Robot.drivetrain.tankDrive(0, 0);
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        end();
     }
 }
