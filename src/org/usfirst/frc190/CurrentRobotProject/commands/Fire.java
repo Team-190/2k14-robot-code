@@ -11,6 +11,7 @@
 
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 /**
  *
@@ -18,21 +19,20 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Fire extends CommandGroup {
     
     public  Fire() {
-        // Add Commands here:
-        // e.g. addSequential(new Command1());
-        //      addSequential(new Command2());
-        // these will run in order.
-
-        // To run multiple commands at the same time,
-        // use addParallel()
-        // e.g. addParallel(new Command1());
-        //      addSequential(new Command2());
-        // Command1 and Command2 will run in parallel.
-
-        // A command group will require all of the subsystems that each member
-        // would require.
-        // e.g. if Command1 requires chassis, and Command2 requires arm,
-        // a CommandGroup containing them would require both the chassis and the
-        // arm.
+        //TODO: check to see if aimed or in auto.
+        //addSequential(new OpenClaw());
+        //TODO: Check reed switch
+        addSequential(new ExtendLatch());
+        //TODO: Check reed switch.
+        addSequential(new WaitCommand(1));
+        addParallel(new RetractLatch());
+        addParallel(new RetractPiston1());
+        addSequential(new DepressurizePiston2());
+        //TODO: Check reed switches.
+        addSequential(new WaitCommand(1));
+        addParallel(new ExtendPiston1());
+        addSequential(new PressurizePiston2());
+        
+        
     }
 }
