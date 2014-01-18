@@ -18,8 +18,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class ShootTruss extends CommandGroup {
     
     public  ShootTruss() {
-        addParallel(new PressurizePiston2());
+        addParallel(new DepressurizePiston2());
         addParallel(new ExtendPiston1());
-        //Aim Arm.
+        //TODO: Aim Arm.
     }
 }
