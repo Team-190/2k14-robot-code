@@ -32,7 +32,7 @@ public class  WaitForCollection extends Command {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.collector.ifCollected();
+        return Robot.collector.ifCollected(); //Wait for the ball to hit the limit switch.
     }
     // Called once after isFinished returns true
     protected void end() {

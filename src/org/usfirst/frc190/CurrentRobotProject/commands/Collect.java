@@ -22,7 +22,7 @@ public class Collect extends CommandGroup {
         addParallel(new ArmDown());
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
-        addSequential(new WaitForCollection());
+        addSequential(new WaitForCollection()); //Does not finish until limit switch is hit.
         addSequential(new MoveArmToPoint());
     }
 }

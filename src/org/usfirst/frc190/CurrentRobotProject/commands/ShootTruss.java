@@ -25,7 +25,7 @@ public class ShootTruss extends CommandGroup {
         addSequential(new RetractLatch());
         addSequential(new RetractPiston1());
         addSequential(new DepressurizePiston2());
-        addSequential(new WaitCommand(.4));
+        addSequential(new WaitCommand(.3));
         addSequential(new ExtendPiston1());
         //TODO: Aim Arm.
     }
