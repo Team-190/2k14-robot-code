@@ -35,11 +35,11 @@ public class Shooter extends Subsystem {
     }
     public void extendBoth() {
         shooterPiston1.set(DoubleSolenoid.Value.kForward);
-        shooterPiston2.set(false);
+        shooterPiston2.set(true);
     }
     public void retractBoth() {
         shooterPiston1.set(DoubleSolenoid.Value.kReverse);
-        shooterPiston2.set(true);
+        shooterPiston2.set(false);
     }
     
     public void extend1(){
@@ -50,12 +50,16 @@ public class Shooter extends Subsystem {
         shooterPiston1.set(DoubleSolenoid.Value.kReverse);
     }
     
+    public void off1(){
+        shooterPiston1.set(DoubleSolenoid.Value.kOff);
+    }
+    
     public void pressurize2(){
-        shooterPiston2.set(false);
+        shooterPiston2.set(true);
     }
     
     public void depressurize2(){
-        shooterPiston2.set(true);
+        shooterPiston2.set(false);
     }
     
     public void unlatch() {
@@ -65,4 +69,9 @@ public class Shooter extends Subsystem {
     public void latch() {
         latchPiston.set(DoubleSolenoid.Value.kForward);
     }
+    
+    public void latchOff(){
+        latchPiston.set(DoubleSolenoid.Value.kOff);
+    }
+            
 }
