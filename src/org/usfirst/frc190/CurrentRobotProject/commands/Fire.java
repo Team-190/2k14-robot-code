@@ -19,19 +19,22 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class Fire extends CommandGroup {
     
     public  Fire() {
+        //None of the sequences for the pneumatics system need addParallel.
+        //The commands take so little time there is no need.
+        
         //TODO: check to see if aimed or in auto.
         //addSequential(new OpenClaw());
         //TODO: Check reed switch
         addSequential(new ExtendLatch());
         //TODO: Check reed switch.
-        addSequential(new WaitCommand(1));
-        addParallel(new RetractLatch());
-        addParallel(new RetractPiston1());
+        addSequential(new WaitCommand(.4));
+        addSequential(new RetractLatch());
+        addSequential(new RetractPiston1());
         addSequential(new DepressurizePiston2());
         //TODO: Check reed switches.
-        addSequential(new WaitCommand(1));
-        addParallel(new ExtendPiston1());
-        addSequential(new PressurizePiston2());
+        //addSequential(new WaitCommand(1));
+        //addParallel(new ExtendPiston1());
+        //addSequential(new PressurizePiston2());
         
         
     }

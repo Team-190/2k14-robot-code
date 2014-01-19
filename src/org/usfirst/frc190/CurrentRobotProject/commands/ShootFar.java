@@ -19,11 +19,15 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class ShootFar extends CommandGroup {
     
     public  ShootFar() {
-        addParallel(new RetractPiston1());
+        //None of the sequences for the pneumatics system need addParallel.
+        //The commands take so little time there is no need.
+        
+        addSequential(new RetractPiston1());
         addSequential(new DepressurizePiston2());
-        addSequential(new WaitCommand(1));
-        addParallel(new ExtendPiston1());
-        addParallel(new PressurizePiston2());
+        addSequential(new WaitCommand(.3));
+        addSequential(new ExtendPiston1());
+        addSequential(new WaitCommand(.2));
+        addSequential(new PressurizePiston2());
         //TODO: Aim arm.
     }
 }

@@ -19,11 +19,14 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class ShootTruss extends CommandGroup {
     
     public  ShootTruss() {
-        addParallel(new RetractLatch());
-        addParallel(new RetractPiston1());
+        //None of the sequences for the pneumatics system need addParallel.
+        //The commands take so little time there is no need.
+        
+        addSequential(new RetractLatch());
+        addSequential(new RetractPiston1());
         addSequential(new DepressurizePiston2());
-        addSequential(new WaitCommand(1));
-        addParallel(new ExtendPiston1());
+        addSequential(new WaitCommand(.4));
+        addSequential(new ExtendPiston1());
         //TODO: Aim Arm.
     }
 }
