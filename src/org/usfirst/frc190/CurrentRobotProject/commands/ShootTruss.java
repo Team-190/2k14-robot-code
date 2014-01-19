@@ -11,6 +11,7 @@
 
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 /**
  *
@@ -18,7 +19,10 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class ShootTruss extends CommandGroup {
     
     public  ShootTruss() {
-        addParallel(new DepressurizePiston2());
+        addParallel(new RetractLatch());
+        addParallel(new RetractPiston1());
+        addSequential(new DepressurizePiston2());
+        addSequential(new WaitCommand(1));
         addParallel(new ExtendPiston1());
         //TODO: Aim Arm.
     }
