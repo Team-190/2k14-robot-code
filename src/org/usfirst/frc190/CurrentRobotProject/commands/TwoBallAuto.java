@@ -11,6 +11,7 @@
 
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 /**
  *
@@ -18,10 +19,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class TwoBallAuto extends CommandGroup {
     
     public  TwoBallAuto() {
-        addSequential(new ShootFar());
-        addSequential(new Fire());
+        addSequential(new OneBallAuto());
+        addSequential(new WaitCommand(0.5));
         //addSequential(new Collect());
         addSequential(new OneBallAuto());
+        addSequential(new WaitCommand(0.5));
         
     }
 }

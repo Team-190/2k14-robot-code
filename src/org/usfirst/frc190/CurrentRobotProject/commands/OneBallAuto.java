@@ -11,6 +11,7 @@
 
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 /**
  *
@@ -18,7 +19,12 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class OneBallAuto extends CommandGroup {
     
     public  OneBallAuto() {
-        addSequential(new ShootFar());
+        addSequential(new DepressurizePiston2());
+        addSequential(new WaitCommand(.3));
+        addSequential(new ExtendPiston1());
+        addSequential(new WaitCommand(.2));
+        addSequential(new PressurizePiston2());
+        addSequential(new WaitCommand(.5));
         addSequential(new Fire());
         //addParallel(new ArmDown());
         //addSequential(new DriveForward(5));
