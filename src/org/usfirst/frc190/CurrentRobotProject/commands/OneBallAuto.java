@@ -18,6 +18,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class OneBallAuto extends CommandGroup {
     
     public  OneBallAuto() {
+        addSequential(new ShootFar());
+        addSequential(new Fire());
+        //addParallel(new ArmDown());
+        //addSequential(new DriveForward(5));
+        //addSequential(new DriveSpin());
         
     }
 }
