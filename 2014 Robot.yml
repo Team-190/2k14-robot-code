@@ -402,17 +402,17 @@ Children:
       Children: []
       Properties:
         Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id028 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+          choices: &id032 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
             '12', '13', '14']
           default: '1'
           name: Input Channel (Digital)
-          validators: &id029 [DigitalChannel]
+          validators: &id033 [DigitalChannel]
           value: '14'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id030 ['1', '2']
+          choices: &id034 ['1', '2']
           default: '1'
           name: Input Module (Digital)
-          validators: &id031 [DigitalChannel]
+          validators: &id035 [DigitalChannel]
           value: '1'
     - Name: Servo
       Base: Servo
@@ -509,34 +509,6 @@ Children:
           name: Reverse Channel (Solenoid)
           validators: *id023
           value: '5'
-    - Name: Latch Piston
-      Base: Double Solenoid
-      Children: []
-      Properties:
-        Forward Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id016
-          default: '1'
-          name: Forward Channel (Solenoid)
-          validators: *id017
-          value: '1'
-        Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id018
-          default: '1'
-          name: Forward Module (Solenoid)
-          validators: *id019
-          value: '1'
-        Reverse Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id020
-          default: '1'
-          name: Reverse Module (Solenoid)
-          validators: *id021
-          value: '1'
-        Reverse Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id022
-          default: '1'
-          name: Reverse Channel (Solenoid)
-          validators: *id023
-          value: '2'
     - Name: Reed Switch 1
       Base: Digital Input
       Children: []
@@ -574,17 +546,33 @@ Children:
       Children: []
       Properties:
         Output Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2']
+          choices: &id028 ['1', '2']
           default: '1'
           name: Output Module (Solenoid)
-          validators: [Solenoid]
+          validators: &id029 [Solenoid]
           value: '1'
         Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
+          choices: &id030 ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
           name: Output Channel (Solenoid)
-          validators: [Solenoid]
+          validators: &id031 [Solenoid]
           value: '3'
+    - Name: Latch Piston
+      Base: Solenoid
+      Children: []
+      Properties:
+        Output Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id028
+          default: '1'
+          name: Output Module (Solenoid)
+          validators: *id029
+          value: '1'
+        Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id030
+          default: '1'
+          name: Output Channel (Solenoid)
+          validators: *id031
+          value: '1'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -631,32 +619,32 @@ Children:
       Children: []
       Properties:
         Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id028
+          choices: *id032
           default: '1'
           name: Input Channel (Digital)
-          validators: *id029
+          validators: *id033
           value: '13'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id030
+          choices: *id034
           default: '1'
           name: Input Module (Digital)
-          validators: *id031
+          validators: *id035
           value: '1'
     - Name: Lower Limit Switch
       Base: Limit Switch
       Children: []
       Properties:
         Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id028
+          choices: *id032
           default: '1'
           name: Input Channel (Digital)
-          validators: *id029
+          validators: *id033
           value: '12'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id030
+          choices: *id034
           default: '1'
           name: Input Module (Digital)
-          validators: *id031
+          validators: *id035
           value: '1'
     - Name: Pot
       Base: Potentiometer
@@ -744,20 +732,20 @@ Children:
     Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id032 ['1', '2', '3', '4']
+        choices: &id036 ['1', '2', '3', '4']
         default: 1
         name: Number
-        validators: &id033 [Joystick]
+        validators: &id037 [Joystick]
         value: '1'
   - Name: Right Joystick
     Base: Joystick
     Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id032
+        choices: *id036
         default: 1
         name: Number
-        validators: *id033
+        validators: *id037
         value: '2'
   Properties: {}
 - Name: Commands
@@ -980,6 +968,14 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   - Name: Retract Latch
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Shooter}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Piston 1 Off
     Base: Command
     Children: []
     Properties:
