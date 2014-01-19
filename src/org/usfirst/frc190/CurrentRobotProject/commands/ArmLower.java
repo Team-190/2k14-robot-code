@@ -14,6 +14,9 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
  *
  */
 public class  ArmLower extends Command {
+    
+    private double speed = 0.5;
+    
     public ArmLower() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -24,19 +27,25 @@ public class  ArmLower extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.elevator.setElevatorMotor(-speed);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
+        
+        //Will be controlled/finished by a button on the OI.
+        
         return false;
     }
     // Called once after isFinished returns true
     protected void end() {
+        Robot.elevator.setElevatorMotor(0);
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        end()
     }
 }
