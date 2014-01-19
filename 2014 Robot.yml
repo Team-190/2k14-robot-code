@@ -490,6 +490,34 @@ Children:
           default: '1'
           name: Forward Channel (Solenoid)
           validators: *id017
+          value: '4'
+        Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id018
+          default: '1'
+          name: Forward Module (Solenoid)
+          validators: *id019
+          value: '1'
+        Reverse Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id020
+          default: '1'
+          name: Reverse Module (Solenoid)
+          validators: *id021
+          value: '1'
+        Reverse Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id022
+          default: '1'
+          name: Reverse Channel (Solenoid)
+          validators: *id023
+          value: '5'
+    - Name: Latch Piston
+      Base: Double Solenoid
+      Children: []
+      Properties:
+        Forward Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id016
+          default: '1'
+          name: Forward Channel (Solenoid)
+          validators: *id017
           value: '1'
         Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: *id018
@@ -509,34 +537,6 @@ Children:
           name: Reverse Channel (Solenoid)
           validators: *id023
           value: '2'
-    - Name: Latch Piston
-      Base: Double Solenoid
-      Children: []
-      Properties:
-        Forward Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id016
-          default: '1'
-          name: Forward Channel (Solenoid)
-          validators: *id017
-          value: '5'
-        Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id018
-          default: '1'
-          name: Forward Module (Solenoid)
-          validators: *id019
-          value: '1'
-        Reverse Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id020
-          default: '1'
-          name: Reverse Module (Solenoid)
-          validators: *id021
-          value: '1'
-        Reverse Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id022
-          default: '1'
-          name: Reverse Channel (Solenoid)
-          validators: *id023
-          value: '6'
     - Name: Reed Switch 1
       Base: Digital Input
       Children: []
@@ -578,13 +578,13 @@ Children:
           default: '1'
           name: Output Module (Solenoid)
           validators: [Solenoid]
-          value: '2'
+          value: '1'
         Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
           name: Output Channel (Solenoid)
           validators: [Solenoid]
-          value: '1'
+          value: '3'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}

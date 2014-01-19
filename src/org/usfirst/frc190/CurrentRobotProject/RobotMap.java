@@ -131,10 +131,10 @@ public class RobotMap {
         collectorClawReedSwitch = new DigitalInput(1, 10);
 	LiveWindow.addSensor("Collector", "Claw Reed Switch", collectorClawReedSwitch);
         
-        shooterShooterPiston1 = new DoubleSolenoid(1, 1, 2);      
+        shooterShooterPiston1 = new DoubleSolenoid(1, 4, 5);      
 	
         
-        shooterLatchPiston = new DoubleSolenoid(1, 5, 6);      
+        shooterLatchPiston = new DoubleSolenoid(1, 1, 2);      
 	
         
         shooterReedSwitch1 = new DigitalInput(1, 8);
@@ -143,7 +143,7 @@ public class RobotMap {
         shooterReedSwitch2 = new DigitalInput(1, 9);
 	LiveWindow.addSensor("Shooter", "Reed Switch 2", shooterReedSwitch2);
         
-        shooterShooterPiston2 = new Solenoid(2, 1);
+        shooterShooterPiston2 = new Solenoid(1, 3);
 	LiveWindow.addActuator("Shooter", "Shooter Piston 2", shooterShooterPiston2);
         
         pneumaticsCompressor = new Compressor(1, 1, 1, 1);
