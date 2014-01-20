@@ -14,6 +14,9 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
  *
  */
 public class  ArmUp extends Command {
+    //May want to have this controlled via PID, instead of relying limit switches.
+    private double armDownSpeed = 1;
+    
     public ArmUp() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -24,19 +27,22 @@ public class  ArmUp extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.elevator.setElevatorMotor(armDownSpeed);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return Robot.elevator.topLimitSwitchPressed();
     }
     // Called once after isFinished returns true
     protected void end() {
+        Robot.elevator.setElevatorMotor(0);
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        end();
     }
 }
