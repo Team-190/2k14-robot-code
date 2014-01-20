@@ -18,10 +18,12 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
  */
 public class TwoBallAuto extends CommandGroup {
     
+    private double collectionTimeout = 2; //Needs to be tested.
+    
     public  TwoBallAuto() {
         addSequential(new ShootFar());
         addSequential(new Fire());
-        addSequential(new Collect());
+        addSequential(new Collect(collectionTimeout));
         
         /*
         addSequential(new DepressurizePiston2());

@@ -18,11 +18,21 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
  */
 public class Collect extends CommandGroup {
     
-    public  Collect() {
+    public Collect() {
         addParallel(new ArmDown());
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection()); //Does not finish until limit switch is hit.
         addSequential(new MoveArmToPoint());
     }
+   
+    public Collect(double timeout){
+        //This command works the same as expected, except it will end the WaitForCollection command after a given time.
+        //This should only need to be called for autonomous.
+        addParallel(new ArmDown());
+        addParallel(new RollersForward());
+        addSequential(new CloseClaw());
+        addSequential(new WaitForCollection(timeout)); //Does not finish until limit switch is hit.
+        addSequential(new MoveArmToPoint());
+    }  
 }
