@@ -20,6 +20,7 @@ public class OneBallAuto extends CommandGroup {
     
     public  OneBallAuto() {
         addSequential(new ShootFar());
+        //Wait for Hot Goal.
         addSequential(new Fire());
         addSequential(new DriveForward());
         addSequential(new DriveSpin());

@@ -14,7 +14,9 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
  *
  */
 public class  CheckForHotGoal extends Command {
+    
     private boolean hotGoalFound;
+    private double timeout = 5.5;
     
     public CheckForHotGoal() {
         // Use requires() here to declare subsystem dependencies
@@ -25,7 +27,7 @@ public class  CheckForHotGoal extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        setTimeout(5);
+        setTimeout(timeout);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {

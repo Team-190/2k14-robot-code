@@ -22,8 +22,10 @@ public class TwoBallAuto extends CommandGroup {
     
     public  TwoBallAuto() {
         addSequential(new ShootFar());
+        //Wait for Hot Goal.
         addSequential(new Fire());
         addSequential(new Collect(collectionTimeout));
+        
         
         /*
         addSequential(new DepressurizePiston2());
