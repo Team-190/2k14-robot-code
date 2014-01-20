@@ -791,6 +791,50 @@ Children:
         name: Digital Pin
         validators: null
         value: '2'
+  - Name: Fire Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Fire
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '3'
+  - Name: Collect Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Collect
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '4'
   Properties: {}
 - Name: Commands
   Base: Commands
