@@ -19,11 +19,24 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class TwoBallAuto extends CommandGroup {
     
     public  TwoBallAuto() {
-        addSequential(new OneBallAuto());
-        addSequential(new WaitCommand(0.5));
+        addSequential(new ShootFar());
+        addSequential(new Fire());
+        addSequential(new Collect());
+        
+        /*
+        addSequential(new DepressurizePiston2());
+        addSequential(new WaitCommand(.3));
+        addSequential(new ExtendPiston1());
+        addSequential(new WaitCommand(.2));
+        addSequential(new PressurizePiston2());
+        addSequential(new WaitCommand(.5));
+        addSequential(new Fire());
         //addSequential(new Collect());
+        addSequential(new WaitCommand(0.5));
+        
         addSequential(new OneBallAuto());
         addSequential(new WaitCommand(0.5));
+        */
         
     }
 }
