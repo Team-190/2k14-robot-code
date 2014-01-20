@@ -747,6 +747,50 @@ Children:
         name: Number
         validators: *id037
         value: '2'
+  - Name: Raise Arm Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: &id038 [TypeDropdownSelected]
+        value: Arm Raise
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: &id039 [whileHeld, whenPressed, whenReleased]
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whileHeld
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: &id040 ['1', '2', '3', '4', '5', '6', '7', '8']
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Arm Lower Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Arm Lower
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whileHeld
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '2'
   Properties: {}
 - Name: Commands
   Base: Commands
@@ -765,14 +809,6 @@ Children:
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Shooter}
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Collect Command
-    Base: Command
-    Children: []
-    Properties:
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Collector}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   - Name: Drive Forward
