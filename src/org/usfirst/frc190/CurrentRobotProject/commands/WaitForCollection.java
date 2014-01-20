@@ -14,7 +14,9 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
  *
  */
 public class  WaitForCollection extends Command {
+    
     private double speed = .5;  //roller speed. test val of .5 
+    
     public WaitForCollection() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -25,7 +27,7 @@ public class  WaitForCollection extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.collector.setSpeed(speed);
+        Robot.collector.setRollerSpeed(speed);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
