@@ -835,6 +835,72 @@ Children:
         name: Digital Pin
         validators: null
         value: '4'
+  - Name: Shoot Far Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Shoot Far
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Shoot Truss Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Shoot Truss
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Pass Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Pass
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
   Properties: {}
 - Name: Commands
   Base: Commands

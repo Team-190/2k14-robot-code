@@ -33,6 +33,8 @@ public class Fire extends CommandGroup {
         //TODO: Check reed switch
         addSequential(new WaitCommand(.4));
         addSequential(new RetractLatch());
+        //addSequential(new Closeclaw());
+        //TODO: Check reed switch for CloseClaw()
         //TODO: Check reed switch for Latch
         addSequential(new ExtendPiston1());
     }
