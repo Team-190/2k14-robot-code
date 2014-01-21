@@ -9,7 +9,6 @@
 // it from being updated in the future.
 package org.usfirst.frc190.CurrentRobotProject.subsystems;
 import org.usfirst.frc190.CurrentRobotProject.RobotMap;
-import org.usfirst.frc190.CurrentRobotProject.commands.*;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 /**
