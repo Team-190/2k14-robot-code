@@ -509,7 +509,7 @@ Children:
           name: Reverse Channel (Solenoid)
           validators: *id023
           value: '5'
-    - Name: Reed Switch 1
+    - Name: Piston1 Reed Switch 1
       Base: Digital Input
       Children: []
       Properties:
@@ -525,7 +525,7 @@ Children:
           name: Input Module (Digital)
           validators: *id027
           value: '1'
-    - Name: Reed Switch 2
+    - Name: Piston1 Reed Switch 2
       Base: Digital Input
       Children: []
       Properties:

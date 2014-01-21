@@ -53,8 +53,8 @@ public class RobotMap {
     public static DoubleSolenoid collectorClawCylinder;
     public static DigitalInput collectorClawReedSwitch;
     public static DoubleSolenoid shooterShooterPiston1;
-    public static DigitalInput shooterReedSwitch1;
-    public static DigitalInput shooterReedSwitch2;
+    public static DigitalInput shooterPiston1ReedSwitch1;
+    public static DigitalInput shooterPiston1ReedSwitch2;
     public static Solenoid shooterShooterPiston2;
     public static Solenoid shooterLatchPiston;
     public static Compressor pneumaticsCompressor;
@@ -134,11 +134,11 @@ public class RobotMap {
         shooterShooterPiston1 = new DoubleSolenoid(1, 4, 5);      
 	
         
-        shooterReedSwitch1 = new DigitalInput(1, 8);
-	LiveWindow.addSensor("Shooter", "Reed Switch 1", shooterReedSwitch1);
+        shooterPiston1ReedSwitch1 = new DigitalInput(1, 8);
+	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch 1", shooterPiston1ReedSwitch1);
         
-        shooterReedSwitch2 = new DigitalInput(1, 9);
-	LiveWindow.addSensor("Shooter", "Reed Switch 2", shooterReedSwitch2);
+        shooterPiston1ReedSwitch2 = new DigitalInput(1, 9);
+	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch 2", shooterPiston1ReedSwitch2);
         
         shooterShooterPiston2 = new Solenoid(1, 3);
 	LiveWindow.addActuator("Shooter", "Shooter Piston 2", shooterShooterPiston2);

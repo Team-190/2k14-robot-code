@@ -29,9 +29,11 @@ public class ShootFar extends CommandGroup {
         addSequential(new RetractPiston1());
         addSequential(new DepressurizePiston2());
         addSequential(new WaitCommand(.3));
+        addSequential(new RetractLatch());
+        addSequential(new WaitCommand(.3));
         addSequential(new ExtendPiston1());
-        addSequential(new WaitCommand(.2));
         addSequential(new PressurizePiston2());
+        
         //TODO: Aim arm.
     }
 }
