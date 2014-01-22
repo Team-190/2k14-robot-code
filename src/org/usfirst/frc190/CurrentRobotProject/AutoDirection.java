@@ -1,14 +1,7 @@
 package org.usfirst.frc190.CurrentRobotProject;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+//This is an "enum-type" class that allows you specify how the robot should move in order to collect the ball. 
 
-/**
- *
- * @author Will
- */
 public class AutoDirection {
     public final int value;
 
