@@ -80,4 +80,11 @@ public class Shooter extends Subsystem {
         return piston1ReedSwitch2.get();
 }
             
+    public void turnOffSolenoids(){
+        //Turns off all double solenoids.
+        //Double solenoids hold their position when they are turned off.
+        //We should turn them off whenever possible to extend the life of the coils.
+        shooterPiston1.set(DoubleSolenoid.Value.kOff);
+        //May need to add more methods here if we use more double solenoids.
+    }
 }

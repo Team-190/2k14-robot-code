@@ -12,6 +12,7 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
+import org.usfirst.frc190.CurrentRobotProject.Robot;
 
 /**
  *
@@ -26,9 +27,17 @@ public class ShootTruss extends CommandGroup {
         //The two pistons only need to be retracted sometimes.
         //With reed switches we'll be able to tell when the pistons are pressurized but still held back.
         
-        addSequential(new RetractPiston1());
-        addSequential(new DepressurizePiston2());
-        addSequential(new WaitCommand(.3));
+        if(!Robot.shooter.piston1IsRetracted()){
+            //If piston1 isn't fully retracted, retract it.
+            addSequential(new DepressurizePiston2()); //piston2 must be depressurized in order for piston1 to retract.
+            addSequential(new RetractPiston1());
+            
+            while(!Robot.shooter.piston1IsRetracted()){
+                //Block while piston1 is retracting.
+            }
+            Robot.shooter.turnOffSolenoids();
+        }
+        
         addSequential(new RetractLatch());
         addSequential(new WaitCommand(.3));
         addSequential(new ExtendPiston1());
