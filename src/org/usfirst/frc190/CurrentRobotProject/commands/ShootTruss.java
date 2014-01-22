@@ -35,7 +35,7 @@ public class ShootTruss extends CommandGroup {
             while(!Robot.shooter.piston1IsRetracted()){
                 //Block while piston1 is retracting.
             }
-            Robot.shooter.turnOffSolenoids();
+            Robot.shooter.turnOffAllDoubleSolenoids();
         }
         
         addSequential(new RetractLatch());
