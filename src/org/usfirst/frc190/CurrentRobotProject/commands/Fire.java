@@ -12,6 +12,7 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
+import org.usfirst.frc190.CurrentRobotProject.Robot;
 
 /**
  *
@@ -26,16 +27,19 @@ public class Fire extends CommandGroup {
         //addSequential(new OpenClaw());
         //TODO: Check reed switch for OpenClaw()
         addSequential(new ExtendLatch());
-        //TODO: Check reed switch for extended piston
-        addSequential(new WaitCommand(.4));
+        
+        while(!Robot.shooter.piston1IsExtended()){
+            //Block while we are waiting for the piston to extend.
+        }
         addSequential(new DepressurizePiston2());
         addSequential(new RetractPiston1());
-        //TODO: Check reed switch
-        addSequential(new WaitCommand(.4));
+        
+        while(!Robot.shooter.piston1IsRetracted()){
+            //Block while we are waiting for the piston to retract.
+        }
+        
         addSequential(new RetractLatch());
         //addSequential(new Closeclaw());
-        //TODO: Check reed switch for CloseClaw()
-        //TODO: Check reed switch for Latch
         addSequential(new ExtendPiston1());
     }
 }
