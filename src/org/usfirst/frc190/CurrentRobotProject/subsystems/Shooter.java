@@ -72,6 +72,12 @@ public class Shooter extends Subsystem {
         latchPiston.set(false);
     }
     
+    public boolean piston1IsExtended(){
+        return piston1ReedSwitch1.get();
+}
     
+    public boolean piston1IsRetracted(){
+        return piston1ReedSwitch2.get();
+}
             
 }
