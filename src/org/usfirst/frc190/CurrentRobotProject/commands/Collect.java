@@ -22,12 +22,16 @@ public class Collect extends CommandGroup {
         addParallel(new ArmDown());
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
-        addSequential(new WaitForCollection()); //Does not finish until limit switch is hit.
-        addSequential(new MoveArmToPoint());
+        //wait until buttor released or limitswitch hit
+        //RollersStop();
+        //If(limitswitch hit){
+            //ArmAimFar();
+        //}
     }
    
     public Collect(double timeout){
-        //This command works the same as expected, except it will end the WaitForCollection command after a given time.
+        //This command works the same as expected, except it will end the 
+        //WaitForCollection command after a given time.
         //This should only need to be called for autonomous.
         addParallel(new ArmDown());
         addParallel(new RollersForward());

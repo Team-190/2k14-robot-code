@@ -20,7 +20,9 @@ public class OneBallAuto extends CommandGroup {
     
     public  OneBallAuto() {
         addSequential(new ShootFar());
-        //Wait for Hot Goal.
+        //if(!Robot.camera.hotgoal()){
+            //Timer.delay(5); 5 seconds
+        //}
         addSequential(new Fire());
         addSequential(new DriveForward());
         addSequential(new DriveSpin());
