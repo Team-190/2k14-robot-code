@@ -41,9 +41,16 @@ public class TwoBallAuto extends CommandGroup {
         
         
         addSequential(new ShootFar());
-        //Wait for Hot Goal.
+        //Wait for Hot Goal. OR NOT?
         addSequential(new Fire());
         addSequential(new Collect(collectionTimeout));
+        //We need to at a case here:
+        //Collect(); ShootFar(); Fire(); Drive Forward(); DriveSpin();
+        //If a timeout Happens: DriveForward(); DriveSpin();
+        
+        //What we should do is do the proceedure assuming it works, and just at
+        //the end of the time, we drive forward to get the mobility points
+        // and if we fire before that, we then spin around
         
         
         /*

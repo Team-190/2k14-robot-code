@@ -21,6 +21,8 @@ public class Pass extends CommandGroup {
         
         addSequential(new ArmDown());
         addSequential(new RollersBackward());
-        //Do we want a delay in here, or just end the command group with the rollers moving until they're interupted?
+        //wait until !passbuttonpressed;
+        //addSequential(new RollersStop());
+        
     }
 }
