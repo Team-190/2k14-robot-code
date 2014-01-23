@@ -24,11 +24,11 @@ public class TwoBallAuto extends CommandGroup {
      
     public  TwoBallAuto() {
        
-        addSequential(new AutoManuver()); //Will perform any nessecary manuvers.
         addSequential(new ShootFar());
         //Wait for Hot Goal. OR NOT?
         addSequential(new Fire());
-        addSequential(new Collect(collectionTimeout));
+        addSequential(new AutoManuver()); //Will perform any nessecary manuvers.
+        //addSequential(new Collect(collectionTimeout));
         addSequential(new ShootFar());
         addSequential(new Fire());
         addSequential(new DriveForward());
@@ -40,22 +40,6 @@ public class TwoBallAuto extends CommandGroup {
         //What we should do is do the proceedure assuming it works, and just at
         //the end of the time, we drive forward to get the mobility points
         // and if we fire before that, we then spin around
-        
-        
-        /*
-        addSequential(new DepressurizePiston2());
-        addSequential(new WaitCommand(.3));
-        addSequential(new ExtendPiston1());
-        addSequential(new WaitCommand(.2));
-        addSequential(new PressurizePiston2());
-        addSequential(new WaitCommand(.5));
-        addSequential(new Fire());
-        //addSequential(new Collect());
-        addSequential(new WaitCommand(0.5));
-        
-        addSequential(new OneBallAuto());
-        addSequential(new WaitCommand(0.5));
-        */
         
     }
 }
