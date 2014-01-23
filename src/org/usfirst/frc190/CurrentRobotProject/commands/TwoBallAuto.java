@@ -23,23 +23,8 @@ public class TwoBallAuto extends CommandGroup {
     private double collectionTimeout = 2; //Needs to be tested.
      
     public  TwoBallAuto() {
-        switch(Robot.getAutonomousDirection().value){
-            case 0:
-                //LEFT
-                break;
-            case 1:
-                //RIGHT
-                break;
-            case 2:
-                //FORWARD
-                break;
-            case 3:
-                //NO MOVEMENT
-                break;
-                
-        }
-        
-        
+       
+        addSequential(new AutoManuver()); //Will perform any nessecary manuvers.
         addSequential(new ShootFar());
         //Wait for Hot Goal. OR NOT?
         addSequential(new Fire());

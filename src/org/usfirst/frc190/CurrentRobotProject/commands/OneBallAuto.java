@@ -22,22 +22,6 @@ import org.usfirst.frc190.CurrentRobotProject.AutoDirection;
 public class OneBallAuto extends CommandGroup {
         
     public  OneBallAuto() {
-        switch(Robot.getAutonomousDirection().value){
-            case 0:
-                //LEFT
-                break;
-            case 1:
-                //RIGHT
-                break;
-            case 2:
-                //FORWARD
-                break;
-            case 3:
-                //NO MOVEMENT
-                break;
-                
-        }
-        
         
         addSequential(new ShootFar());
         //if(!Robot.camera.hotgoal()){
