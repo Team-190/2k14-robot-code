@@ -9,6 +9,7 @@
 // it from being updated in the future.
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc190.CurrentRobotProject.AutoDirection;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
 /**
  *
@@ -17,6 +18,7 @@ public class  DriveSpin extends Command {
     
     private double turnSpeed = 0.5;
     private double spinAngle = 180;
+    private boolean onlyIfNessecaryForAuto = false;
     
     public DriveSpin(double angle, double speed){
         turnSpeed = speed;
@@ -35,28 +37,37 @@ public class  DriveSpin extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.drivetrain.resetGyro();
-        if(spinAngle < 0){
-            //Turn left.
-            Robot.drivetrain.tankDrive(-turnSpeed, turnSpeed);
-        }else{
-            //Turn right.
-            Robot.drivetrain.tankDrive(turnSpeed, -turnSpeed);
+        if(Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT){
+            //Is nessecary.
+            Robot.drivetrain.resetGyro();
+            if(spinAngle < 0){
+                //Turn left.
+                Robot.drivetrain.tankDrive(-turnSpeed, turnSpeed);
+            }else{
+                //Turn right.
+                Robot.drivetrain.tankDrive(turnSpeed, -turnSpeed);
+            }
         }
     }
+    
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(spinAngle < 0){
-            //Turn left.
-            return (spinAngle >= Robot.drivetrain.getGyro());
+        if(Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT){
+            if(spinAngle < 0){
+                //Turn left.
+                return (spinAngle >= Robot.drivetrain.getGyro());
+            }else{
+                //Turn right.
+                return (spinAngle <= Robot.drivetrain.getGyro());
+            }
         }else{
-            //Turn right.
-            return (spinAngle <= Robot.drivetrain.getGyro());
+            return true;
         }
     }
+    
     // Called once after isFinished returns true
     protected void end() {
         Robot.drivetrain.tankDrive(0, 0);

@@ -10,6 +10,7 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
+import org.usfirst.frc190.CurrentRobotProject.AutoDirection;
 /**
  *
  */
@@ -34,12 +35,15 @@ public class  DriveForward extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        if(distance < 0){
-            //Go backward.
-            Robot.drivetrain.tankDrive(-driveForwardSpeed, -driveForwardSpeed);
-        }else{
-            //Go forward.
-            Robot.drivetrain.tankDrive(driveForwardSpeed, driveForwardSpeed);
+        if(Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT){
+            //Is nessecary.
+            if(distance < 0){
+                //Go backward.
+                Robot.drivetrain.tankDrive(-driveForwardSpeed, -driveForwardSpeed);
+            }else{
+                //Go forward.
+                Robot.drivetrain.tankDrive(driveForwardSpeed, driveForwardSpeed);
+            }
         }
     }
     // Called repeatedly when this Command is scheduled to run
@@ -47,12 +51,16 @@ public class  DriveForward extends Command {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(distance < 0){
-            //Going backward.
-            return (Robot.drivetrain.getLeftEncoderDistance() <= distance) && (Robot.drivetrain.getRightEncoderDistance() <= distance);
+        if(Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT){
+            if(distance < 0){
+                //Going backward.
+                return (Robot.drivetrain.getLeftEncoderDistance() <= distance) && (Robot.drivetrain.getRightEncoderDistance() <= distance);
+            }else{
+                return (Robot.drivetrain.getLeftEncoderDistance() >= distance) && (Robot.drivetrain.getRightEncoderDistance() >= distance);
+            } 
         }else{
-            return (Robot.drivetrain.getLeftEncoderDistance() >= distance) && (Robot.drivetrain.getRightEncoderDistance() >= distance);
-        }  
+            return true;
+        }
     }
     
     // Called once after isFinished returns true
