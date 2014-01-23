@@ -72,6 +72,19 @@ public class Shooter extends Subsystem {
         latchPiston.set(false);
     }
     
+    public boolean piston1IsExtended(){
+        return piston1ReedSwitch1.get();
+}
     
+    public boolean piston1IsRetracted(){
+        return piston1ReedSwitch2.get();
+}
             
+    public void turnOffAllDoubleSolenoids(){
+        //Turns off all double solenoids.
+        //Double solenoids hold their position when they are turned off.
+        //We should turn them off whenever possible to extend the life of the coils.
+        shooterPiston1.set(DoubleSolenoid.Value.kOff);
+        //May need to add more methods here if we use more double solenoids.
+    }
 }

@@ -12,6 +12,8 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
+import org.usfirst.frc190.CurrentRobotProject.AutoDirection;
+import org.usfirst.frc190.CurrentRobotProject.Robot;
 
 /**
  *
@@ -19,8 +21,25 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class TwoBallAuto extends CommandGroup {
     
     private double collectionTimeout = 2; //Needs to be tested.
-    
+     
     public  TwoBallAuto() {
+        switch(Robot.getAutonomousDirection().value){
+            case 0:
+                //LEFT
+                break;
+            case 1:
+                //RIGHT
+                break;
+            case 2:
+                //FORWARD
+                break;
+            case 3:
+                //NO MOVEMENT
+                break;
+                
+        }
+        
+        
         addSequential(new ShootFar());
         //Wait for Hot Goal. OR NOT?
         addSequential(new Fire());
