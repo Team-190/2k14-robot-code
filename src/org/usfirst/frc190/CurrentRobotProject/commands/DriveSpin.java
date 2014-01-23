@@ -36,14 +36,26 @@ public class  DriveSpin extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
         Robot.drivetrain.resetGyro();
-        Robot.drivetrain.tankDrive(turnSpeed, -turnSpeed);
+        if(spinAngle < 0){
+            //Turn left.
+            Robot.drivetrain.tankDrive(-turnSpeed, turnSpeed);
+        }else{
+            //Turn right.
+            Robot.drivetrain.tankDrive(turnSpeed, -turnSpeed);
+        }
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return (spinAngle >= Robot.drivetrain.getGyro());
+        if(spinAngle < 0){
+            //Turn left.
+            return (spinAngle >= Robot.drivetrain.getGyro());
+        }else{
+            //Turn right.
+            return (spinAngle <= Robot.drivetrain.getGyro());
+        }
     }
     // Called once after isFinished returns true
     protected void end() {
