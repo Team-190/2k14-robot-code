@@ -25,6 +25,10 @@ public class TwoBallAuto extends CommandGroup {
         //Wait for Hot Goal. OR NOT?
         addSequential(new Fire());
         addSequential(new Collect(collectionTimeout));
+        addSequential(new ShootFar());
+        addSequential(new Fire());
+        addSequential(new DriveForward());
+        addSequential(new DriveSpin());
         //We need to at a case here:
         //Collect(); ShootFar(); Fire(); Drive Forward(); DriveSpin();
         //If a timeout Happens: DriveForward(); DriveSpin();
