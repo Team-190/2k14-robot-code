@@ -31,10 +31,7 @@ public class ShootFar extends CommandGroup {
             //If piston1 isn't fully retracted, retract it.
             addSequential(new DepressurizePiston2()); //piston2 must be depressurized in order for piston1 to retract.
             addSequential(new RetractPiston1());
-            
-            while(!Robot.shooter.piston1IsRetracted()){
-                //Block while piston1 is retracting.
-            }  
+            addSequential(new WaitForRetracted());
         }
         
         addSequential(new RetractLatch());

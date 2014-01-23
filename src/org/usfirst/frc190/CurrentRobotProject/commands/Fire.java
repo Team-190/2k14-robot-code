@@ -27,17 +27,10 @@ public class Fire extends CommandGroup {
         //addSequential(new OpenClaw());
         //TODO: Check reed switch for OpenClaw()
         addSequential(new ExtendLatch());
-        
-        while(!Robot.shooter.piston1IsExtended()){
-            //Block while we are waiting for the piston to extend.
-        }
+        addSequential(new WaitForExtended());
         addSequential(new DepressurizePiston2());
         addSequential(new RetractPiston1());
-        
-        while(!Robot.shooter.piston1IsRetracted()){
-            //Block while we are waiting for the piston to retract.
-        }
-        
+        addSequential(new WaitForRetracted());
         addSequential(new RetractLatch());
         //addSequential(new Closeclaw());
         addSequential(new ExtendPiston1());
