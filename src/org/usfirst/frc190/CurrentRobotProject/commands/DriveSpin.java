@@ -18,6 +18,12 @@ public class  DriveSpin extends Command {
     private double turnSpeed = 0.5;
     private double spinAngle = 180;
     
+    public DriveSpin(double angle, double speed){
+        turnSpeed = speed;
+        spinAngle = angle;
+        requires(Robot.drivetrain);
+    }
+    
     public DriveSpin() {
         
         // Use requires() here to declare subsystem dependencies
