@@ -37,8 +37,8 @@ public class  DriveSpin extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        if(Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT){
-            //Is nessecary.
+        if((Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT) && (Robot.getAutonomousDirection() != AutoDirection.FORWARD)){
+            //Is auto is set to Left or Right.
             Robot.drivetrain.resetGyro();
             if(spinAngle < 0){
                 //Turn left.
@@ -55,7 +55,7 @@ public class  DriveSpin extends Command {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT){
+        if((Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT) && (Robot.getAutonomousDirection() != AutoDirection.FORWARD)){
             if(spinAngle < 0){
                 //Turn left.
                 return (spinAngle >= Robot.drivetrain.getGyro());
