@@ -19,8 +19,6 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
  *
  */
 public class TwoBallAuto extends CommandGroup {
-    
-    private double collectionTimeout = 2; //Needs to be tested.
      
     public  TwoBallAuto() {
        
@@ -28,7 +26,6 @@ public class TwoBallAuto extends CommandGroup {
         //Wait for Hot Goal. OR NOT?
         addSequential(new Fire());
         addSequential(new AutoManuver()); //Will perform any nessecary manuvers.
-        //addSequential(new Collect(collectionTimeout));
         addSequential(new ShootFar());
         addSequential(new Fire());
         addSequential(new DriveForward());
