@@ -4,7 +4,6 @@
  */
 package org.usfirst.frc190.CurrentRobotProject;
 
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStationLCD;
 
 
@@ -21,6 +20,11 @@ public class MessageLogger {
     }
     
     public void speakMessage(SpeechMessage message){
+        switch(message.value){
+            case SpeechMessage.LEFT_VAL:
+                //TODO add code later.
+                break;
+        }
 
     }
     
