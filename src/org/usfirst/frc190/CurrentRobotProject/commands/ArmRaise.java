@@ -2,7 +2,6 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
-
 public class ArmRaise extends Command {
     private double speed = 0.5;
     

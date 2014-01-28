@@ -3,8 +3,6 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
-
-
 public class MoveArmToPoint extends Command {
     private double setPoint = 1.0;
     private boolean setPointSetInCode = false;

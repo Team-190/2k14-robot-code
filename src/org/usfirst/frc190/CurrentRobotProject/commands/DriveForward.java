@@ -3,8 +3,6 @@ package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
 import org.usfirst.frc190.CurrentRobotProject.AutoDirection;
-
-
 public class DriveForward extends Command {
     private double driveForwardSpeed = .5;
     private double distance;

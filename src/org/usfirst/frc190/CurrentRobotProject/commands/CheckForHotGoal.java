@@ -2,7 +2,6 @@
 //it's detected or timed out
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
-
 public class CheckForHotGoal extends Command {
     private boolean hotGoalFound;
     private double timeout = 5.5;
