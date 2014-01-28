@@ -27,6 +27,7 @@ public class  ArmRaise extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        //TODO: disable PID before motor control.
         Robot.elevator.setElevatorMotor(speed);
     }
     // Called repeatedly when this Command is scheduled to run

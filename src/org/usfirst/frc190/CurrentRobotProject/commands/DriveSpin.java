@@ -14,11 +14,13 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
 /**
  *
  */
+
+//This command makes the robot spin a set number of degrees at a specific speed.
+
 public class  DriveSpin extends Command {
     
     private double turnSpeed = 0.5;
     private double spinAngle = 180;
-    private boolean onlyIfNessecaryForAuto = false;
     
     public DriveSpin(double angle, double speed){
         turnSpeed = speed;
@@ -37,15 +39,16 @@ public class  DriveSpin extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        Robot.drivetrain.resetDriveEncoders();
         if((Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT) && (Robot.getAutonomousDirection() != AutoDirection.FORWARD)){
             //Is auto is set to Left or Right.
             Robot.drivetrain.resetGyro();
             if(spinAngle < 0){
                 //Turn left.
-                Robot.drivetrain.tankDrive(-turnSpeed, turnSpeed);
+                Robot.drivetrain.tankDriveWithValues(-turnSpeed, turnSpeed);
             }else{
                 //Turn right.
-                Robot.drivetrain.tankDrive(turnSpeed, -turnSpeed);
+                Robot.drivetrain.tankDriveWithValues(turnSpeed, -turnSpeed);
             }
         }
     }
@@ -70,7 +73,7 @@ public class  DriveSpin extends Command {
     
     // Called once after isFinished returns true
     protected void end() {
-        Robot.drivetrain.tankDrive(0, 0);
+        Robot.drivetrain.tankDriveWithValues(0, 0);
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run

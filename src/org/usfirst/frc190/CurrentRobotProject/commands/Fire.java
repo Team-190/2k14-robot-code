@@ -24,15 +24,17 @@ public class Fire extends CommandGroup {
         //The commands take so little time there is no need.
         
         //TODO: check to see if aimed or in auto.
-        //addSequential(new OpenClaw());
+        addSequential(new OpenClaw());
         //TODO: Check reed switch for OpenClaw()
         addSequential(new ExtendLatch());
         addSequential(new WaitForExtended());
         addSequential(new DepressurizePiston2());
         addSequential(new RetractPiston1());
         addSequential(new WaitForRetracted());
+        addSequential(new CloseClaw());
+        //TODO: Check for claw reed switch.
         addSequential(new RetractLatch());
-        //addSequential(new Closeclaw());
         addSequential(new ExtendPiston1());
+        addSequential(new ArmUp());
     }
 }

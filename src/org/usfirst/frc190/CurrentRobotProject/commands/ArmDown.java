@@ -15,7 +15,7 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
  */
 public class  ArmDown extends Command {
     //May want to have this controlled via PID, instead of relying limit switches.
-    private double armDownSpeed = 1;
+    private final double armDownSpeed = 1;
     
     public ArmDown() {
         // Use requires() here to declare subsystem dependencies

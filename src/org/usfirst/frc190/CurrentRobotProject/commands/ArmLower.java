@@ -10,6 +10,7 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
+import org.usfirst.frc190.CurrentRobotProject.subsystems.Elevator;
 /**
  *
  */
@@ -27,6 +28,7 @@ public class  ArmLower extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
+        //TODO: disable PID before motor control.
         Robot.elevator.setElevatorMotor(-speed);
     }
     // Called repeatedly when this Command is scheduled to run

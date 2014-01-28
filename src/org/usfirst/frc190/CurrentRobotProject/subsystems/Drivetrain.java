@@ -42,7 +42,12 @@ public class Drivetrain extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    public void tankDrive(double leftAxis, double rightAxis) {
+    public void tankDriveWithJoysitcks(Joystick leftAxis, Joystick rightAxis) {
+        robotDrive4Motors.tankDrive(leftAxis, rightAxis);
+        //Squared inputs?
+    }
+    
+    public void tankDriveWithValues(double leftAxis, double rightAxis) {
         robotDrive4Motors.tankDrive(leftAxis, rightAxis);
         //Squared inputs?
     }
@@ -82,5 +87,9 @@ public class Drivetrain extends Subsystem {
     public void setInPosistionIndicator(boolean on){
         //We may possibly have some sort of indicator on the robot for the robot's position.
         inPositionIndicator.set(on);
+    }
+    
+    public void stopDriveMotors(){
+        robotDrive4Motors.tankDrive(0, 0);
     }
 }

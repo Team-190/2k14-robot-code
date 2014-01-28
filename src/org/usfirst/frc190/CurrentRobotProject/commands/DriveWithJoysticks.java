@@ -29,11 +29,10 @@ public class  DriveWithJoysticks extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.drivetrain.tankDrive(Robot.oi.getLeftJoystick().getAxis(Joystick.AxisType.kY), 
-                                   Robot.oi.getRightJoystick().getAxis(Joystick.AxisType.kY));
+        Robot.drivetrain.tankDriveWithJoysitcks(Robot.oi.leftJoystick, Robot.oi.rightJoystick);
         
         //Turn on some sort of indicator on the robot. May or may not be needed.
-        Robot.drivetrain.setInPosistionIndicator(Robot.drivetrain.inPosition(0, 0)); 
+        Robot.drivetrain.setInPosistionIndicator(Robot.drivetrain.inPosition(5, 10)); 
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
@@ -41,7 +40,7 @@ public class  DriveWithJoysticks extends Command {
     }
     // Called once after isFinished returns true
     protected void end() {
-        Robot.drivetrain.tankDrive(0, 0);
+        Robot.drivetrain.stopDriveMotors();
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
