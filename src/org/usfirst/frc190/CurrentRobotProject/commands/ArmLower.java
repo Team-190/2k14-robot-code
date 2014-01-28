@@ -19,6 +19,7 @@ public class ArmLower extends Command {
     protected void execute() {
     }
     protected boolean isFinished() {
+        //TODO: Add limit switch safeties.
         //Will be controlled/finished by a button on the OI.
         return false;
     }
