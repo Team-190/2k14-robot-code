@@ -1,9 +1,7 @@
 //Need to make this PID
-
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
-
 public class  ArmUp extends Command {
     //May want to have this controlled via PID, instead of relying limit switches.
     private double armDownSpeed = 1;
