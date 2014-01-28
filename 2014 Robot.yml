@@ -675,7 +675,7 @@ Children:
         name: Number
         validators: *id037
         value: '2'
-  - Name: Raise Arm Button
+  - Name: Arm Raise Button
     Base: Digital Button
     Children: []
     Properties:
@@ -829,6 +829,236 @@ Children:
         name: Digital Pin
         validators: null
         value: '1'
+  - Name: Store Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Move Arm To Point
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Automatic Switch
+    Base: OI Digital Input
+    Children: []
+    Properties:
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: ['1', '2', '3', '4', '5', '6', '7', '8']
+        default: '1'
+        name: Digital Pin
+        validators: [OI Digital Input]
+        value: '1'
+  - Name: Collector In Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Rollers Forward
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whileHeld
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Collector Out Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Rollers Backward
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whileHeld
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Claw Open Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Open Claw
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Claw Closed Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Close Claw
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Latch Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Extend Latch
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whileHeld
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Piston 1 Out Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Extend Piston 1
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Piston 1 In Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Retract Piston 1
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Piston 2 Out Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Pressurize Piston 2
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
+  - Name: Piston 2 Empty Button
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: *id038
+        value: Depressurize Piston 2
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id039
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whenPressed
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id040
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
   Properties: {}
 - Name: Commands
   Base: Commands
@@ -841,14 +1071,6 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Drivetrain}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Move Arm
-    Base: Command
-    Children: []
-    Properties:
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Shooter}
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
   - Name: One Ball Auto
     Base: Command Group
     Children: []
