@@ -1,5 +1,4 @@
 package org.usfirst.frc190.CurrentRobotProject;
-
 import edu.wpi.first.wpilibj.DriverStationLCD;
 
 public class MessageLogger {

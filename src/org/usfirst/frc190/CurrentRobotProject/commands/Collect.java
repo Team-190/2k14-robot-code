@@ -28,7 +28,7 @@ public class Collect extends CommandGroup {
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection(timeout));
-            //Does not finish until limit switch is hit.
+        //Does not finish until limit switch is hit.
         addSequential(new ArmUp());
     }
 }
