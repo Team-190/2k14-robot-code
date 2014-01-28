@@ -4,18 +4,12 @@ package org.usfirst.frc190.CurrentRobotProject.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
-<<<<<<< HEAD
 import org.usfirst.frc190.CurrentRobotProject.subsystems.Elevator;
 /**
  *
  */
-public class  ArmLower extends Command {
-    
-=======
-
 public class ArmLower extends Command {
 
->>>>>>> 1602907022cfcf5b51ea147960f4dd73a010f7f0
     private double speed = 0.5;
 
     public ArmLower() {

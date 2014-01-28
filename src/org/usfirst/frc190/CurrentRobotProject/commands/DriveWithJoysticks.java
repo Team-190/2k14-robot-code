@@ -18,13 +18,11 @@ public class  DriveWithJoysticks extends Command {
         Robot.drivetrain.tankDriveWithJoysitcks(Robot.oi.leftJoystick, Robot.oi.rightJoystick);
         
         //Turn on some sort of indicator on the robot. May or may not be needed.
-<<<<<<< HEAD
         Robot.drivetrain.setInPosistionIndicator(Robot.drivetrain.inPosition(5, 10)); 
-=======
         //Tucker - Is this necessary?
         Robot.drivetrain.setInPosistionIndicator(Robot.drivetrain.inPosition(0, 0)); 
->>>>>>> 1602907022cfcf5b51ea147960f4dd73a010f7f0
     }
+    
     protected boolean isFinished() {
         return false;
     }
