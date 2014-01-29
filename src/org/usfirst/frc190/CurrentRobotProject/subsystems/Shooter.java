@@ -32,6 +32,8 @@ public class Shooter extends Subsystem {
         shooterPiston1.set(DoubleSolenoid.Value.kReverse);
     }
     public void off1() {
+        //Turns off the piston1 double solenoid. This won't actuate anything because double solenoids preserve their state when turned off.
+        //This should be called in order to reduce the amount of time that the coils are powered.
         shooterPiston1.set(DoubleSolenoid.Value.kOff);
     }
     public void pressurize2() {
@@ -57,9 +59,11 @@ public class Shooter extends Subsystem {
         //Double solenoids hold their position when they are turned off.
         //We should turn them off whenever possible to extend the life of the coils.
         shooterPiston1.set(DoubleSolenoid.Value.kOff);
-        //May need to add more methods here if we use more double solenoids.
+        //TODO: May need to add more methods here if we use more double solenoids.
     }
     public boolean goalIsHot(){
+        //Reads the banner switch. 
+        //Will be true when goal is hot.
         return hotGoalSensor.get();
     }
     

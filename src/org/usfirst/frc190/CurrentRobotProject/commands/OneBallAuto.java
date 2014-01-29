@@ -14,11 +14,11 @@ public class OneBallAuto extends CommandGroup {
 
     public OneBallAuto() {
         addSequential(new MoveArmToPoint(0.5));
-        //TODO: Change arm setpoint based on tests.
+            //TODO: Change arm setpoint based on tests.
         addSequential(new ShootFar());
-        addSequential(new CheckForHotGoal()); //checks for hot goal
-            //if hot goal is detected, the command ends
-            //If hot goal is not detected, the command ends after five seconds
+        addSequential(new CheckForHotGoal()); //Checks for hot goal
+            //If hot goal is detected, the command ends
+            //If hot goal is not detected, the command ends after a timeout.
         addSequential(new Fire());
         //TODO: Check to make sure the methods below will always run.
         addSequential(new DriveForward(10, 0.5));
