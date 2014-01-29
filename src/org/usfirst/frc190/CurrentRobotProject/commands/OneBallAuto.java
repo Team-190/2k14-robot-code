@@ -21,7 +21,7 @@ public class OneBallAuto extends CommandGroup {
             //If hot goal is not detected, the command ends after five seconds
         addSequential(new Fire());
         //TODO: Check to make sure the methods below will always run.
-        addSequential(new DriveForward());
-        addSequential(new DriveSpin());
+        addSequential(new DriveForward(10, 0.5));
+        addSequential(new DriveSpin(180, 0.5));
     }
 }
