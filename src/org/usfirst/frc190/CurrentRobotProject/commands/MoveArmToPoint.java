@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
 import edu.wpi.first.wpilibj.DriverStation;
-
 public class MoveArmToPoint extends Command {
     private double setPoint = 1.0;
     private boolean setPointSetInCode = false;
