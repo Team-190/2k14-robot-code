@@ -13,7 +13,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class OneBallAuto extends CommandGroup {
 
     public OneBallAuto() {
-
+        addSequential(new MoveArmToPoint(0.5));
+        //TODO: Change arm setpoint based on tests.
         addSequential(new ShootFar());
         addSequential(new CheckForHotGoal()); //checks for hot goal
             //if hot goal is detected, the command ends
