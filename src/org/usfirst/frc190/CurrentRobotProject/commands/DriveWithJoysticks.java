@@ -1,5 +1,6 @@
 //This command allows the joysticks to drive the robot.
-//It is always running except when interruted
+//It is always running except when interruted.
+//This command also sets an on-board indicator based on the ultrasonic sensor.
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;

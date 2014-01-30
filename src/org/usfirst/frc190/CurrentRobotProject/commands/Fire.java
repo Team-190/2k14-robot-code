@@ -14,16 +14,15 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
 
-/**
- *
- */
+//This is the Fire sequence. It assumes that all pistons are in correct position.
+
 public class Fire extends CommandGroup {
     
     public  Fire() {
         //None of the sequences for the pneumatics system need addParallel.
         //The commands take so little time there is no need.
         
-        //TODO: check to see if aimed or in auto.
+        //TODO: check to see if in auto.
         addSequential(new OpenClaw());
         //TODO: Check reed switch for OpenClaw()
         addSequential(new ExtendLatch());
@@ -31,10 +30,11 @@ public class Fire extends CommandGroup {
         addSequential(new DepressurizePiston2());
         addSequential(new RetractPiston1());
         addSequential(new WaitForRetracted());
+        addParallel(new ArmUp());
         addSequential(new CloseClaw());
         //TODO: Check for claw reed switch.
         addSequential(new RetractLatch());
         addSequential(new ExtendPiston1());
-        addSequential(new ArmUp());
+        
     }
 }

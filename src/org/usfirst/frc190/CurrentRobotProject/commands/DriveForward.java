@@ -3,6 +3,11 @@ package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
 import org.usfirst.frc190.CurrentRobotProject.AutoDirection;
+
+//This command will drive a given distance at a given speed.
+//Requires encoders.
+//TODO: Fix with autotonomous implementation.
+
 public class DriveForward extends Command {
     private double driveForwardSpeed = .5;
     private double distance;

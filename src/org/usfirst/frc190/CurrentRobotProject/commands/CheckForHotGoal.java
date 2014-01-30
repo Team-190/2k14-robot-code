@@ -3,6 +3,11 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
+
+//This command looks for uses the Banner sensor to look for the Hot Goal.
+//You can also specify a timeout, after which this command will end no matter what.
+//When called sequentially, this command will block until the hot goal is detected or until it is timed out.
+
 public class CheckForHotGoal extends Command {
     private double timeout = 5.5; //Command will exit after this many seconds no matter what.
     public CheckForHotGoal() {

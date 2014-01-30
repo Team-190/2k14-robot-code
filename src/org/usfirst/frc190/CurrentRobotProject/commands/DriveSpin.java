@@ -3,10 +3,9 @@ package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.AutoDirection;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
-/**
- *
- */
+
 //This command makes the robot spin a set number of degrees at a specific speed.
+
 public class  DriveSpin extends Command {
     
     private double turnSpeed = 0.5;
