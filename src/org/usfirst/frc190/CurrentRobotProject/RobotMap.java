@@ -28,9 +28,9 @@ public class RobotMap {
     public static RobotDrive drivetrainRobotDrive4Motors;
     public static Encoder drivetrainLeftEncoder;
     public static Encoder drivetrainRightEncoder;
-    public static Ultrasonic drivetrainDistanceSensor;
     public static DigitalOutput drivetrainInPositionIndicator;
     public static Gyro drivetrainGyro;
+    public static DigitalInput drivetrainDistanceSensor;
     public static SpeedController collectorRollerMotor;
     public static DigitalInput collectorBallDetector;
     public static Servo collectorServo;
@@ -69,6 +69,8 @@ public class RobotMap {
         drivetrainRobotDrive4Motors.setExpiration(0.1);
         drivetrainRobotDrive4Motors.setSensitivity(0.5);
         drivetrainRobotDrive4Motors.setMaxOutput(1.0);
+        drivetrainRobotDrive4Motors.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+        drivetrainRobotDrive4Motors.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
         drivetrainLeftEncoder = new Encoder(1, 3, 1, 4, false, EncodingType.k4X);
 	LiveWindow.addSensor("Drivetrain", "Left Encoder", drivetrainLeftEncoder);
         drivetrainLeftEncoder.setDistancePerPulse(1.0);
@@ -79,15 +81,15 @@ public class RobotMap {
         drivetrainRightEncoder.setDistancePerPulse(1.0);
         drivetrainRightEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
         drivetrainRightEncoder.start();
-        drivetrainDistanceSensor = new Ultrasonic(1, 2, 1, 1);
-	LiveWindow.addSensor("Drivetrain", "Distance Sensor", drivetrainDistanceSensor);
-        
         drivetrainInPositionIndicator = new DigitalOutput(1, 11);
 	
         
         drivetrainGyro = new Gyro(1, 2);
 	LiveWindow.addSensor("Drivetrain", "Gyro", drivetrainGyro);
         drivetrainGyro.setSensitivity(0.007);
+        drivetrainDistanceSensor = new DigitalInput(1, 1);
+	LiveWindow.addSensor("Drivetrain", "Distance Sensor", drivetrainDistanceSensor);
+        
         collectorRollerMotor = new Victor(1, 5);
 	LiveWindow.addActuator("Collector", "Roller Motor", (Victor) collectorRollerMotor);
         
@@ -118,7 +120,7 @@ public class RobotMap {
         shooterLatchPiston = new Solenoid(1, 1);
 	LiveWindow.addActuator("Shooter", "Latch Piston", shooterLatchPiston);
         
-        shooterHotGoalSensor = new DigitalInput(2, 1);
+        shooterHotGoalSensor = new DigitalInput(1, 2);
 	LiveWindow.addSensor("Shooter", "Hot Goal Sensor", shooterHotGoalSensor);
         
         pneumaticsCompressor = new Compressor(1, 7, 1, 1);

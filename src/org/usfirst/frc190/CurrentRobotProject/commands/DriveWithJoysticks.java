@@ -24,7 +24,7 @@ public class  DriveWithJoysticks extends Command {
         }
  
         //Turn on some sort of indicator on the robot. May or may not be needed.
-        Robot.drivetrain.setInPosistionIndicator(Robot.drivetrain.inPosition(5, 10));  
+        //Robot.drivetrain.setInPosistionIndicator(Robot.drivetrain.inPosition(5, 10));  
     }
     
     protected boolean isFinished() {

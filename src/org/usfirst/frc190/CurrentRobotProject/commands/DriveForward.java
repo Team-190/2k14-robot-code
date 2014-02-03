@@ -11,7 +11,7 @@ public class DriveForward extends Command {
     private double distance;
     
     public DriveForward() {
-        distance = 0;
+        distance = 10;
         requires(Robot.drivetrain);
     }
     
