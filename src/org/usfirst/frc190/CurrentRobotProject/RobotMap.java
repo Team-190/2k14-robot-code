@@ -69,6 +69,8 @@ public class RobotMap {
         drivetrainRobotDrive4Motors.setExpiration(0.1);
         drivetrainRobotDrive4Motors.setSensitivity(0.5);
         drivetrainRobotDrive4Motors.setMaxOutput(1.0);
+        drivetrainRobotDrive4Motors.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+        drivetrainRobotDrive4Motors.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
         drivetrainRobotDrive4Motors.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
         drivetrainRobotDrive4Motors.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
         drivetrainLeftEncoder = new Encoder(1, 3, 1, 4, false, EncodingType.k4X);
