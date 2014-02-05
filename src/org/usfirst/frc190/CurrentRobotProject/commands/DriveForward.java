@@ -33,7 +33,7 @@ public class DriveForward extends Command {
                 //Go backward.
                 Robot.drivetrain.tankDriveWithValues(-driveForwardSpeed, -driveForwardSpeed);
             }else{
-                Robot.drivetrain.tankDrive(-driveForwardSpeed, -driveForwardSpeed);
+                Robot.drivetrain.tankDriveWithValues(-driveForwardSpeed, -driveForwardSpeed);
             }}else {
                 //Go forward.
                 Robot.drivetrain.tankDriveWithValues(driveForwardSpeed, driveForwardSpeed);
