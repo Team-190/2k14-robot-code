@@ -36,9 +36,9 @@ int cycle = 0;
     protected void execute() {
         setTimeout(60*15);
         if(cycle == 0){
-        Robot.drivetrain.tankDrive(1, 1);
+        Robot.drivetrain.tankDrive(-1, -1);
         }if(cycle==1){
-            Robot.drivetrain.tankDrive(-1, -1);
+            Robot.drivetrain.tankDrive(1, 1);
         }
         if(isTimedOut()){
             try {
