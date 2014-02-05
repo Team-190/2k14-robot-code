@@ -40,10 +40,6 @@ public class Drivetrain extends Subsystem {
     public void tankDriveWithValues(double leftAxis, double rightAxis) {
         robotDrive4Motors.tankDrive(leftAxis, rightAxis);
     }
-    public void tankDrive(double leftAxis, double rightAxis) {
-        robotDrive4Motors.tankDrive(leftAxis, rightAxis);
-        //Squared inputs?
-    }
     public double getLeftEncoderDistance() {
         return leftEncoder.getDistance();
     }
