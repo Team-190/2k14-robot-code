@@ -90,6 +90,7 @@ public class OI {
         armRaiseButton = new DigitalIOButton(1);
         armRaiseButton.whileHeld(new ArmRaise());
         rightJoystick = new Joystick(2);
+        
         leftJoystick = new Joystick(1);
         
 	    
