@@ -295,6 +295,23 @@ Children:
           name: Reverse Channel (Solenoid)
           validators: &id013 [Solenoid]
           value: '8'
+    - Name: Claw Reed Switch
+      Base: Digital Input
+      Children: []
+      Properties:
+        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id014 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+            '12', '13', '14']
+          default: '1'
+          name: Input Channel (Digital)
+          validators: &id015 [DigitalChannel]
+          value: '4'
+        Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id016 ['1', '2']
+          default: '1'
+          name: Input Module (Digital)
+          validators: &id017 [DigitalChannel]
+          value: '1'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -334,17 +351,16 @@ Children:
       Children: []
       Properties:
         Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id014 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
-            '12', '13', '14']
+          choices: *id014
           default: '1'
           name: Input Channel (Digital)
-          validators: &id015 [DigitalChannel]
+          validators: *id015
           value: '8'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id016 ['1', '2']
+          choices: *id016
           default: '1'
           name: Input Module (Digital)
-          validators: &id017 [DigitalChannel]
+          validators: *id017
           value: '1'
     - Name: Piston1 Reed Switch 2
       Base: Digital Input
@@ -968,6 +984,16 @@ Children:
         name: Digital Pin
         validators: null
         value: '1'
+  - Name: OI Joystick
+    Base: Joystick
+    Children: []
+    Properties:
+      Number: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id026
+        default: 1
+        name: Number
+        validators: *id027
+        value: '3'
   Properties: {}
 - Name: Commands
   Base: Commands
