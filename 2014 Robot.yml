@@ -142,143 +142,52 @@ Children:
           value: Drivetrain CIM 1
         Safety Expiration Time: !!robotbuilder.data.properties.DoubleProperty {default: 0.1,
           name: Safety Expiration Time, validators: null, value: 0.1}
-    - Name: Left Encoder
+    - Name: Drive Encoder
       Base: Quadrature Encoder
       Children: []
       Properties:
         Channel B Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id006 ['1', '2']
+          choices: ['1', '2']
           default: '1'
           name: Channel B Module (Digital)
-          validators: &id007 [DigitalChannel]
+          validators: [DigitalChannel]
           value: '1'
         Channel A Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id008 ['1', '2']
+          choices: ['1', '2']
           default: '1'
           name: Channel A Module (Digital)
-          validators: &id009 [DigitalChannel]
+          validators: [DigitalChannel]
           value: '1'
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id010 [kDistance, kRate]
+          choices: [kDistance, kRate]
           default: kRate
           name: PID Source
           validators: null
           value: kDistance
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
-          name: Distance Per Pulse, validators: null, value: 1.0}
+          name: Distance Per Pulse, validators: null, value: 0.0785398}
         Encoding Type: !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id011 [k4X, k2X, k1X]
+          choices: [k4X, k2X, k1X]
           default: k4X
           name: Encoding Type
           validators: null
-          value: k4X
+          value: k1X
         Channel B Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id012 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
-            '12', '13', '14']
-          default: '1'
-          name: Channel B Channel (Digital)
-          validators: &id013 [DigitalChannel]
-          value: '4'
-        Channel A Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id014 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
-            '12', '13', '14']
-          default: '1'
-          name: Channel A Channel (Digital)
-          validators: &id015 [DigitalChannel]
-          value: '3'
-        Reverse Direction: !!robotbuilder.data.properties.BooleanProperty {default: false,
-          name: Reverse Direction, validators: null, value: false}
-    - Name: Right Encoder
-      Base: Quadrature Encoder
-      Children: []
-      Properties:
-        Channel B Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
-          default: '1'
-          name: Channel B Module (Digital)
-          validators: *id007
-          value: '1'
-        Channel A Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id008
-          default: '1'
-          name: Channel A Module (Digital)
-          validators: *id009
-          value: '1'
-        PID Source: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id010
-          default: kRate
-          name: PID Source
-          validators: null
-          value: kDistance
-        Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
-          name: Distance Per Pulse, validators: null, value: 1.0}
-        Encoding Type: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id011
-          default: k4X
-          name: Encoding Type
-          validators: null
-          value: k4X
-        Channel B Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id012
-          default: '1'
-          name: Channel B Channel (Digital)
-          validators: *id013
-          value: '6'
-        Channel A Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id014
-          default: '1'
-          name: Channel A Channel (Digital)
-          validators: *id015
-          value: '5'
-        Reverse Direction: !!robotbuilder.data.properties.BooleanProperty {default: false,
-          name: Reverse Direction, validators: null, value: false}
-    - Name: Distance Sensor
-      Base: Ultrasonic
-      Children: []
-      Properties:
-        Ping Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
             '13', '14']
           default: '1'
-          name: Ping Channel (Digital)
+          name: Channel B Channel (Digital)
           validators: [DigitalChannel]
           value: '2'
-        Ping Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2']
-          default: '1'
-          name: Ping Module (Digital)
-          validators: [DigitalChannel]
-          value: '1'
-        Echo Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2']
-          default: '1'
-          name: Echo Module (Digital)
-          validators: [DigitalChannel]
-          value: '1'
-        Echo Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
+        Channel A Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
             '13', '14']
           default: '1'
-          name: Echo Channel (Digital)
+          name: Channel A Channel (Digital)
           validators: [DigitalChannel]
           value: '1'
-    - Name: In Position Indicator
-      Base: Digital Output
-      Children: []
-      Properties:
-        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2']
-          default: '1'
-          name: Output Module (Digital)
-          validators: [DigitalChannel]
-          value: '1'
-        Output Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
-            '13', '14']
-          default: '1'
-          name: Output Channel (Digital)
-          validators: [DigitalChannel]
-          value: '11'
+        Reverse Direction: !!robotbuilder.data.properties.BooleanProperty {default: false,
+          name: Reverse Direction, validators: null, value: true}
     - Name: Gyro
       Base: Gyro
       Children: []
@@ -330,17 +239,17 @@ Children:
       Children: []
       Properties:
         Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id032 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+          choices: &id022 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
             '12', '13', '14']
           default: '1'
           name: Input Channel (Digital)
-          validators: &id033 [DigitalChannel]
+          validators: &id023 [DigitalChannel]
           value: '14'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id034 ['1', '2']
+          choices: &id024 ['1', '2']
           default: '1'
           name: Input Module (Digital)
-          validators: &id035 [DigitalChannel]
+          validators: &id025 [DigitalChannel]
           value: '1'
     - Name: Servo
       Base: Servo
@@ -363,46 +272,29 @@ Children:
       Children: []
       Properties:
         Forward Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id016 ['1', '2', '3', '4', '5', '6', '7', '8']
+          choices: &id006 ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
           name: Forward Channel (Solenoid)
-          validators: &id017 [Solenoid]
+          validators: &id007 [Solenoid]
           value: '7'
         Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id018 ['1', '2']
+          choices: &id008 ['1', '2']
           default: '1'
           name: Forward Module (Solenoid)
-          validators: &id019 [Solenoid]
+          validators: &id009 [Solenoid]
           value: '1'
         Reverse Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id020 ['1', '2']
+          choices: &id010 ['1', '2']
           default: '1'
           name: Reverse Module (Solenoid)
-          validators: &id021 [Solenoid]
+          validators: &id011 [Solenoid]
           value: '1'
         Reverse Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id022 ['1', '2', '3', '4', '5', '6', '7', '8']
+          choices: &id012 ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
           name: Reverse Channel (Solenoid)
-          validators: &id023 [Solenoid]
+          validators: &id013 [Solenoid]
           value: '8'
-    - Name: Claw Reed Switch
-      Base: Digital Input
-      Children: []
-      Properties:
-        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id024 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
-            '12', '13', '14']
-          default: '1'
-          name: Input Channel (Digital)
-          validators: &id025 [DigitalChannel]
-          value: '10'
-        Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id026 ['1', '2']
-          default: '1'
-          name: Input Module (Digital)
-          validators: &id027 [DigitalChannel]
-          value: '1'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -414,109 +306,110 @@ Children:
       Children: []
       Properties:
         Forward Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id016
+          choices: *id006
           default: '1'
           name: Forward Channel (Solenoid)
-          validators: *id017
+          validators: *id007
           value: '4'
         Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id018
+          choices: *id008
           default: '1'
           name: Forward Module (Solenoid)
-          validators: *id019
+          validators: *id009
           value: '1'
         Reverse Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id020
+          choices: *id010
           default: '1'
           name: Reverse Module (Solenoid)
-          validators: *id021
+          validators: *id011
           value: '1'
         Reverse Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id022
+          choices: *id012
           default: '1'
           name: Reverse Channel (Solenoid)
-          validators: *id023
+          validators: *id013
           value: '5'
     - Name: Piston1 Reed Switch 1
       Base: Digital Input
       Children: []
       Properties:
         Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id024
+          choices: &id014 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+            '12', '13', '14']
           default: '1'
           name: Input Channel (Digital)
-          validators: *id025
+          validators: &id015 [DigitalChannel]
           value: '8'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id026
+          choices: &id016 ['1', '2']
           default: '1'
           name: Input Module (Digital)
-          validators: *id027
+          validators: &id017 [DigitalChannel]
           value: '1'
     - Name: Piston1 Reed Switch 2
       Base: Digital Input
       Children: []
       Properties:
         Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id024
+          choices: *id014
           default: '1'
           name: Input Channel (Digital)
-          validators: *id025
+          validators: *id015
           value: '9'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id026
+          choices: *id016
           default: '1'
           name: Input Module (Digital)
-          validators: *id027
+          validators: *id017
           value: '1'
     - Name: Shooter Piston 2
       Base: Solenoid
       Children: []
       Properties:
         Output Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id028 ['1', '2']
+          choices: &id018 ['1', '2']
           default: '1'
           name: Output Module (Solenoid)
-          validators: &id029 [Solenoid]
+          validators: &id019 [Solenoid]
           value: '1'
         Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id030 ['1', '2', '3', '4', '5', '6', '7', '8']
+          choices: &id020 ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
           name: Output Channel (Solenoid)
-          validators: &id031 [Solenoid]
+          validators: &id021 [Solenoid]
           value: '3'
     - Name: Latch Piston
       Base: Solenoid
       Children: []
       Properties:
         Output Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id028
+          choices: *id018
           default: '1'
           name: Output Module (Solenoid)
-          validators: *id029
+          validators: *id019
           value: '1'
         Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id030
+          choices: *id020
           default: '1'
           name: Output Channel (Solenoid)
-          validators: *id031
+          validators: *id021
           value: '1'
     - Name: Hot Goal Sensor
       Base: Digital Input
       Children: []
       Properties:
         Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id024
+          choices: *id014
           default: '1'
           name: Input Channel (Digital)
-          validators: *id025
-          value: '1'
+          validators: *id015
+          value: '3'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id026
+          choices: *id016
           default: '1'
           name: Input Module (Digital)
-          validators: *id027
-          value: '2'
+          validators: *id017
+          value: '1'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -563,32 +456,32 @@ Children:
       Children: []
       Properties:
         Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
+          choices: *id022
           default: '1'
           name: Input Channel (Digital)
-          validators: *id033
+          validators: *id023
           value: '13'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id034
+          choices: *id024
           default: '1'
           name: Input Module (Digital)
-          validators: *id035
+          validators: *id025
           value: '1'
     - Name: Lower Limit Switch
       Base: Limit Switch
       Children: []
       Properties:
         Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
+          choices: *id022
           default: '1'
           name: Input Channel (Digital)
-          validators: *id033
+          validators: *id023
           value: '12'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id034
+          choices: *id024
           default: '1'
           name: Input Module (Digital)
-          validators: *id035
+          validators: *id025
           value: '1'
     - Name: Pot
       Base: Potentiometer
@@ -676,20 +569,20 @@ Children:
     Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id036 ['1', '2', '3', '4']
+        choices: &id026 ['1', '2', '3', '4']
         default: 1
         name: Number
-        validators: &id037 [Joystick]
+        validators: &id027 [Joystick]
         value: '1'
   - Name: Right Joystick
     Base: Joystick
     Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id036
+        choices: *id026
         default: 1
         name: Number
-        validators: *id037
+        validators: *id027
         value: '2'
   - Name: Arm Raise Button
     Base: Digital Button
@@ -699,16 +592,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: &id038 [TypeDropdownSelected]
+        validators: &id028 [TypeDropdownSelected]
         value: Arm Raise
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id039 [whileHeld, whenPressed, whenReleased]
+        choices: &id029 [whileHeld, whenPressed, whenReleased]
         default: whileHeld
         name: When to Run
         validators: null
         value: whileHeld
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id040 ['1', '2', '3', '4', '5', '6', '7', '8']
+        choices: &id030 ['1', '2', '3', '4', '5', '6', '7', '8']
         default: '1'
         name: Digital Pin
         validators: null
@@ -721,16 +614,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Arm Lower
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whileHeld
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -743,16 +636,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Fire
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -765,16 +658,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Collect
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -787,16 +680,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Shoot Far
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -809,16 +702,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Shoot Truss
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -831,16 +724,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Pass
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -853,16 +746,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Move Arm To Stored
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -885,16 +778,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Rollers Forward
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whileHeld
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -907,16 +800,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Rollers Backward
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whileHeld
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -929,16 +822,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Open Claw
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -951,16 +844,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Close Claw
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -973,16 +866,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Extend Latch
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whileHeld
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -995,16 +888,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Extend Piston 1
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -1017,16 +910,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Retract Piston 1
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -1039,16 +932,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Pressurize Piston 2
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -1061,16 +954,16 @@ Children:
         default: None
         name: Command
         type: Command
-        validators: *id038
+        validators: *id028
         value: Depressurize Piston 2
       When to Run: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id039
+        choices: *id029
         default: whileHeld
         name: When to Run
         validators: null
         value: whenPressed
       Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id040
+        choices: *id030
         default: '1'
         name: Digital Pin
         validators: null
@@ -1101,7 +994,7 @@ Children:
         componentName: PID Subsystem
         default: None
         name: Requires
-        validators: &id041 [TypeDropdownSelected]
+        validators: &id031 [TypeDropdownSelected]
         value: Pivot
       Setpoint: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: Setpoint,
         validators: null, value: 1.0}
@@ -1317,7 +1210,7 @@ Children:
         componentName: PID Subsystem
         default: None
         name: Requires
-        validators: *id041
+        validators: *id031
         value: Pivot
       Setpoint: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: Setpoint,
         validators: null, value: 1.0}
@@ -1339,7 +1232,7 @@ Children:
         componentName: PID Subsystem
         default: None
         name: Requires
-        validators: *id041
+        validators: *id031
         value: Pivot
       Setpoint: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: Setpoint,
         validators: null, value: 1.0}
@@ -1353,10 +1246,18 @@ Children:
         componentName: PID Subsystem
         default: None
         name: Requires
-        validators: *id041
+        validators: *id031
         value: Pivot
       Setpoint: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: Setpoint,
         validators: null, value: 1.0}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Send Message to Arduino
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: None}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}

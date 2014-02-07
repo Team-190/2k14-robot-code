@@ -27,7 +27,6 @@ public class RobotMap {
     public static SpeedController drivetrainCIM4;
     public static RobotDrive drivetrainRobotDrive4Motors;
     public static Encoder drivetrainDriveEncoder;
-    public static DigitalOutput drivetrainInPositionIndicator;
     public static Gyro drivetrainGyro;
     public static SpeedController collectorRollerMotor;
     public static DigitalInput collectorBallDetector;
@@ -67,14 +66,11 @@ public class RobotMap {
         drivetrainRobotDrive4Motors.setExpiration(0.1);
         drivetrainRobotDrive4Motors.setSensitivity(0.5);
         drivetrainRobotDrive4Motors.setMaxOutput(1.0);
-        drivetrainDriveEncoder = new Encoder(1, 1, 1, 2, false, EncodingType.k1X);
+        drivetrainDriveEncoder = new Encoder(1, 1, 1, 2, true, EncodingType.k1X);
 	LiveWindow.addSensor("Drivetrain", "Drive Encoder", drivetrainDriveEncoder);
         drivetrainDriveEncoder.setDistancePerPulse(0.0785398);
         drivetrainDriveEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
         drivetrainDriveEncoder.start();
-        drivetrainInPositionIndicator = new DigitalOutput(1, 11);
-	
-        
         drivetrainGyro = new Gyro(1, 2);
 	LiveWindow.addSensor("Drivetrain", "Gyro", drivetrainGyro);
         drivetrainGyro.setSensitivity(0.007);
@@ -90,7 +86,7 @@ public class RobotMap {
         collectorClawCylinder = new DoubleSolenoid(1, 7, 8);      
 	
         
-        collectorClawReedSwitch = new DigitalInput(1, 10);
+        collectorClawReedSwitch = new DigitalInput(1, 4);
 	LiveWindow.addSensor("Collector", "Claw Reed Switch", collectorClawReedSwitch);
         
         shooterShooterPiston1 = new DoubleSolenoid(1, 4, 5);      
@@ -108,7 +104,7 @@ public class RobotMap {
         shooterLatchPiston = new Solenoid(1, 1);
 	LiveWindow.addActuator("Shooter", "Latch Piston", shooterLatchPiston);
         
-        shooterHotGoalSensor = new DigitalInput(2, 1);
+        shooterHotGoalSensor = new DigitalInput(1, 3);
 	LiveWindow.addSensor("Shooter", "Hot Goal Sensor", shooterHotGoalSensor);
         
         pneumaticsCompressor = new Compressor(1, 7, 1, 1);

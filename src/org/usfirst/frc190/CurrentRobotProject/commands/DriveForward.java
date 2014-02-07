@@ -43,7 +43,7 @@ public class DriveForward extends Command {
         if (Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT) {
             if (distance < 0) {
                 //Going backward.
-                return (Robot.drivetrain.getEncoderDistance() <= distance);
+                return (Robot.drivetrain.getEncoderDistance()<= distance);
             } else {
                 return (Robot.drivetrain.getEncoderDistance() >= distance);
             }

@@ -66,5 +66,4 @@ public class Shooter extends Subsystem {
         //Will be true when goal is hot.
         return hotGoalSensor.get();
     }
-    
 }
