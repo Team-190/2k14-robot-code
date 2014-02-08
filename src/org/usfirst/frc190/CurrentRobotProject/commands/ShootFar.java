@@ -1,4 +1,5 @@
-//This command needs to be double checked
+//This command sets both of the pistons to be ready to fire
+//and puts the pivot in the far position
 
 package org.usfirst.frc190.CurrentRobotProject.commands;
 
@@ -10,7 +11,8 @@ public class ShootFar extends CommandGroup {
         //None of the sequences for the pneumatics system need addParallel.
         //The commands take so little time there is no need.
         
-        //addParallel(new ArmFar());
-        //Aimed = true, allow Fire command to run
+        addParallel(new PivotFarPosition());
+        addParallel(new ExtendPiston1());
+        addSequential(new PressurizePiston2());
     }
 }

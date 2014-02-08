@@ -5,6 +5,9 @@
 //I auto, the timeout method is called to prevent the robot from
 //not getting mobility points
 
+//NOTE: when you want the collect command to go to Stored when ended
+//use the one with the boolean
+
 package org.usfirst.frc190.CurrentRobotProject.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -16,7 +19,7 @@ public class Collect extends CommandGroup {
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection());
-        addSequential(new PivotStoredPosition());
+        addParallel(new RollersStop());
     }
 
     public Collect(double timeout) {
@@ -28,6 +31,21 @@ public class Collect extends CommandGroup {
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection(timeout));
+        addSequential(new RollersStop());
+    }
+    
+    public Collect(double timeout, boolean setToStoredPosition) {
+        //This command works the same as expected, except it will end the 
+        //WaitForCollection command after a given time.
+        //This should only need to be called for autonomous.
+
+        addParallel(new PivotDownPosition());
+        addParallel(new RollersForward());
+        addSequential(new CloseClaw());
+        addSequential(new WaitForCollection(timeout));
+        addParallel(new RollersStop());
         addSequential(new PivotStoredPosition());
     }
+    
+    
 }
