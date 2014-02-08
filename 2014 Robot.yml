@@ -13,7 +13,7 @@ Children:
     - Name: Robot Drive 4 Motors
       Base: Robot Drive 4
       Children:
-      - Name: CIM 1
+      - Name: FrontLeftCIM
         Base: Speed Controller
         Children: []
         Properties:
@@ -35,7 +35,7 @@ Children:
             name: Output Channel (PWM)
             validators: &id005 [PWMOutput]
             value: '1'
-      - Name: CIM 2
+      - Name: FrontRightCIM
         Base: Speed Controller
         Children: []
         Properties:
@@ -57,7 +57,7 @@ Children:
             name: Output Channel (PWM)
             validators: *id005
             value: '2'
-      - Name: CIM 3
+      - Name: BackLeftCIM
         Base: Speed Controller
         Children: []
         Properties:
@@ -79,7 +79,7 @@ Children:
             name: Output Channel (PWM)
             validators: *id005
             value: '3'
-      - Name: CIM 4
+      - Name: BackRightCIM
         Base: Speed Controller
         Children: []
         Properties:
@@ -105,41 +105,41 @@ Children:
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.5,
           name: Sensitivity, validators: null, value: 0.5}
         Right Front Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Right Front Motor Inverted, validators: null, value: false}
+          default: false, name: Right Front Motor Inverted, validators: null, value: true}
         Safety Enabled: !!robotbuilder.data.properties.BooleanProperty {default: true,
           name: Safety Enabled, validators: null, value: true}
         Left Front Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Left Front Motor Inverted, validators: null, value: false}
+          default: false, name: Left Front Motor Inverted, validators: null, value: true}
         Right Front Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 2
           name: Right Front Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: Drivetrain CIM 3
+          value: Drivetrain FrontRightCIM
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
         Right Rear Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Right Rear Motor Inverted, validators: null, value: false}
+          default: false, name: Right Rear Motor Inverted, validators: null, value: true}
         Left Rear Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Left Rear Motor Inverted, validators: null, value: false}
+          default: false, name: Left Rear Motor Inverted, validators: null, value: true}
         Right Rear Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 3
           name: Right Rear Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: Drivetrain CIM 4
+          value: Drivetrain BackRightCIM
         Left Rear Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 1
           name: Left Rear Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: Drivetrain CIM 2
+          value: Drivetrain BackLeftCIM
         Left Front Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 0
           name: Left Front Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: Drivetrain CIM 1
+          value: Drivetrain FrontLeftCIM
         Safety Expiration Time: !!robotbuilder.data.properties.DoubleProperty {default: 0.1,
           name: Safety Expiration Time, validators: null, value: 0.1}
     - Name: Drive Encoder
@@ -1305,6 +1305,6 @@ Properties:
     validators: null, value: 190}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: /Users/Will/NetBeansProjects,
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Team190\NetBeansProjects',
     extension: null, folder: true, name: Java Project Directory, validators: null,
     value: ../}

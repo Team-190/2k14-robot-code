@@ -30,7 +30,7 @@ public class Fire extends CommandGroup {
         addSequential(new DepressurizePiston2());
         addSequential(new RetractPiston1());
         addSequential(new WaitForRetracted());
-        addParallel(new ArmUp());
+        addParallel(new PivotStoredPosition());
         addSequential(new CloseClaw());
         //TODO: Check for claw reed switch.
         addSequential(new RetractLatch());

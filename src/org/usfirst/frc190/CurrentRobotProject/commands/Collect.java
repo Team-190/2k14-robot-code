@@ -12,11 +12,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Collect extends CommandGroup {
 
     public Collect() {
-        addParallel(new ArmDown());
+        addParallel(new PivotDownPosition());
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection());
-        addSequential(new ArmUp());
+        addSequential(new PivotStoredPosition());
     }
 
     public Collect(double timeout) {
@@ -24,10 +24,10 @@ public class Collect extends CommandGroup {
         //WaitForCollection command after a given time.
         //This should only need to be called for autonomous.
 
-        addParallel(new ArmDown());
+        addParallel(new PivotDownPosition());
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection(timeout));
-        addSequential(new ArmUp());
+        addSequential(new PivotStoredPosition());
     }
 }

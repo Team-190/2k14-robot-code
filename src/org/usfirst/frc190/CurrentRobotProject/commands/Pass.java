@@ -7,7 +7,7 @@ public class Pass extends CommandGroup {
     
     public  Pass() {
         
-        addParallel(new ArmDown());
+        addParallel(new PivotDownPosition());
         addSequential(new RollersBackward());
         //wait until !passbuttonpressed;
         //addSequential(new RollersStop());
