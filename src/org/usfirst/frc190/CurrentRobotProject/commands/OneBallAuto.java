@@ -11,17 +11,19 @@ package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class OneBallAuto extends CommandGroup {
+    
+    private final double maxSpeed = 0.5;        //maximum speed of the motors
+    private final double mobilityDist = 10;     //distance from starting position to colored zone
+    private final double finalSpinAngle = 180;  //angle for the final spin
 
     public OneBallAuto() {
         addSequential(new PivotFarPosition());
-            //TODO: Change arm setpoint based on tests.
         addSequential(new ShootFar());
         addSequential(new CheckForHotGoal()); //Checks for hot goal
             //If hot goal is detected, the command ends
             //If hot goal is not detected, the command ends after a timeout.
         addSequential(new Fire());
-        //TODO: Check to make sure the methods below will always run.
-        addSequential(new DriveForward(10, 0.5));
-        addSequential(new DriveSpin(180, 0.5));
+        addSequential(new DriveForward(mobilityDist, maxSpeed));
+        addSequential(new DriveSpin(finalSpinAngle, maxSpeed));
     }
 }
