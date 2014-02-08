@@ -105,7 +105,6 @@ public class OI {
         SmartDashboard.putData("Two Ball Auto Forward", new TwoBallAutoForward());
         SmartDashboard.putData("Two Ball Auto Left", new TwoBallAutoLeft());
         SmartDashboard.putData("Two Ball Auto Right", new TwoBallAutoRight());
-        SmartDashboard.putData("Auto Manuver", new AutoManuver());
         SmartDashboard.putData("Check For Hot Goal", new CheckForHotGoal());
         SmartDashboard.putData("Wait For Collection", new WaitForCollection());
         SmartDashboard.putData("Wait For Extended", new WaitForExtended());

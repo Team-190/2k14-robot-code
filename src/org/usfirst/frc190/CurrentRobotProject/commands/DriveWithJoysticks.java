@@ -18,9 +18,9 @@ public class  DriveWithJoysticks extends Command {
     
     protected void execute() {
         if(Robot.drivetrain.shouldUseTankDrive()){
-            Robot.drivetrain.tankDriveWithJoysitcks(Robot.oi.leftJoystick, Robot.oi.rightJoystick);
+            Robot.drivetrain.tankDrive(Robot.oi.leftJoystick, Robot.oi.rightJoystick);
         }else{
-            Robot.drivetrain.arcadeDriveWithJoysticks(Robot.oi.leftJoystick);
+            Robot.drivetrain.arcadeDrive(Robot.oi.leftJoystick);
         }
  
         //Turn on some sort of indicator on the robot. May or may not be needed.

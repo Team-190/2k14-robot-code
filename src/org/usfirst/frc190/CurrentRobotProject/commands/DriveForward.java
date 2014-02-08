@@ -7,11 +7,14 @@ import org.usfirst.frc190.CurrentRobotProject.AutoDirection;
 //Requires encoders.
 //TODO: Fix with autotonomous implementation.
 public class DriveForward extends Command {
+    
     private double driveForwardSpeed = .5;
-    private double distance;
+    private double distance = 50;
+    private double tolerance = 5;
+    private double error;
+    private double Kp = -1.0/5.0;
     
     public DriveForward() {
-        distance = 10;
         requires(Robot.drivetrain);
     }
     
@@ -25,31 +28,15 @@ public class DriveForward extends Command {
     }
     protected void initialize() {
         Robot.drivetrain.resetEncoder();
-        if(Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT){
-            //Is nessecary.
-            if (distance < 0) {
-                //Go backward.
-                Robot.drivetrain.tankDriveWithValues(-driveForwardSpeed, -driveForwardSpeed);
-            }else{
-                Robot.drivetrain.tankDriveWithValues(-driveForwardSpeed, -driveForwardSpeed);
-            }}else {
-                //Go forward.
-                Robot.drivetrain.tankDriveWithValues(driveForwardSpeed, driveForwardSpeed);
-            }
+        
         }
     protected void execute() {
+        error = (distance - Robot.drivetrain.getEncoderDistance());
+        //Robot.drivetrain.tankDrive(0.2,0.2);
+        Robot.drivetrain.tankDrive(driveForwardSpeed*Kp*error, driveForwardSpeed*Kp*error);
     }
     protected boolean isFinished() {
-        if (Robot.getAutonomousDirection() != AutoDirection.NO_MOVEMENT) {
-            if (distance < 0) {
-                //Going backward.
-                return (Robot.drivetrain.getEncoderDistance()<= distance);
-            } else {
-                return (Robot.drivetrain.getEncoderDistance() >= distance);
-            }
-        } else {
-            return true;
-        }
+        return (Math.abs(error) <= tolerance);
     }
     protected void end() {
         Robot.drivetrain.stopDriveMotors();

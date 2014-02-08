@@ -11,7 +11,7 @@ public class TwoBallAuto extends CommandGroup {
         addSequential(new ShootFar());
         addSequential(new Fire());
         addSequential(new ShootFar());
-        addSequential(new AutoManuver()); //Will perform any nessecary manuvers.
+        //addSequential(new AutoManuver()); //Will perform any nessecary manuvers.
         addSequential(new Fire());
         addSequential(new DriveForward(5, 0.6)); //TODO: Parameters may need to change.
         addSequential(new DriveSpin(180, 0.6)); //TODO: Parameters may need to change.
