@@ -14,7 +14,6 @@ public class TwoBallAutoNoMovement extends CommandGroup {
     public  TwoBallAutoNoMovement() {
         addSequential(new ShootFar());
         addSequential(new Fire());
-        addSequential(new PivotDownPosition());
         addSequential(new Collect(collectTimeout));
         addSequential(new ShootFar());
         addSequential(new Fire());

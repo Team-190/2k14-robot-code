@@ -17,7 +17,6 @@ public class OneBallAuto extends CommandGroup {
     private final double finalSpinAngle = 180;  //angle for the final spin
 
     public OneBallAuto() {
-        addSequential(new PivotFarPosition());
         addSequential(new ShootFar());
         addSequential(new CheckForHotGoal()); //Checks for hot goal
             //If hot goal is detected, the command ends
