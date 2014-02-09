@@ -32,11 +32,11 @@ public class RobotMap {
     public static DigitalInput collectorBallDetector;
     public static DoubleSolenoid collectorClawPiston;
     public static DigitalInput collectorClawReedSwitch;
-    public static DoubleSolenoid shooterShooterPiston1;
+    public static DoubleSolenoid shooterPiston1;
+    public static DoubleSolenoid shooterPiston2;
+    public static Solenoid shooterLatchPiston;
     public static DigitalInput shooterPiston1ReedSwitch1;
     public static DigitalInput shooterPiston1ReedSwitch2;
-    public static Solenoid shooterShooterPiston2;
-    public static Solenoid shooterLatchPiston;
     public static DigitalInput shooterHotGoalSensor;
     public static Compressor pneumaticsCompressor;
     public static DigitalInput pivotTopLimitSwitch;
@@ -83,26 +83,26 @@ public class RobotMap {
         collectorBallDetector = new DigitalInput(1, 14);
 	LiveWindow.addSensor("Collector", "Ball Detector", collectorBallDetector);
         
-        collectorClawPiston = new DoubleSolenoid(1, 7, 8);      
+        collectorClawPiston = new DoubleSolenoid(1, 6, 7);      
 	
         
         collectorClawReedSwitch = new DigitalInput(1, 4);
 	LiveWindow.addSensor("Collector", "Claw Reed Switch", collectorClawReedSwitch);
         
-        shooterShooterPiston1 = new DoubleSolenoid(1, 4, 5);      
+        shooterPiston1 = new DoubleSolenoid(1, 1, 2);      
 	
+        
+        shooterPiston2 = new DoubleSolenoid(1, 3, 4);      
+	
+        
+        shooterLatchPiston = new Solenoid(1, 5);
+	LiveWindow.addActuator("Shooter", "Latch Piston", shooterLatchPiston);
         
         shooterPiston1ReedSwitch1 = new DigitalInput(1, 8);
 	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch 1", shooterPiston1ReedSwitch1);
         
         shooterPiston1ReedSwitch2 = new DigitalInput(1, 9);
 	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch 2", shooterPiston1ReedSwitch2);
-        
-        shooterShooterPiston2 = new Solenoid(1, 3);
-	LiveWindow.addActuator("Shooter", "Shooter Piston 2", shooterShooterPiston2);
-        
-        shooterLatchPiston = new Solenoid(1, 1);
-	LiveWindow.addActuator("Shooter", "Latch Piston", shooterLatchPiston);
         
         shooterHotGoalSensor = new DigitalInput(1, 3);
 	LiveWindow.addSensor("Shooter", "Hot Goal Sensor", shooterHotGoalSensor);

@@ -13,8 +13,8 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
 /**
  *
  */
-public class  PivotRaise extends Command {
-    public PivotRaise() {
+public class  WaitForBoomButton extends Command {
+    public WaitForBoomButton() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 	

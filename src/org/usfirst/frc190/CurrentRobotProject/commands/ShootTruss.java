@@ -11,7 +11,7 @@ public class ShootTruss extends CommandGroup {
         //The commands take so little time there is no need.
 
         //addParallel(new ArmTruss());
-        addSequential(new DepressurizePiston2());
+        addSequential(new RetractPiston2());
         //Aimed = true, Allows Fire command to run;
     }
 }

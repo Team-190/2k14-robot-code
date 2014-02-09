@@ -13,8 +13,8 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
 /**
  *
  */
-public class  PivotRaise extends Command {
-    public PivotRaise() {
+public class  SetControlModeManual extends Command {
+    public SetControlModeManual() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 	

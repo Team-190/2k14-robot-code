@@ -12,7 +12,7 @@ public class  DriveSpin extends Command {
     private double spinAngle = 180;
     private double tolerance = 10;
     private double error;
-    private double Kp = 1.0/90.0;
+    private double Kp = -1.0/90.0;
     
     public DriveSpin(double angle, double speed){
         turnSpeed = speed;

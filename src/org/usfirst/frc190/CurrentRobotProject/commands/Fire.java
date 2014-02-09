@@ -14,7 +14,7 @@ public class Fire extends CommandGroup {
         //TODO: Check reed switch for OpenClaw()
         addSequential(new ExtendLatch());
         addSequential(new WaitForExtended());
-        addSequential(new DepressurizePiston2());
+        addSequential(new RetractPiston2());
         addSequential(new RetractPiston1());
         addSequential(new WaitForRetracted());
         addSequential(new CloseClaw());
@@ -22,7 +22,7 @@ public class Fire extends CommandGroup {
         addSequential(new RetractLatch());
         //TODO: Check for latch retracted reed switch.
         addSequential(new ExtendPiston1());
-        addSequential(new PressurizePiston2());
+        addSequential(new ExtendPiston2());
         addParallel(new PivotStoredPosition());
     }
 }

@@ -13,6 +13,6 @@ public class ShootFar extends CommandGroup {
         
         addParallel(new PivotFarPosition());
         addParallel(new ExtendPiston1());
-        addSequential(new PressurizePiston2());
+        addSequential(new ExtendPiston2());
     }
 }
