@@ -12,10 +12,10 @@ public class TwoBallAutoNoMovement extends CommandGroup {
     private final double finalSpinAngle = 180;  //angle for the final spin
     
     public  TwoBallAutoNoMovement() {
-        addSequential(new ShootFar());
+        addSequential(new PrepareShootFar());
         addSequential(new Fire());
         addSequential(new Collect(collectTimeout));
-        addSequential(new ShootFar());
+        addSequential(new PrepareShootFar());
         addSequential(new Fire());
         addSequential(new DriveForward(mobilityDist, maxSpeed)); //TODO: Parameters may need to change.
         addSequential(new DriveSpin(finalSpinAngle, maxSpeed)); //TODO: Parameters may need to change.

@@ -5,9 +5,9 @@ package org.usfirst.frc190.CurrentRobotProject.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class ShootFar extends CommandGroup {
+public class PrepareShootFar extends CommandGroup {
 
-    public ShootFar() {
+    public PrepareShootFar() {
         //None of the sequences for the pneumatics system need addParallel.
         //The commands take so little time there is no need.
         

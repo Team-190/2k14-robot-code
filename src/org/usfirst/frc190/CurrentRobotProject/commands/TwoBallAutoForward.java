@@ -13,12 +13,12 @@ public class TwoBallAutoForward extends CommandGroup {
     private final double finalSpinAngle = 180;  //angle for the final spin
     
     public  TwoBallAutoForward() {
-        addSequential(new ShootFar());
+        addSequential(new PrepareShootFar());
         addSequential(new Fire());
         addSequential(new PivotDownPosition());
         addParallel(new Collect(collectTimeout));
         addSequential(new DriveForward(ballDist, maxSpeed));//TODO: Parameters may need to change.
-        addParallel(new ShootFar());
+        addParallel(new PrepareShootFar());
         addSequential(new DriveForward(-ballDist, maxSpeed));//TODO: Parameters may need to change.
         addSequential(new Fire());
         addSequential(new DriveForward(mobilityDist, maxSpeed)); //TODO: Parameters may need to change.

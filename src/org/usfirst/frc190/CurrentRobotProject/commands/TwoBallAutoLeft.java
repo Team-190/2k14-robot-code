@@ -14,13 +14,13 @@ public class TwoBallAutoLeft extends CommandGroup {
     private final double finalSpinAngle = 180;  //angle for the final spin
     
     public  TwoBallAutoLeft() {
-        addSequential(new ShootFar());
+        addSequential(new PrepareShootFar());
         addSequential(new Fire());
         addParallel(new PivotDownPosition());
         addSequential(new DriveSpin(-angle, maxSpeed));
         addParallel(new Collect(collectTimeout));
         addSequential(new DriveForward(ballDist, maxSpeed));//TODO: Parameters may need to change.
-        addParallel(new ShootFar());
+        addParallel(new PrepareShootFar());
         addSequential(new DriveForward(-ballDist, maxSpeed));//TODO: Parameters may need to change.
         addSequential(new DriveSpin(angle, maxSpeed));
         addSequential(new Fire());
