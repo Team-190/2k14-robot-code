@@ -5,8 +5,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-//This class is the glue that binds the controls on the physical operator
-//interface to the commands and command groups that allow control of the robot.
 public class OI {
     private static boolean inManualMode = false;
     
@@ -91,6 +89,9 @@ public class OI {
         switchDrivingInputs.whenPressed(new SwitchDriveInputs());
 	    
         // SmartDashboard Buttons
+        SmartDashboard.putBoolean("Is in Manual Mode?", inManualMode);
+        SmartDashboard.putBoolean("Inputs Squared?", Robot.drivetrain.getSquaredInput());
+        SmartDashboard.putBoolean("Tank Drive?", Robot.drivetrain.shouldUseTankDrive());
         SmartDashboard.putData("Send Message to Arduino", new SendMessagetoArduino());
         SmartDashboard.putData("Auto Mobility Only", new AutoMobilityOnly());
         SmartDashboard.putData("One Ball Auto", new OneBallAuto());
