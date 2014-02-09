@@ -4,15 +4,15 @@ package org.usfirst.frc190.CurrentRobotProject;
 
 
 public class ArduinoMessages {
-    public final int value;
+    public final byte value;
 
-    protected static final int LEFT_VAL  = 0;
+    protected static final byte LEFT_VAL  = 0;
 
     public static final ArduinoMessages LEFT = new ArduinoMessages(LEFT_VAL);
 
     
     
-    private ArduinoMessages(int value){
+    private ArduinoMessages(byte value){
         this.value = value;
     } 
 }
