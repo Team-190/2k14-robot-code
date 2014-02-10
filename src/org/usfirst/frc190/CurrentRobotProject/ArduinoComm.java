@@ -13,29 +13,20 @@ import edu.wpi.first.wpilibj.DigitalOutput;
  */
 public class ArduinoComm {
     
-    private static SerialPort serial;
-    static DigitalOutput out = new DigitalOutput(6);
+    I2C i2c = DigitalModule.getInstance(1).getI2C(168);
+    private static byte[] toSend = new byte[1];
     
-    public static void sendSerialMessage(int message){
-        out.pulse(0.0001*message);
-    }
-    
-    public static void sendMessage(int message){
-        DigitalModule.getInstance(1).getI2C(1).setCompatabilityMode(true);
-        DigitalModule.getInstance(1).getI2C(1).write(4, message);
+    public static void sendMessage(byte message){
+        toSend[0] = message;
+        DigitalModule.getInstance(1).getI2C(168).transaction(toSend, 1, null, 0);
+        
     }
     
     public static void sendMessage(ArduinoMessages message){
-        DigitalModule.getInstance(1).getI2C(1).write(4, message.value);
+        toSend[0] = message.value;
+        DigitalModule.getInstance(1).getI2C(168).transaction(toSend, 1, null, 0);
     }
 
-    public ArduinoComm() {
-        try {
-            this.serial = new SerialPort(9600);
-        } catch (VisaException ex) {
-            ex.printStackTrace();
-        }
-    }
     
     
     
