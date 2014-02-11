@@ -49,11 +49,11 @@ public class Shooter extends Subsystem {
         piston2.set(DoubleSolenoid.Value.kOff);
     }
     
-    public void unlatch() {
-        latchPiston.set(true);
+    public void extendLatchPiston() {
+        latchPiston.set(true); //Unlatch
     }
-    public void latch() {
-        latchPiston.set(false);
+    public void retractLatchPiston() {
+        latchPiston.set(false); //Latch
     }
     public boolean piston1IsExtended() {
         return piston1ReedSwitch1.get();

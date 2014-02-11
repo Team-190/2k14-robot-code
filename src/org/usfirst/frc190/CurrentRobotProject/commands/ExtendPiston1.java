@@ -25,5 +25,6 @@ public class ExtendPiston1 extends Command {
     }
     
     protected void interrupted() {
+        end();
     }
 }

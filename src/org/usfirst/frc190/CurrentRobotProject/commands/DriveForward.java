@@ -1,8 +1,8 @@
-//We need to modify this to work in auto - discuss
+//This command drive the robot over a given distance with simple porportional
+//control
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
-import org.usfirst.frc190.CurrentRobotProject.AutoDirection;
 //This command will drive a given distance at a given speed.
 //Requires encoders.
 //TODO: Fix with autotonomous implementation.
@@ -10,9 +10,9 @@ public class DriveForward extends Command {
     
     private double driveForwardSpeed = .5;
     private double distance = 50;
-    private double tolerance = 5;
+    private final double tolerance = 5;
     private double error;
-    private double Kp = -1.0/5.0;
+    private final double Kp = -1.0/5.0;
     
     public DriveForward() {
         requires(Robot.drivetrain);

@@ -11,7 +11,7 @@ public class ExtendLatch extends Command {
     }
     
     protected void initialize() {
-        Robot.shooter.unlatch();
+        Robot.shooter.extendLatchPiston();
     }
     
     protected void execute() {
@@ -25,5 +25,6 @@ public class ExtendLatch extends Command {
     }
     
     protected void interrupted() {
+        end();
     }
 }

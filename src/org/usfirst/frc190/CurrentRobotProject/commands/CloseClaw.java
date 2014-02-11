@@ -19,5 +19,6 @@ public class CloseClaw extends Command {
     protected void end() {
     }
     protected void interrupted() {
+        end();
     }
 }

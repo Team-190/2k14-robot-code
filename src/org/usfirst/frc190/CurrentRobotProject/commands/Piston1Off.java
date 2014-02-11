@@ -25,5 +25,6 @@ public class Piston1Off extends Command {
     }
     
     protected void interrupted() {
+        end();
     }
 }

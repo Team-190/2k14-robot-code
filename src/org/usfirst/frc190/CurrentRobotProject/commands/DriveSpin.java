@@ -1,18 +1,15 @@
-//needs work
+//This command spins the robot over a given angle using simple porportional
+//control.
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc190.CurrentRobotProject.AutoDirection;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
-import org.usfirst.frc190.CurrentRobotProject.ArduinoComm;
-import org.usfirst.frc190.CurrentRobotProject.ArduinoMessages;
-//This command makes the robot spin a set number of degrees at a specific speed.
 public class  DriveSpin extends Command {
     
     private double turnSpeed = 0.5;
     private double spinAngle = 180;
-    private double tolerance = 10;
+    private final double tolerance = 10;
     private double error;
-    private double Kp = -1.0/90.0;
+    private final double Kp = -1.0/90.0;
     
     public DriveSpin(double angle, double speed){
         turnSpeed = speed;

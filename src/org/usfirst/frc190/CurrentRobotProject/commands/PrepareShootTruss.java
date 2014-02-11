@@ -1,5 +1,4 @@
-//This command needs to be double checked
-
+//This command prepares the robot to shoot a truss shot
 
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;

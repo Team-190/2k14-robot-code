@@ -3,6 +3,7 @@
 
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 public class Fire extends CommandGroup {
     
@@ -11,16 +12,15 @@ public class Fire extends CommandGroup {
         //The commands take so little time there is no need.
         
         addSequential(new OpenClaw());
-        //TODO: Check reed switch for OpenClaw()
+        addSequential(new WaitCommand(0.5));
         addSequential(new ExtendLatch());
         addSequential(new WaitForExtended());
         addSequential(new RetractPiston2());
         addSequential(new RetractPiston1());
         addSequential(new WaitForRetracted());
         addSequential(new CloseClaw());
-        //TODO: Check for claw reed switch.
         addSequential(new RetractLatch());
-        //TODO: Check for latch retracted reed switch.
+        addSequential(new WaitCommand(0.5));
         addSequential(new ExtendPiston1());
         addSequential(new ExtendPiston2());
         addParallel(new PivotStoredPosition());

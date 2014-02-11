@@ -1,10 +1,8 @@
-//This commandgroup needs to be review
-//Two different cases for hotgoal detection
-
-//This commandgroup shoots one ball in auto
-//It uses the camera to detect if the goal is hot or not
-//if the goal it hot, it shoots, if not it waits about 5 sec for the goal
-//to become hot
+//This command shoots one ball in auto
+//It uses a banner sensor to detect if the goal is hot
+//it will fire the ball as soon as it sees that the goal is hot
+//if for some reason the banner sensor fails, it will launch the ball
+//after 5.5 second regardless of hot goal
 
 package org.usfirst.frc190.CurrentRobotProject.commands;
 

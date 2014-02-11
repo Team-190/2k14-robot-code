@@ -1,4 +1,5 @@
-//This command opens the claw, preparing the shooter to fire
+//This command opens the claw
+
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
@@ -25,5 +26,6 @@ public class OpenClaw extends Command {
     }
     
     protected void interrupted() {
+        end();
     }
 }

@@ -19,5 +19,6 @@ public class RollersStop extends Command {
     protected void end() {
     }
     protected void interrupted() {
+        end();
     }
 }

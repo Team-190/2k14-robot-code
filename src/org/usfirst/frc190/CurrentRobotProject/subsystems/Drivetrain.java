@@ -27,11 +27,11 @@ public class Drivetrain extends Subsystem {
     }
     
     public void arcadeDrive(Joystick leftAxis){
-        robotDrive4Motors.arcadeDrive(leftAxis);
+        robotDrive4Motors.arcadeDrive(leftAxis, useSquaredInputs);
     }
     
     public void tankDrive(Joystick leftAxis, Joystick rightAxis) {
-        robotDrive4Motors.tankDrive(leftAxis, rightAxis);
+        robotDrive4Motors.tankDrive(leftAxis, rightAxis, useSquaredInputs);
         //Squared inputs?
     }
     

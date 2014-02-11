@@ -30,5 +30,6 @@ public class TurnOffDoubleSolenoids extends Command {
     }
 
     protected void interrupted() {
+        end();
     }
 }
