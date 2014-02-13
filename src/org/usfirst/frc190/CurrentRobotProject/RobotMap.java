@@ -86,16 +86,16 @@ public class RobotMap {
         collectorClawReedSwitch = new DigitalInput(1, 4);
 	LiveWindow.addSensor("Collector", "Claw Reed Switch", collectorClawReedSwitch);
         
-        collectorClawPiston = new Solenoid(1, 6);
+        collectorClawPiston = new Solenoid(1, 2);
 	LiveWindow.addActuator("Collector", "Claw Piston", collectorClawPiston);
         
-        shooterPiston1 = new DoubleSolenoid(1, 1, 2);      
+        shooterPiston1 = new DoubleSolenoid(1, 4, 3);      
 	
         
-        shooterPiston2 = new DoubleSolenoid(1, 3, 4);      
+        shooterPiston2 = new DoubleSolenoid(1, 5, 6);      
 	
         
-        shooterLatchPiston = new Solenoid(1, 5);
+        shooterLatchPiston = new Solenoid(1, 1);
 	LiveWindow.addActuator("Shooter", "Latch Piston", shooterLatchPiston);
         
         shooterPiston1ReedSwitchFront = new DigitalInput(1, 9);

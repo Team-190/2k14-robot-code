@@ -283,7 +283,7 @@ Children:
           default: '1'
           name: Output Channel (Solenoid)
           validators: &id017 [Solenoid]
-          value: '6'
+          value: '2'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -299,7 +299,7 @@ Children:
           default: '1'
           name: Forward Channel (Solenoid)
           validators: &id007 [Solenoid]
-          value: '1'
+          value: '4'
         Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: &id008 ['1', '2']
           default: '1'
@@ -317,7 +317,7 @@ Children:
           default: '1'
           name: Reverse Channel (Solenoid)
           validators: &id013 [Solenoid]
-          value: '2'
+          value: '3'
     - Name: Piston 2
       Base: Double Solenoid
       Children: []
@@ -327,7 +327,7 @@ Children:
           default: '1'
           name: Forward Channel (Solenoid)
           validators: *id007
-          value: '3'
+          value: '5'
         Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: *id008
           default: '1'
@@ -345,7 +345,7 @@ Children:
           default: '1'
           name: Reverse Channel (Solenoid)
           validators: *id013
-          value: '4'
+          value: '6'
     - Name: Latch Piston
       Base: Solenoid
       Children: []
@@ -361,7 +361,7 @@ Children:
           default: '1'
           name: Output Channel (Solenoid)
           validators: *id017
-          value: '5'
+          value: '1'
     - Name: 'Piston1 Reed Switch Front '
       Base: Digital Input
       Children: []
@@ -1510,6 +1510,6 @@ Properties:
     validators: null, value: 190}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Team190\NetBeansProjects',
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: /Users/Will/NetBeansProjects,
     extension: null, folder: true, name: Java Project Directory, validators: null,
     value: ../}
