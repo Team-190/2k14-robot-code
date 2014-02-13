@@ -244,7 +244,7 @@ Children:
           default: '1'
           name: Input Channel (Digital)
           validators: &id023 [DigitalChannel]
-          value: '14'
+          value: '10'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
           choices: &id024 ['1', '2']
           default: '1'
@@ -283,7 +283,7 @@ Children:
           default: '1'
           name: Output Channel (Solenoid)
           validators: &id017 [Solenoid]
-          value: '2'
+          value: '1'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -299,7 +299,7 @@ Children:
           default: '1'
           name: Forward Channel (Solenoid)
           validators: &id007 [Solenoid]
-          value: '4'
+          value: '3'
         Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: &id008 ['1', '2']
           default: '1'
@@ -317,7 +317,7 @@ Children:
           default: '1'
           name: Reverse Channel (Solenoid)
           validators: &id013 [Solenoid]
-          value: '3'
+          value: '4'
     - Name: Piston 2
       Base: Double Solenoid
       Children: []
@@ -361,7 +361,7 @@ Children:
           default: '1'
           name: Output Channel (Solenoid)
           validators: *id017
-          value: '1'
+          value: '2'
     - Name: 'Piston1 Reed Switch Front '
       Base: Digital Input
       Children: []
@@ -387,7 +387,7 @@ Children:
           default: '1'
           name: Input Channel (Digital)
           validators: *id019
-          value: '11'
+          value: '8'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
           choices: *id020
           default: '1'
@@ -425,7 +425,7 @@ Children:
           default: '1'
           name: Spike Channel (Relay)
           validators: [RelayOutput]
-          value: '1'
+          value: '8'
         Spike Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2']
           default: '1'
@@ -444,7 +444,7 @@ Children:
           default: '1'
           name: Pressure Switch Channel (Digital)
           validators: [DigitalChannel]
-          value: '7'
+          value: '14'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}

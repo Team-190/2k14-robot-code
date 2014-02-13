@@ -54,14 +54,14 @@ public class Pivot extends PIDSubsystem {
     }
     
     public void setMotor(double speed){
-        motor.set(speed);
+        motor.set(-speed);
     }
     
     public boolean topLimitSwitchPressed(){
-        return upperLimitSwitch.get();
+        return !upperLimitSwitch.get();
     }
     
     public boolean lowerLimitSwitchPressed(){
-        return lowerLimitSwitch.get();
+        return !lowerLimitSwitch.get();
     }
 }

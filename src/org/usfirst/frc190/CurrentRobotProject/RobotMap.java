@@ -80,34 +80,34 @@ public class RobotMap {
         collectorRollerMotor = new Victor(1, 6);
 	LiveWindow.addActuator("Collector", "Roller Motor", (Victor) collectorRollerMotor);
         
-        collectorBallDetector = new DigitalInput(1, 14);
+        collectorBallDetector = new DigitalInput(1, 10);
 	LiveWindow.addSensor("Collector", "Ball Detector", collectorBallDetector);
         
         collectorClawReedSwitch = new DigitalInput(1, 4);
 	LiveWindow.addSensor("Collector", "Claw Reed Switch", collectorClawReedSwitch);
         
-        collectorClawPiston = new Solenoid(1, 2);
+        collectorClawPiston = new Solenoid(1, 1);
 	LiveWindow.addActuator("Collector", "Claw Piston", collectorClawPiston);
         
-        shooterPiston1 = new DoubleSolenoid(1, 4, 3);      
+        shooterPiston1 = new DoubleSolenoid(1, 3, 4);      
 	
         
         shooterPiston2 = new DoubleSolenoid(1, 5, 6);      
 	
         
-        shooterLatchPiston = new Solenoid(1, 1);
+        shooterLatchPiston = new Solenoid(1, 2);
 	LiveWindow.addActuator("Shooter", "Latch Piston", shooterLatchPiston);
         
         shooterPiston1ReedSwitchFront = new DigitalInput(1, 9);
 	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch Front ", shooterPiston1ReedSwitchFront);
         
-        shooterPiston1ReedSwitchBack = new DigitalInput(1, 11);
+        shooterPiston1ReedSwitchBack = new DigitalInput(1, 8);
 	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch Back ", shooterPiston1ReedSwitchBack);
         
         shooterHotGoalSensor = new DigitalInput(1, 3);
 	LiveWindow.addSensor("Shooter", "Hot Goal Sensor", shooterHotGoalSensor);
         
-        pneumaticsCompressor = new Compressor(1, 7, 1, 1);
+        pneumaticsCompressor = new Compressor(1, 14, 1, 8);
 	
         
         pivotUpperLimitSwitch = new DigitalInput(1, 13);

@@ -18,7 +18,7 @@ public class Collector extends Subsystem {
         return (ballDetector.get());
     }
     public void setRollerSpeed(double speed) {
-        rollerMotor.set(speed);
+        rollerMotor.set(-speed);
     }
     public void stop() {
         rollerMotor.set(0);

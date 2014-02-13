@@ -33,10 +33,10 @@ public class Shooter extends Subsystem {
     }
     
     public void extend2() {
-        piston2.set(DoubleSolenoid.Value.kForward);
+        piston2.set(DoubleSolenoid.Value.kReverse);
     }
     public void retract2() {
-        piston2.set(DoubleSolenoid.Value.kReverse);
+        piston2.set(DoubleSolenoid.Value.kForward);
     }
     public void off1() {
         //Turns off the piston1 double solenoid. 
