@@ -535,7 +535,7 @@ Children:
       F: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: F, validators: null,
         value: 0.0}
       Tolerance: !!robotbuilder.data.properties.DoubleProperty {default: 0.2, name: Tolerance,
-        validators: null, value: 0.2}
+        validators: null, value: 0.02}
       Continuous: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Continuous, validators: null, value: false}
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -557,7 +557,7 @@ Children:
       I: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: I, validators: null,
         value: 0.0}
       P: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: P, validators: null,
-        value: 1.0}
+        value: 6.0}
       Maximum Input: !!robotbuilder.data.properties.DoubleProperty {default: 5, name: Maximum Input,
         validators: null, value: 5.0}
   Properties: {}
@@ -1509,6 +1509,24 @@ Children:
         value: Pivot
       Setpoint: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: Setpoint,
         validators: null, value: 1.0}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Collect With Timeout
+    Base: Command Group
+    Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Collect Then Stored With Timeout
+    Base: Command Group
+    Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Collect Then Stored
+    Base: Command Group
+    Children: []
+    Properties:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}

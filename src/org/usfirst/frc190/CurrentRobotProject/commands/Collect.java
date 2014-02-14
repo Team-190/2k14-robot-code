@@ -21,41 +21,5 @@ public class Collect extends CommandGroup {
         addSequential(new WaitForCollection());
         addParallel(new RollersStop());
         addSequential(new PivotRaise());
-    }
-
-    public Collect(double timeout) {
-        //This command works the same as expected, except it will end the 
-        //WaitForCollection command after a given time.
-        //This should only need to be called for autonomous.
-
-        addParallel(new PivotLower());
-        addParallel(new RollersForward());
-        addSequential(new CloseClaw());
-        addSequential(new WaitForCollection(timeout));
-        addSequential(new RollersStop());
-    }
-    
-    public Collect(double timeout, boolean setToStoredPosition) {
-        //This command uses a timeout and ends by putting the pivot in the store position
-
-        addParallel(new PivotLower());
-        addParallel(new RollersForward());
-        addSequential(new CloseClaw());
-        addSequential(new WaitForCollection(timeout));
-        addParallel(new RollersStop());
-        addSequential(new PivotStoredPosition());
-    }
-    
-     public Collect(boolean setToStoredPosition) {
-        //This command ends by putting the pivot in the store position
-        //without a timeout
-
-        addParallel(new PivotLower());
-        addParallel(new RollersForward());
-        addSequential(new CloseClaw());
-        addSequential(new WaitForCollection());
-        addParallel(new RollersStop());
-        addSequential(new PivotStoredPosition());
-    }
-    
+    }  
 }

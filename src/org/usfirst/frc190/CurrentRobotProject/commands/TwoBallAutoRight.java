@@ -19,7 +19,7 @@ public class TwoBallAutoRight extends CommandGroup {
         addSequential(new Fire());
         addParallel(new PivotDownPosition());
         addSequential(new DriveSpin(angle, maxSpeed));
-        addParallel(new Collect(collectTimeout));
+        addParallel(new CollectWithTimeout());
         addSequential(new DriveForward(ballDist, maxSpeed));
         addParallel(new PrepareShootFar());
         addSequential(new DriveForward(-ballDist, maxSpeed));
