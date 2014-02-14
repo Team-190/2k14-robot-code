@@ -101,7 +101,7 @@ public class RobotMap {
         shooterPiston1ReedSwitchFront = new DigitalInput(1, 9);
 	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch Front ", shooterPiston1ReedSwitchFront);
         
-        shooterPiston1ReedSwitchBack = new DigitalInput(1, 8);
+        shooterPiston1ReedSwitchBack = new DigitalInput(1, 11);
 	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch Back ", shooterPiston1ReedSwitchBack);
         
         shooterHotGoalSensor = new DigitalInput(1, 3);

@@ -15,11 +15,12 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Collect extends CommandGroup {
 
     public Collect() {
-        addParallel(new PivotDownPosition());
+        addParallel(new PivotLower());
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection());
         addParallel(new RollersStop());
+        addSequential(new PivotRaise());
     }
 
     public Collect(double timeout) {
@@ -27,7 +28,7 @@ public class Collect extends CommandGroup {
         //WaitForCollection command after a given time.
         //This should only need to be called for autonomous.
 
-        addParallel(new PivotDownPosition());
+        addParallel(new PivotLower());
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection(timeout));
@@ -37,7 +38,7 @@ public class Collect extends CommandGroup {
     public Collect(double timeout, boolean setToStoredPosition) {
         //This command uses a timeout and ends by putting the pivot in the store position
 
-        addParallel(new PivotDownPosition());
+        addParallel(new PivotLower());
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection(timeout));
@@ -49,11 +50,12 @@ public class Collect extends CommandGroup {
         //This command ends by putting the pivot in the store position
         //without a timeout
 
-        addParallel(new PivotDownPosition());
+        addParallel(new PivotLower());
         addParallel(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection());
         addParallel(new RollersStop());
         addSequential(new PivotStoredPosition());
     }
+    
 }

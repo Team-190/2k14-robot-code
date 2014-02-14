@@ -56,10 +56,10 @@ public class Shooter extends Subsystem {
         latchPiston.set(false); //Latch
     }
     public boolean piston1IsExtended() {
-        return piston1ReedSwitchFront.get();
+        return !piston1ReedSwitchFront.get();
     }
     public boolean piston1IsRetracted() {
-        return piston1ReedSwitchBack.get();
+        return !piston1ReedSwitchBack.get();
     }
     public void turnOffAllDoubleSolenoids() {
         //Turns off all double solenoids.
