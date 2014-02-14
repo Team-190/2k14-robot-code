@@ -37,7 +37,7 @@ public class RobotMap {
     public static Solenoid shooterLatchPiston;
     public static DigitalInput shooterPiston1ReedSwitchFront;
     public static DigitalInput shooterPiston1ReedSwitchBack;
-    public static DigitalInput shooterHotGoalSensor;
+    public static AnalogChannel shooterHotGoalSensor;
     public static Compressor pneumaticsCompressor;
     public static DigitalInput pivotUpperLimitSwitch;
     public static DigitalInput pivotLowerLimitSwitch;
@@ -104,7 +104,7 @@ public class RobotMap {
         shooterPiston1ReedSwitchBack = new DigitalInput(1, 11);
 	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch Back ", shooterPiston1ReedSwitchBack);
         
-        shooterHotGoalSensor = new DigitalInput(1, 3);
+        shooterHotGoalSensor = new AnalogChannel(1, 3);
 	LiveWindow.addSensor("Shooter", "Hot Goal Sensor", shooterHotGoalSensor);
         
         pneumaticsCompressor = new Compressor(1, 14, 1, 8);

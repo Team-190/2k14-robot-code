@@ -395,21 +395,21 @@ Children:
           validators: *id021
           value: '1'
     - Name: Hot Goal Sensor
-      Base: Digital Input
+      Base: Analog Input
       Children: []
       Properties:
-        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id018
+        Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['1', '2']
           default: '1'
-          name: Input Channel (Digital)
-          validators: *id019
-          value: '3'
-        Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id020
-          default: '1'
-          name: Input Module (Digital)
-          validators: *id021
+          name: Input Module (Analog)
+          validators: [AnalogInput]
           value: '1'
+        Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
+          default: '1'
+          name: Input Channel (Analog)
+          validators: [AnalogInput]
+          value: '3'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -1548,6 +1548,6 @@ Properties:
     validators: null, value: 190}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: /Users/Will/NetBeansProjects,
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Team190\NetBeansProjects',
     extension: null, folder: true, name: Java Project Directory, validators: null,
     value: ../}

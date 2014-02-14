@@ -100,8 +100,8 @@ public class OI {
         SmartDashboard.putData("Wait For Collection", new WaitForCollection());
         SmartDashboard.putData("Wait For Extended", new WaitForExtended());
         SmartDashboard.putData("Wait For Retracted", new WaitForRetracted());
-        SmartDashboard.putData("Drive Spin", new DriveSpin(90, 0.5));
-        SmartDashboard.putData("Drive Forward", new DriveForward(10, 0.8));
+        SmartDashboard.putData("Drive Spin", new DriveSpin(180, 0.75));
+        SmartDashboard.putData("Drive Forward", new DriveForward(10, 0.75));
         SmartDashboard.putData("Switch Drive Mode", new SwitchDriveMode());
         SmartDashboard.putData("Collect", new Collect());
         SmartDashboard.putData("Fire", new Fire());
