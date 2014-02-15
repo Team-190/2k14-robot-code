@@ -18,11 +18,11 @@ public class TwoBallAutoForward extends CommandGroup {
         addSequential(new Fire());
         addSequential(new PivotDownPosition());
         addParallel(new CollectWithTimeout());
-        addSequential(new DriveForward(ballDist, maxSpeed));//TODO: Parameters may need to change.
+        addSequential(new DriveForward());//TODO: Parameters may need to change.
         addParallel(new PrepareShootFar());
-        addSequential(new DriveForward(-ballDist, maxSpeed));//TODO: Parameters may need to change.
+        addSequential(new DriveForward());//TODO: Parameters may need to change.
         addSequential(new Fire());
-        addSequential(new DriveForward(mobilityDist, maxSpeed)); //TODO: Parameters may need to change.
-        addSequential(new DriveSpin(finalSpinAngle, maxSpeed)); //TODO: Parameters may need to change.
+        addSequential(new DriveForward()); //TODO: Parameters may need to change.
+        addSequential(new DriveSpin()); //TODO: Parameters may need to change.
     }
 }

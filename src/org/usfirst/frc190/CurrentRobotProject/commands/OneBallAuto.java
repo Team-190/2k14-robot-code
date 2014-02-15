@@ -20,7 +20,7 @@ public class OneBallAuto extends CommandGroup {
             //If hot goal is detected, the command ends
             //If hot goal is not detected, the command ends after a timeout.
         addSequential(new Fire());
-        addSequential(new DriveForward(mobilityDist, maxSpeed));
-        addSequential(new DriveSpin(finalSpinAngle, maxSpeed));
+        addSequential(new DriveForward());
+        addSequential(new DriveSpin());
     }
 }

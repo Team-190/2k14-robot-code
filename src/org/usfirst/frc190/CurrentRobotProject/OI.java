@@ -41,13 +41,13 @@ public class OI {
         
         collectSequenceButton = new JoystickButton(oIJoystick2, 7);
         collectSequenceButton.whileHeld(new Collect());
-        pivotLowerButton = new JoystickButton(oIJoystick2, 12);
+        pivotLowerButton = new JoystickButton(oIJoystick2, 5);
         pivotLowerButton.whileHeld(new PivotLower());
-        pivotRaiseButton = new JoystickButton(oIJoystick2, 11);
+        pivotRaiseButton = new JoystickButton(oIJoystick2, 4);
         pivotRaiseButton.whileHeld(new PivotRaise());
-        rollersOutButton = new JoystickButton(oIJoystick2, 2);
+        rollersOutButton = new JoystickButton(oIJoystick2, 3);
         rollersOutButton.whileHeld(new RollersBackward());
-        rollersInbutton = new JoystickButton(oIJoystick2, 1);
+        rollersInbutton = new JoystickButton(oIJoystick2, 2);
         rollersInbutton.whileHeld(new RollersForward());
         boomButton = new JoystickButton(oIJoystick2, 6);
         boomButton.whenPressed(new WaitForBoomButton());
@@ -100,8 +100,8 @@ public class OI {
         SmartDashboard.putData("Wait For Collection", new WaitForCollection());
         SmartDashboard.putData("Wait For Extended", new WaitForExtended());
         SmartDashboard.putData("Wait For Retracted", new WaitForRetracted());
-        SmartDashboard.putData("Drive Spin", new DriveSpin(180, 0.75));
-        SmartDashboard.putData("Drive Forward", new DriveForward(10, 0.75));
+        SmartDashboard.putData("Drive Spin", new DriveSpin());
+        SmartDashboard.putData("Drive Forward", new DriveForward());
         SmartDashboard.putData("Switch Drive Mode", new SwitchDriveMode());
         SmartDashboard.putData("Collect", new Collect());
         SmartDashboard.putData("Fire", new Fire());

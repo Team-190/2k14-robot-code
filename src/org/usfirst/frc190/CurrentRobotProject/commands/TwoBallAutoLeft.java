@@ -18,14 +18,14 @@ public class TwoBallAutoLeft extends CommandGroup {
         addSequential(new PrepareShootFar());
         addSequential(new Fire());
         addParallel(new PivotDownPosition());
-        addSequential(new DriveSpin(-angle, maxSpeed));
+        addSequential(new DriveSpin());
         addParallel(new CollectWithTimeout());
-        addSequential(new DriveForward(ballDist, maxSpeed));//TODO: Parameters may need to change.
+        addSequential(new DriveForward());//TODO: Parameters may need to change.
         addParallel(new PrepareShootFar());
-        addSequential(new DriveForward(-ballDist, maxSpeed));//TODO: Parameters may need to change.
-        addSequential(new DriveSpin(angle, maxSpeed));
+        addSequential(new DriveForward());//TODO: Parameters may need to change.
+        addSequential(new DriveSpin());
         addSequential(new Fire());
-        addSequential(new DriveForward(mobilityDist, maxSpeed)); //TODO: Parameters may need to change.
-        addSequential(new DriveSpin(finalSpinAngle, maxSpeed)); //TODO: Parameters may need to change.
+        addSequential(new DriveForward()); //TODO: Parameters may need to change.
+        addSequential(new DriveSpin()); //TODO: Parameters may need to change.
     }
 }

@@ -11,9 +11,7 @@ public class  DriveSpin extends Command {
     private double error;
     private final double Kp = -1.0/90.0;
     
-    public DriveSpin(double angle, double speed){
-        turnSpeed = speed;
-        spinAngle = angle;
+    public DriveSpin(){
         requires(Robot.drivetrain);
     }
     
