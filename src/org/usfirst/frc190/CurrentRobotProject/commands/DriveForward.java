@@ -8,14 +8,14 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
 //TODO: Fix with autotonomous implementation.
 public class DriveForward extends Command {
     
-    private double driveForwardSpeed = .5;
+    private double driveForwardSpeed = .75;
     private double distance = 50;
     private final double tolerance = 5;
     private double error;
     private final double Kp = -1.0/5.0;
     
     public DriveForward(double driveDistance, double speed) {
-        distance = driveDistance;
+        distance = driveDistance * 12; //Convert to feet.
         driveForwardSpeed = speed;
 	
         

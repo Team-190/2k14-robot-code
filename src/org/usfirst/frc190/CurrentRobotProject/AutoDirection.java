@@ -8,7 +8,7 @@ public class AutoDirection {
     protected static final int LEFT_VAL = 0;
     protected static final int RIGHT_VAL = 1;
     protected static final int FORWARD_VAL = 2;
-    protected static final int NO_MOVEMENT_VAL = 3;
+    protected static final int NO_MOVEMENT_VAL = 3; 
 
     public static final AutoDirection LEFT = new AutoDirection(LEFT_VAL);
     public static final AutoDirection RIGHT = new AutoDirection(RIGHT_VAL);

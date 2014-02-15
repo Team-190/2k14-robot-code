@@ -15,7 +15,7 @@ public class RollersForward extends Command {
     protected void execute() {
     }
     protected boolean isFinished() {
-        return true;
+        return true || Robot.collector.isCollected();
     }
     protected void end() {
     }

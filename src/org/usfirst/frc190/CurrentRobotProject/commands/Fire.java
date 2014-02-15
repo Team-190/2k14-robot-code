@@ -12,7 +12,7 @@ public class Fire extends CommandGroup {
         //The commands take so little time there is no need.
         
         addSequential(new OpenClaw());
-        addSequential(new WaitCommand(0.5));
+        addSequential(new WaitCommand(1));
         addSequential(new ExtendLatch());
         addSequential(new WaitForExtended());
         addSequential(new RetractPiston2());
@@ -20,9 +20,9 @@ public class Fire extends CommandGroup {
         addSequential(new WaitForRetracted());
         addSequential(new CloseClaw());
         addSequential(new RetractLatch());
-        addSequential(new WaitCommand(0.5));
+        addSequential(new WaitCommand(0.25));
         addSequential(new ExtendPiston1());
         addSequential(new ExtendPiston2());
-        addParallel(new PivotStoredPosition());
+        addSequential(new PivotStoredPosition());
     }
 }

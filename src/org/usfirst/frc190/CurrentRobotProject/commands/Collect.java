@@ -15,11 +15,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Collect extends CommandGroup {
 
     public Collect() {
-        addParallel(new PivotLower());
-        addParallel(new RollersForward());
         addSequential(new CloseClaw());
+        addSequential(new PivotLower());
+        addSequential(new RollersForward());
         addSequential(new WaitForCollection());
-        addParallel(new RollersStop());
+        addSequential(new RollersStop());
         addSequential(new PivotRaise());
-    }  
+    }
 }
