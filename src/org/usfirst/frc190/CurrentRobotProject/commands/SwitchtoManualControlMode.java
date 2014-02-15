@@ -11,6 +11,7 @@
 
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.usfirst.frc190.CurrentRobotProject.Robot;
 
 /**
  *
@@ -22,7 +23,7 @@ public class SwitchtoManualControlMode extends CommandGroup {
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
-
+        Robot.pivot.disable();
         // To run multiple commands at the same time,
         // use addParallel()
         // e.g. addParallel(new Command1());

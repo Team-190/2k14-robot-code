@@ -72,6 +72,6 @@ public class Shooter extends Subsystem {
     public boolean goalIsHot(){
         //Reads the banner switch. 
         //Will be true when goal is hot.
-        return !hotGoalSensor.get();
+        return hotGoalSensor.get();
     }
 }
