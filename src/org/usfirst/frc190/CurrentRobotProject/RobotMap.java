@@ -38,6 +38,7 @@ public class RobotMap {
     public static DigitalInput shooterPiston1ReedSwitchFront;
     public static DigitalInput shooterPiston1ReedSwitchBack;
     public static AnalogChannel shooterHotGoalSensor;
+    public static AnalogChannel pneumaticsPressureSensor;
     public static Compressor pneumaticsCompressor;
     public static DigitalInput pivotUpperLimitSwitch;
     public static DigitalInput pivotLowerLimitSwitch;
@@ -106,6 +107,9 @@ public class RobotMap {
         
         shooterHotGoalSensor = new AnalogChannel(1, 3);
 	LiveWindow.addSensor("Shooter", "Hot Goal Sensor", shooterHotGoalSensor);
+        
+        pneumaticsPressureSensor = new AnalogChannel(1, 4);
+	LiveWindow.addSensor("Pneumatics", "Pressure Sensor", pneumaticsPressureSensor);
         
         pneumaticsCompressor = new Compressor(1, 14, 1, 8);
 	
