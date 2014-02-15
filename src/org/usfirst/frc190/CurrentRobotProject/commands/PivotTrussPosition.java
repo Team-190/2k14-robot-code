@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
 public class PivotTrussPosition extends Command {
     
-    private double degrees = 55;
+    private double degrees = 52;
     private boolean isInitialized = false;
     
     public PivotTrussPosition() {

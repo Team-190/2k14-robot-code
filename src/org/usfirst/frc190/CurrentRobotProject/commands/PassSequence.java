@@ -10,7 +10,8 @@ public class PassSequence extends CommandGroup {
         addSequential(new PivotLower());
         addSequential(new WaitForBoomButton());
         addSequential(new OpenClaw());
-        addSequential(new WaitCommand(.75));
+        addSequential(new WaitCommand(2));
+        addSequential(new CloseClaw());
         addSequential(new PivotStoredPosition());
     }
 }
