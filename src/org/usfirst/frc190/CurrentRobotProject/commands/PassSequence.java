@@ -7,11 +7,10 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class PassSequence extends CommandGroup {
     
     public  PassSequence() {
-        addSequential(new PivotDownPosition());
+        addSequential(new PivotLower());
         addSequential(new WaitForBoomButton());
-        addSequential(new RollersBackward());
-        addSequential(new WaitCommand(3));
-        addSequential(new RollersStop());
+        addSequential(new OpenClaw());
+        addSequential(new WaitCommand(1.5));
         addSequential(new PivotStoredPosition());
     }
 }
