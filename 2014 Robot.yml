@@ -551,7 +551,7 @@ Children:
       F: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: F, validators: null,
         value: 0.0}
       Tolerance: !!robotbuilder.data.properties.DoubleProperty {default: 0.2, name: Tolerance,
-        validators: null, value: 0.04}
+        validators: null, value: 0.1}
       Continuous: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Continuous, validators: null, value: false}
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -843,7 +843,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
     - Name: Extend Latch Button
       Base: Joystick Button
       Children: []
@@ -867,7 +867,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whenPressed
+          value: whileHeld
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
         choices: *id029
@@ -1007,7 +1007,7 @@ Children:
           name: Command
           type: Command
           validators: *id026
-          value: Rollers Forward
+          value: RollersInThenStop
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id027
           default: '1'
@@ -1031,7 +1031,7 @@ Children:
           name: Command
           type: Command
           validators: *id026
-          value: Rollers Backward
+          value: RollersOutThenStop
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id027
           default: '1'
@@ -1117,7 +1117,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
         choices: *id029
@@ -1551,6 +1551,22 @@ Children:
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Pneumatics}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: RollersInThenStop
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Collector}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: RollersOutThenStop
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Collector}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}
