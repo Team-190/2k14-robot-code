@@ -18,10 +18,12 @@ public class  PivotFarPosition extends Command {
         if(Robot.pivot.lowerLimitSwitchPressed()){
             Robot.pivot.setMotor(.75);
             Command wait = new WaitCommand(0.1);
+            wait.start();
             Robot.pivot.setMotor(0);
         }if(Robot.pivot.topLimitSwitchPressed()){
             Robot.pivot.setMotor(-.75);
             Command wait = new WaitCommand(0.1);
+            wait.start();
             Robot.pivot.setMotor(0);
         }
         
