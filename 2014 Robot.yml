@@ -652,7 +652,7 @@ Children:
   - Name: OI Joystick
     Base: Joystick
     Children:
-    - Name: Collect Sequence Button
+    - Name: Retract Latch Button
       Base: Joystick Button
       Children: []
       Properties:
@@ -661,37 +661,13 @@ Children:
           name: Command
           type: Command
           validators: *id030
-          value: Collect
+          value: Retract Latch
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id031
           default: '1'
           name: Button
           validators: null
-          value: '1'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: OI Joystick}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whileHeld
-    - Name: Shoot Far Sequence Button
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: Shoot Far Sequence
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '2'
+          value: '10'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: OI Joystick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -700,7 +676,7 @@ Children:
           name: When to Run
           validators: null
           value: whenPressed
-    - Name: Shoot Truss Sequence Button
+    - Name: Piston 1 Extend Button
       Base: Joystick Button
       Children: []
       Properties:
@@ -709,31 +685,7 @@ Children:
           name: Command
           type: Command
           validators: *id030
-          value: Shoot Truss Sequence
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '3'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: OI Joystick}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whenPressed
-    - Name: Pass Sequence Button
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: Pass Sequence
+          value: Extend Piston 1
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id031
           default: '1'
@@ -748,7 +700,7 @@ Children:
           name: When to Run
           validators: null
           value: whenPressed
-    - Name: Boom Button
+    - Name: Piston 1 Retract Button
       Base: Joystick Button
       Children: []
       Properties:
@@ -757,13 +709,61 @@ Children:
           name: Command
           type: Command
           validators: *id030
-          value: Wait For Boom Button
+          value: Retract Piston 1
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '2'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
+    - Name: Piston 2 Extend Button
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: Extend Piston 2
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id031
           default: '1'
           name: Button
           validators: null
           value: '5'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
+    - Name: Piston 2 Retract Button
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: Retract Piston 2
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '3'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: OI Joystick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -787,7 +787,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '6'
+          value: '9'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: OI Joystick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -796,7 +796,7 @@ Children:
           name: When to Run
           validators: null
           value: whileHeld
-    - Name: Pivot Stored Position Button
+    - Name: Claw Open
       Base: Joystick Button
       Children: []
       Properties:
@@ -805,13 +805,61 @@ Children:
           name: Command
           type: Command
           validators: *id030
-          value: Pivot Stored Position
+          value: Open Claw
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id031
           default: '1'
           name: Button
           validators: null
-          value: '5'
+          value: '6'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
+    - Name: Claw Closed
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: Close Claw
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '7'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whileHeld
+    - Name: Extend Latch Button
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: Extend Latch
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '1'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: OI Joystick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -830,6 +878,126 @@ Children:
   - Name: OI Joystick 2
     Base: Joystick
     Children:
+    - Name: Shoot Far Sequence Button
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: Shoot Far Sequence
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '11'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick 2}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
+    - Name: Shoot Truss Sequence Button
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: Shoot Truss Sequence
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '10'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick 2}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
+    - Name: Pass Sequence Button
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: Pass Sequence
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '9'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick 2}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
+    - Name: Pivot Stored Position Button
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: Pivot Stored Position
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '8'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick 2}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
+    - Name: Boom Button
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: Wait For Boom Button
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '6'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick 2}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
     - Name: Rollers In button
       Base: Joystick Button
       Children: []
@@ -878,198 +1046,6 @@ Children:
           name: When to Run
           validators: null
           value: whileHeld
-    - Name: Claw Open
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: Open Claw
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '3'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: OI Joystick 2}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whenPressed
-    - Name: Claw Closed
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: Close Claw
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '4'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: OI Joystick 2}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whileHeld
-    - Name: Piston 1 Extend Button
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: Extend Piston 1
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '5'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: OI Joystick 2}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whenPressed
-    - Name: Piston 1 Retract Button
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: Retract Piston 1
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '6'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: OI Joystick 2}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whenPressed
-    - Name: Piston 2 Extend Button
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: Extend Piston 2
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '7'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: OI Joystick 2}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whenPressed
-    - Name: Piston 2 Retract Button
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: Retract Piston 2
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '8'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: OI Joystick 2}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whenPressed
-    - Name: Extend Latch Button
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: Extend Latch
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '9'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: OI Joystick 2}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whenPressed
-    - Name: Retract Latch Button
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: Retract Latch
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '10'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: OI Joystick 2}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whenPressed
     - Name: Pivot Raise Button
       Base: Joystick Button
       Children: []
@@ -1110,6 +1086,30 @@ Children:
           name: Button
           validators: null
           value: '12'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick 2}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whileHeld
+    - Name: Collect Sequence Button
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: Collect
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '7'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: OI Joystick 2}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -1543,6 +1543,14 @@ Children:
     Base: Command Group
     Children: []
     Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Wait For Pressure
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Pneumatics}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}
