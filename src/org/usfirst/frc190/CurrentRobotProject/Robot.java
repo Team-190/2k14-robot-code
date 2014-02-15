@@ -64,7 +64,7 @@ public class Robot extends IterativeRobot {
     //This function is called periodically during autonomous
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
-    }
+    } 
     public void teleopInit() {
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to 
@@ -73,6 +73,7 @@ public class Robot extends IterativeRobot {
         if (autonomousCommand != null) {
             autonomousCommand.cancel();
         }
+        Robot.pivot.disable(); //Stop PID loops that began in auto. 
     }
     //This function is called periodically during operator control
     public void teleopPeriodic() {
