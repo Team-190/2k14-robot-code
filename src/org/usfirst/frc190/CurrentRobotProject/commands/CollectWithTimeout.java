@@ -17,15 +17,15 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class CollectWithTimeout extends CommandGroup {
     
-    private double timeout = 5;
+    private double timeout = 4;
     
     public  CollectWithTimeout() {
         //This command works the same as expected, except it will end the 
         //WaitForCollection command after a given time.
         //This should only need to be called for autonomous.
 
-        addParallel(new PivotLower());
-        addParallel(new RollersForward());
+        addSequential(new PivotLower());
+        addSequential(new RollersBackward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection(timeout));
         addSequential(new RollersStop());

@@ -28,7 +28,7 @@ public class OI {
     public JoystickButton passSequenceButton;
     public JoystickButton pivotStoredPositionButton;
     public JoystickButton boomButton;
-    public JoystickButton rollersInbutton;
+    public JoystickButton rollersInButton;
     public JoystickButton rollersOutButton;
     public JoystickButton pivotRaiseButton;
     public JoystickButton pivotLowerButton;
@@ -47,8 +47,8 @@ public class OI {
         pivotRaiseButton.whileHeld(new PivotRaise());
         rollersOutButton = new JoystickButton(oIJoystick2, 3);
         rollersOutButton.whileHeld(new RollersOutThenStop());
-        rollersInbutton = new JoystickButton(oIJoystick2, 2);
-        rollersInbutton.whileHeld(new RollersInThenStop());
+        rollersInButton = new JoystickButton(oIJoystick2, 2);
+        rollersInButton.whileHeld(new RollersInThenStop());
         boomButton = new JoystickButton(oIJoystick2, 6);
         boomButton.whenPressed(new WaitForBoomButton());
         pivotStoredPositionButton = new JoystickButton(oIJoystick2, 8);
