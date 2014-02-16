@@ -111,7 +111,7 @@ public class RobotMap {
         pneumaticsPressureSensor = new AnalogChannel(1, 4);
 	LiveWindow.addSensor("Pneumatics", "Pressure Sensor", pneumaticsPressureSensor);
         
-        pneumaticsCompressor = new Compressor(1, 14, 1, 8);
+        pneumaticsCompressor = new Compressor(1, 8, 1, 8);
 	
         
         pivotUpperLimitSwitch = new DigitalInput(1, 13);

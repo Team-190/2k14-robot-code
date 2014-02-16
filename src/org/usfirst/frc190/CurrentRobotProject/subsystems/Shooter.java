@@ -55,6 +55,10 @@ public class Shooter extends Subsystem {
     public void retractLatchPiston() {
         latchPiston.set(false); //Latch
     }
+    
+    public void toggleLatchPosition() {
+        latchPiston.set(!latchPiston.get()); 
+    }
     public boolean piston1IsExtended() {
         return !piston1ReedSwitchFront.get();
     }

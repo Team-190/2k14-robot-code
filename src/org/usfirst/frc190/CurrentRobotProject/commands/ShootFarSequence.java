@@ -9,6 +9,6 @@ public class ShootFarSequence extends CommandGroup {
         addSequential(new PrepareShootFar());
         addSequential(new WaitForBoomButton());
         addSequential(new Fire());
-        addSequential(new PivotStoredPosition());
+        addSequential(new PivotRaise());
     }
 }

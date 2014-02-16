@@ -16,11 +16,11 @@ public class OneBallAuto extends CommandGroup {
 
     public OneBallAuto() {
         addSequential(new PrepareShootFar());
-        addSequential(new CheckForHotGoal()); //Checks for hot goal
+        //addSequential(new CheckForHotGoal()); //Checks for hot goal
             //If hot goal is detected, the command ends
             //If hot goal is not detected, the command ends after a timeout.
         addSequential(new Fire());
         addSequential(new DriveForward());
-        addSequential(new DriveSpin());
+        //addSequential(new DriveSpin());
     }
 }

@@ -9,6 +9,6 @@ public class ShootTrussSequence extends CommandGroup {
         addSequential(new PrepareShootTruss());
         addSequential(new WaitForBoomButton());
         addSequential(new Fire());
-        addSequential(new PivotStoredPosition());
+        addSequential(new PivotRaise());
     }
 }

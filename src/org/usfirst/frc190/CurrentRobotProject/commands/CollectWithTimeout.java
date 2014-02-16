@@ -25,7 +25,7 @@ public class CollectWithTimeout extends CommandGroup {
         //This should only need to be called for autonomous.
 
         addSequential(new PivotLower());
-        addSequential(new RollersBackward());
+        addSequential(new RollersForward());
         addSequential(new CloseClaw());
         addSequential(new WaitForCollection(timeout));
         addSequential(new RollersStop());

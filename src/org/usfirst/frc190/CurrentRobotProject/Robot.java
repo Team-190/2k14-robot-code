@@ -50,6 +50,7 @@ public class Robot extends IterativeRobot {
         autoChooser = new SendableChooser();
         autoChooser.addObject("Mobility Only", new AutoMobilityOnly());
         autoChooser.addDefault("One Ball Auto", new OneBallAuto());
+        autoChooser.addObject("One Ball Auto Movement", new OneBallAutoMovement());
         autoChooser.addObject("Two Ball No Movement", new TwoBallAutoNoMovement());
         autoChooser.addObject("Two Ball Forward", new TwoBallAutoForward());
         autoChooser.addObject("Two Ball Left", new TwoBallAutoLeft());

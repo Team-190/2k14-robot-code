@@ -12,6 +12,6 @@ public class AutoMobilityOnly extends CommandGroup {
     
     public  AutoMobilityOnly() {
         addSequential(new DriveForward());
-        addSequential(new DriveSpin());
+        //addSequential(new DriveSpin());
     }
 }

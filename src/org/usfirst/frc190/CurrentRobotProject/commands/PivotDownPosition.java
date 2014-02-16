@@ -24,6 +24,7 @@ public class  PivotDownPosition extends Command {
         if(Robot.pivot.lowerLimitSwitchPressed()||Robot.pivot.topLimitSwitchPressed()) {
             Robot.pivot.disable();
         }
+        Robot.pivot.disable();
     }
     protected void interrupted() {
         Robot.pivot.disable();

@@ -12,6 +12,6 @@ public class PassSequence extends CommandGroup {
         addSequential(new OpenClaw());
         addSequential(new WaitCommand(2));
         addSequential(new CloseClaw());
-        addSequential(new PivotStoredPosition());
+        addSequential(new PivotRaise());
     }
 }

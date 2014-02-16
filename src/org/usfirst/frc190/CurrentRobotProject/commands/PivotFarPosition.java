@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
 public class  PivotFarPosition extends Command {
     
-    private double degrees = 38;
+    private double degrees = 25;
     private boolean isInitialized = false;
     
     public PivotFarPosition() {

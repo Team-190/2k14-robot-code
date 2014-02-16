@@ -28,6 +28,7 @@ public class WaitForCollection extends Command {
         //or for the command to timeout.
     }
     protected void end() {
+        Robot.collector.setRollerSpeed(0);
     }
     protected void interrupted() {
         end();
