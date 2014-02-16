@@ -16,10 +16,10 @@ public class Collect extends CommandGroup {
 
     public Collect() {
         addSequential(new CloseClaw());
-        addSequential(new PivotLower());
+        addSequential(new PivotDownPosition());
         addSequential(new RollersForward());
         addSequential(new WaitForCollection());
         addSequential(new RollersStop());
-        addSequential(new PivotRaise());
+        addSequential(new PivotStoredPosition());
     }
 }

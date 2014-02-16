@@ -12,7 +12,7 @@ public class Fire extends CommandGroup {
         //The commands take so little time there is no need.
         
         addSequential(new OpenClaw());
-        addSequential(new WaitCommand(2));
+        addSequential(new WaitCommand(1.3));
         addSequential(new ExtendLatch());
         addSequential(new WaitForExtended());
         addSequential(new RetractPiston2());
