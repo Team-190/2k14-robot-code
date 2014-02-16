@@ -68,7 +68,7 @@ public class Pivot extends PIDSubsystem {
     }
     
     public double degreesToPotValue(double degrees){
-        return (((5*3.125*(90-degrees))/3600) + 1.804);
+        return (((5*4*(90-degrees))/3600) + 1.804);
     }
     
 }

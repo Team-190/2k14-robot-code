@@ -65,6 +65,7 @@ public class Robot extends IterativeRobot {
     //This function is called periodically during autonomous
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        Robot.pneumatics.writePressure();
     } 
     public void teleopInit() {
         // This makes sure that the autonomous stops running when
@@ -79,11 +80,13 @@ public class Robot extends IterativeRobot {
     //This function is called periodically during operator control
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        Robot.pneumatics.writePressure();
     }
     //This function called periodically during test mode
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
     
     
 }

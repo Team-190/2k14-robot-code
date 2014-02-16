@@ -108,7 +108,7 @@ public class RobotMap {
         shooterPiston1ReedSwitchBack = new DigitalInput(1, 11);
 	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch Back ", shooterPiston1ReedSwitchBack);
         
-        pneumaticsPressureSensor = new AnalogChannel(1, 4);
+        pneumaticsPressureSensor = new AnalogChannel(1, 3);
 	LiveWindow.addSensor("Pneumatics", "Pressure Sensor", pneumaticsPressureSensor);
         
         pneumaticsCompressor = new Compressor(1, 8, 1, 8);
