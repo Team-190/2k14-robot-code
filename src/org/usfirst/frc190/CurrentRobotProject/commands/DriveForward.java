@@ -8,8 +8,8 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
 //TODO: Fix with autotonomous implementation.
 public class DriveForward extends Command {
     
-    private double driveForwardSpeed = .75;
-    private double distance = 28; //7 ft times 12 inches.
+    private double driveForwardSpeed = .5;
+    private double distance = 44; //approx inches * 2
     private final double tolerance = 5;
     private double error;
     private final double Kp = -1.0/5.0;
@@ -23,8 +23,12 @@ public class DriveForward extends Command {
         }
     protected void execute() {
         error = (distance - Robot.drivetrain.getEncoderDistance());
+        if(driveForwardSpeed*Kp*error >= driveForwardSpeed) {
+            Robot.drivetrain.tankDrive(driveForwardSpeed, driveForwardSpeed);
+        } else {
+            Robot.drivetrain.tankDrive(driveForwardSpeed*Kp*error, driveForwardSpeed*Kp*error);
+        }
         //Robot.drivetrain.tankDrive(0.2,0.2);
-        Robot.drivetrain.tankDrive(driveForwardSpeed*Kp*error, driveForwardSpeed*Kp*error);
     }
     protected boolean isFinished() {
         return (Math.abs(error) <= tolerance);

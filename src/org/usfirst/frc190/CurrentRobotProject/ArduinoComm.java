@@ -4,30 +4,29 @@
 package org.usfirst.frc190.CurrentRobotProject;
 import edu.wpi.first.wpilibj.DigitalModule;
 import edu.wpi.first.wpilibj.I2C;
-import edu.wpi.first.wpilibj.SerialPort;
-import edu.wpi.first.wpilibj.visa.VisaException;
-import edu.wpi.first.wpilibj.DigitalOutput;
 /**
  *
  * @author Will
  */
 public class ArduinoComm {
     
-    I2C i2c = DigitalModule.getInstance(1).getI2C(168);
-    private static byte[] toSend = new byte[1];
+    protected I2C i2c;
+    private final byte[] toSend = new byte[1];
+    private static ArduinoComm instance = null;
     
-    public static void sendMessage(byte message){
+    private ArduinoComm() {
+        i2c = DigitalModule.getInstance(1).getI2C(168);
+    }
+    
+    public static ArduinoComm getInstance() {
+        if (instance == null) {
+            instance = new ArduinoComm();
+        }
+        return instance;
+    }
+    
+    public void sendMessage(byte message){
         toSend[0] = message;
-        DigitalModule.getInstance(1).getI2C(168).transaction(toSend, 1, null, 0);
-        
+        i2c.transaction(toSend, 1, null, 0);
     }
-    
-    public static void sendMessage(ArduinoMessages message){
-        toSend[0] = message.value;
-        DigitalModule.getInstance(1).getI2C(168).transaction(toSend, 1, null, 0);
-    }
-
-    
-    
-    
 }
