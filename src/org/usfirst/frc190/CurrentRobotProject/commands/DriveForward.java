@@ -9,7 +9,7 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
 public class DriveForward extends Command {
     
     private double driveForwardSpeed = .5;
-    private double distance = 44; //approx inches * 2
+    private double distance = 15; //approx inches * 2
     private final double tolerance = 5;
     private double error;
     private final double Kp = -1.0/5.0;
