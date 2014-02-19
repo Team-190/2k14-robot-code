@@ -14,13 +14,14 @@ public class TwoBallAutoForward extends CommandGroup {
     private final double finalSpinAngle = 180;  //angle for the final spin
 
     public TwoBallAutoForward() {
-        //addSequential(new DriveForward(32.0, 0.5));
+        addSequential(new DriveDistance(32.0, 0.5));
         addSequential(new PrepareShootFar());
         addSequential(new Fire());
         addSequential(new PivotDownPosition());
-        //addParallel(new DriveForward(25.0, 0.25));
-        addSequential(new Collect());
-        //addSequential(new DriveForward(-25.0,0.5));
+        addParallel(new CollectWithTimeout());
+        addSequential(new DriveDistance(25.0, 0.5));
+        addSequential(new DriveDistance(-25.0,0.5));
+        addSequential(new PivotStoredPosition());
         addSequential(new PrepareShootFar());
         addSequential(new Fire());
     }

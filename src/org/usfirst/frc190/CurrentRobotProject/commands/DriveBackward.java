@@ -1,6 +1,5 @@
 //
 package org.usfirst.frc190.CurrentRobotProject.commands;
-
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
 public class  DriveBackward extends Command {
@@ -11,7 +10,6 @@ public class  DriveBackward extends Command {
     private final double tolerance = 5;
     private double error;
     private final double Kp = -1.0/5.0;
-
     public DriveBackward() {
         this(25.0,0.5);
     }
@@ -20,13 +18,12 @@ public class  DriveBackward extends Command {
         distance = dist;
         driveForwardSpeed = maxSpeed;
     }
-
     protected void initialize() {
-        Robot.drivetrain.resetEncoder();
+        Robot.drivetrain.resetEncoderRight();
         
         }
     protected void execute() {
-        error = (distance - Robot.drivetrain.getEncoderDistance());
+        error = (distance - Robot.drivetrain.getEncoderDistanceRight());
         if(driveForwardSpeed*Kp*error >= driveForwardSpeed) {
             Robot.drivetrain.tankDrive(driveForwardSpeed, driveForwardSpeed);
         } else {

@@ -18,11 +18,11 @@ public class DriveForward extends Command {
         requires(Robot.drivetrain);
     }
     protected void initialize() {
-        Robot.drivetrain.resetEncoder();
+        Robot.drivetrain.resetEncoderRight();
         
         }
     protected void execute() {
-        error = (distance - Robot.drivetrain.getEncoderDistance());
+        error = (distance - Robot.drivetrain.getEncoderDistanceRight());
         if(driveForwardSpeed*Kp*error >= driveForwardSpeed) {
             Robot.drivetrain.tankDrive(driveForwardSpeed, driveForwardSpeed);
         } else {
