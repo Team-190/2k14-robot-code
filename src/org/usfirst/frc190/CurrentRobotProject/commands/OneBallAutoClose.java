@@ -3,9 +3,9 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class OneBallAutoMovement extends CommandGroup {
+public class OneBallAutoClose extends CommandGroup {
     
-    public  OneBallAutoMovement() {
+    public  OneBallAutoClose() {
         addSequential(new DriveForward());
         addSequential(new PrepareShootFar());
         addSequential(new CheckForHotGoal()); //Checks for hot goal
