@@ -14,13 +14,13 @@ public class TwoBallAutoStraight extends CommandGroup {
     private final double finalSpinAngle = 180;  //angle for the final spin
 
     public TwoBallAutoStraight() {
-        addSequential(new DriveDistance(32.0, 0.5));
+        addSequential(new DriveDistance(32.0, 0.75));
         addSequential(new PrepareShootFar());
         addSequential(new Fire());
         addSequential(new PivotDownPosition());
         addParallel(new CollectWithTimeout());
-        addSequential(new DriveDistance(25.0, 0.5));
-        addSequential(new DriveDistance(-25.0,0.5));
+        addSequential(new DriveDistance(25.0, 0.75));
+        addSequential(new DriveDistance(-20.0,0.75));
         addSequential(new PivotStoredPosition());
         addSequential(new PrepareShootFar());
         addSequential(new Fire());

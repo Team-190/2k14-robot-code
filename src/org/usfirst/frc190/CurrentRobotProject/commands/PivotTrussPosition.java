@@ -32,7 +32,8 @@ public class PivotTrussPosition extends Command {
     protected void execute() {
     }
     protected boolean isFinished() {
-        return (Robot.pivot.onTarget() || Robot.pivot.lowerLimitSwitchPressed() || Robot.pivot.topLimitSwitchPressed());
+        return (Robot.pivot.onTarget() || Robot.pivot.lowerLimitSwitchPressed() 
+                || Robot.pivot.topLimitSwitchPressed() || Robot.oi.doNothing_PassButton.get());
     }
     protected void end() {
         if (Robot.pivot.lowerLimitSwitchPressed() || Robot.pivot.topLimitSwitchPressed()) {

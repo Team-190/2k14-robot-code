@@ -9,7 +9,7 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
 public class DriveForward extends Command {
     
     private double driveForwardSpeed = .5;
-    private double distance = 25; //approx inches * 2
+    private double distance = 37; //was 25
     private final double tolerance = 5;
     private double error;
     private final double Kp = -1.0/5.0;
@@ -19,7 +19,7 @@ public class DriveForward extends Command {
     }
     protected void initialize() {
         Robot.drivetrain.resetEncoderRight();
-        
+        setTimeout(2);
         }
     protected void execute() {
         error = (distance - Robot.drivetrain.getEncoderDistanceRight());
@@ -31,7 +31,7 @@ public class DriveForward extends Command {
         //Robot.drivetrain.tankDrive(0.2,0.2);
     }
     protected boolean isFinished() {
-        return (Math.abs(error) <= tolerance);
+        return (Math.abs(error) <= tolerance)||isTimedOut();
     }
     protected void end() {
         Robot.drivetrain.stopDriveMotors();

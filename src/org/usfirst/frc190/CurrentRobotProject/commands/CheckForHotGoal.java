@@ -18,7 +18,9 @@ public class CheckForHotGoal extends Command {
     protected void execute() {
     }
     protected boolean isFinished() {
-        return isTimedOut() || Robot.shooter.goalIsHot(); //Command ends when the hot goal is seen, or isTimedOut().
+        return isTimedOut() || Robot.shooter.goalIsHot() || Robot.getInstance().isTeleopMode(); 
+            //Command ends when the hot goal is seen, or isTimedOut().
+            //Should not run in Teleop
     }
     protected void end() {
     }

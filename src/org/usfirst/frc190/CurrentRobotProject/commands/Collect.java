@@ -5,9 +5,6 @@
 //I auto, the timeout method is called to prevent the robot from
 //not getting mobility points
 
-//NOTE: when you want the collect command to go to Stored when ended
-//use the one with the boolean
-
 package org.usfirst.frc190.CurrentRobotProject.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;

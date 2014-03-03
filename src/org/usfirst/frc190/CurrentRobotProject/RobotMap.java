@@ -29,6 +29,7 @@ public class RobotMap {
     public static Encoder drivetrainDriveEncoderRight;
     public static Encoder drivetrainDriveEncoderLeft;
     public static Gyro drivetrainGyro;
+    public static DigitalInput drivetrainLineDetector;
     public static SpeedController collectorRollerMotor;
     public static DigitalInput collectorBallDetector;
     public static DigitalInput collectorClawReedSwitch;
@@ -41,6 +42,7 @@ public class RobotMap {
     public static DigitalInput shooterPiston1ReedSwitchBack;
     public static AnalogChannel pneumaticsPressureSensor;
     public static Compressor pneumaticsCompressor;
+    public static DigitalOutput pneumaticsArduinoSignal;
     public static DigitalInput pivotUpperLimitSwitch;
     public static DigitalInput pivotLowerLimitSwitch;
     public static AnalogChannel pivotPot;
@@ -84,6 +86,9 @@ public class RobotMap {
         drivetrainGyro = new Gyro(1, 2);
 	LiveWindow.addSensor("Drivetrain", "Gyro", drivetrainGyro);
         drivetrainGyro.setSensitivity(0.007);
+        drivetrainLineDetector = new DigitalInput(1, 7);
+	LiveWindow.addSensor("Drivetrain", "Line Detector", drivetrainLineDetector);
+        
         collectorRollerMotor = new Victor(1, 6);
 	LiveWindow.addActuator("Collector", "Roller Motor", (Victor) collectorRollerMotor);
         
@@ -117,7 +122,10 @@ public class RobotMap {
         pneumaticsPressureSensor = new AnalogChannel(1, 3);
 	LiveWindow.addSensor("Pneumatics", "Pressure Sensor", pneumaticsPressureSensor);
         
-        pneumaticsCompressor = new Compressor(1, 8, 1, 8);
+        pneumaticsCompressor = new Compressor(1, 14, 1, 8);
+	
+        
+        pneumaticsArduinoSignal = new DigitalOutput(1, 8);
 	
         
         pivotUpperLimitSwitch = new DigitalInput(1, 13);
