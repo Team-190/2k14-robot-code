@@ -21,6 +21,8 @@ public class OneBallAutoFar extends CommandGroup {
         addSequential(new PrepareShootFar());
         addSequential(new Fire());
         addSequential(new DriveForward());
+        addSequential(new RollersInThenStop(4));
+        addSequential(new PivotStoredPosition());
         //addSequential(new DriveSpin());
     }
 }

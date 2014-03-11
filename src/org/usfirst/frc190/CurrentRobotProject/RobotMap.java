@@ -32,8 +32,8 @@ public class RobotMap {
     public static DigitalInput drivetrainLineDetector;
     public static SpeedController collectorRollerMotor;
     public static DigitalInput collectorBallDetector;
-    public static DigitalInput collectorClawReedSwitch;
     public static Solenoid collectorClawPiston;
+    public static DigitalInput collectorClawOpenDetector;
     public static DigitalInput shooterHotGoalSensor;
     public static DoubleSolenoid shooterPiston1;
     public static DoubleSolenoid shooterPiston2;
@@ -78,7 +78,7 @@ public class RobotMap {
         drivetrainDriveEncoderRight.setDistancePerPulse(0.0785398);
         drivetrainDriveEncoderRight.setPIDSourceParameter(PIDSourceParameter.kDistance);
         drivetrainDriveEncoderRight.start();
-        drivetrainDriveEncoderLeft = new Encoder(1, 5, 1, 6, false, EncodingType.k1X);
+        drivetrainDriveEncoderLeft = new Encoder(2, 5, 2, 6, false, EncodingType.k1X);
 	LiveWindow.addSensor("Drivetrain", "Drive Encoder Left", drivetrainDriveEncoderLeft);
         drivetrainDriveEncoderLeft.setDistancePerPulse(0.0785398);
         drivetrainDriveEncoderLeft.setPIDSourceParameter(PIDSourceParameter.kDistance);
@@ -95,11 +95,11 @@ public class RobotMap {
         collectorBallDetector = new DigitalInput(1, 10);
 	LiveWindow.addSensor("Collector", "Ball Detector", collectorBallDetector);
         
-        collectorClawReedSwitch = new DigitalInput(1, 4);
-	LiveWindow.addSensor("Collector", "Claw Reed Switch", collectorClawReedSwitch);
-        
         collectorClawPiston = new Solenoid(1, 1);
 	LiveWindow.addActuator("Collector", "Claw Piston", collectorClawPiston);
+        
+        collectorClawOpenDetector = new DigitalInput(1, 6);
+	LiveWindow.addSensor("Collector", "Claw Open Detector", collectorClawOpenDetector);
         
         shooterHotGoalSensor = new DigitalInput(1, 3);
 	LiveWindow.addSensor("Shooter", "Hot Goal Sensor", shooterHotGoalSensor);

@@ -21,8 +21,9 @@ public class TwoBallAutoStraight extends CommandGroup {
         addParallel(new CollectWithTimeout());
         addSequential(new DriveDistance(25.0, 0.75));
         addSequential(new DriveDistance(-20.0,0.75));
-        addSequential(new PivotStoredPosition());
+        addSequential(new PivotFarPosition());
         addSequential(new PrepareShootFar());
         addSequential(new Fire());
+        addSequential(new PivotStoredPosition());
     }
 }
