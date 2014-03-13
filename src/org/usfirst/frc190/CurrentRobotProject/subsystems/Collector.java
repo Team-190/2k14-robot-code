@@ -24,7 +24,7 @@ public class Collector extends Subsystem {
         rollerMotor.set(0);
     }
     public boolean isClawOpen() {
-        return clawOpenDetector.get();
+        return !clawOpenDetector.get();
     }
     public void openClaw() {
         clawPiston.set(true);

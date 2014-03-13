@@ -10,8 +10,8 @@ public class LowGoalShot extends CommandGroup {
         addSequential(new PivotLowGoal());
         addSequential(new WaitForBoomButton());
         addSequential(new OpenClaw());
-        addSequential(new WaitCommand(3));
-        addSequential(new CloseClaw());
-        addSequential(new PivotStoredPosition());
+        //addSequential(new WaitCommand(3));
+        //addSequential(new CloseClaw());
+        //addSequential(new PivotStoredPosition());
     }
 }
