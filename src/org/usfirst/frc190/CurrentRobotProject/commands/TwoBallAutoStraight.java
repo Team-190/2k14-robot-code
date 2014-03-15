@@ -4,25 +4,22 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 public class TwoBallAutoStraight extends CommandGroup {
 
-    private final double maxSpeed = 0.5;        //maximum speed of the motors
-    private final double ballDist = 10;         //distance from the robot to the ball
-    private final double mobilityDist = 10;     //distance from starting position to colored zone
-    private final double collectTimeout = 10;   //timeout for the collect command
-    private final double finalSpinAngle = 180;  //angle for the final spin
-
     public TwoBallAutoStraight() {
-        addSequential(new DriveDistance(32.0, 0.75));
-        addSequential(new PrepareShootFar());
-        addSequential(new Fire());
-        addSequential(new PivotDownPosition());
-        addParallel(new CollectWithTimeout());
-        addSequential(new DriveDistance(25.0, 0.75));
-        addSequential(new DriveDistance(-20.0,0.75));
-        addSequential(new PivotFarPosition());
-        addSequential(new PrepareShootFar());
+        addSequential(new WaitCommand(1));
+        //addSequential(new CheckForHotGoal(2.5));
+        addSequential(new DriveForwardSpeed(1, 1, 0.5));
+        addSequential(new DriveForwardSpeed(0.65, 0.65, 4.5));
+            //DriveForwardTimeout(time, distance, speed)
+        addSequential(new DriveForwardSpeed(-0.5, -0.6, 0.4));
+            //DriveForwart(distance, speed)
+        addSequential(new WaitCommand(0.75));
+        addSequential(new PrepareShootTruss());
+        addSequential(new OpenClaw());
+        addSequential(new WaitToFire());
         addSequential(new Fire());
         addSequential(new PivotStoredPosition());
     }

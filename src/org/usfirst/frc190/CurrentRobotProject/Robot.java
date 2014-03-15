@@ -59,8 +59,8 @@ public class Robot extends IterativeRobot {
         autoChooser = new SendableChooser();
         autoChooser.addObject("Mobility Only", new AutoMobilityOnly());
         autoChooser.addObject("One Ball Auto Far", new OneBallAutoFar());
-        autoChooser.addDefault("One Ball Auto Close", new OneBallAutoClose());
-        autoChooser.addObject("Two Ball Straight", new TwoBallAutoStraight());
+        autoChooser.addObject("One Ball Auto Close", new OneBallAutoClose());
+        autoChooser.addDefault("Two Ball Straight", new TwoBallAutoStraight());
         SmartDashboard.putData("Auto Mode", autoChooser);
         Robot.pneumatics.startCompressor(); //Start the compressor working.
     }
@@ -90,6 +90,7 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
         Robot.pneumatics.writePressure();
         SmartDashboard.putNumber("Pivot Pot Value", Robot.pivot.getPotValue());
+        SmartDashboard.putNumber("Right Encoder Distance", Robot.drivetrain.getEncoderDistanceRight());
     }
     //This function called periodically during test mode
     public void testPeriodic() {

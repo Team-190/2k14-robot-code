@@ -6,23 +6,27 @@ import org.usfirst.frc190.CurrentRobotProject.Robot;
 //This command will drive a given distance at a given speed.
 //Requires encoders.
 //TODO: Fix with autotonomous implementation.
-public class DriveForward extends Command {
+public class DriveForwardTimeout extends Command {
     
     private double driveForwardSpeed = .5;
     private double distance = 10; //was 25 or 37 or 20
     private final double tolerance = 5;
     private double error;
-    private final double Kp = -1.0/5.0;
+    private final double Kp = -1.0/25.0;
     
-    public DriveForward() {
+    
+    public DriveForwardTimeout() {
         requires(Robot.drivetrain);
+        distance = 0;
     }
-    public DriveForward(double dist) {
+    public DriveForwardTimeout(double time, double dist) {
         requires(Robot.drivetrain);
+        setTimeout(time);
         distance = dist;
     }
-    public DriveForward(double dist, double maxSpeed){
+    public DriveForwardTimeout(double time, double dist, double maxSpeed){
         requires(Robot.drivetrain);
+        setTimeout(time);
         distance = dist;
         driveForwardSpeed = maxSpeed;
     }

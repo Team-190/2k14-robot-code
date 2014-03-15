@@ -10,16 +10,19 @@ public class  RollersInThenStop extends Command {
     }
     
     public RollersInThenStop(double time) {
+        requires(Robot.collector);
         setTimeout(time);
     }
     protected void initialize() {
         if(!Robot.collector.isCollected()){
-            Robot.collector.setRollerSpeed(-1);
+            Robot.collector.setRollerSpeed(1);
+        } else {
+            Robot.collector.setRollerSpeed(0);
         }
     }
     protected void execute() {
         if(!Robot.collector.isCollected()){
-            Robot.collector.setRollerSpeed(-1);
+            Robot.collector.setRollerSpeed(1);
         } else {
             Robot.collector.setRollerSpeed(0);
         }
