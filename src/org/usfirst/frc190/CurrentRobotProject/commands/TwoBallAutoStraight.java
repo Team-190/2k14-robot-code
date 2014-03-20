@@ -9,12 +9,13 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class TwoBallAutoStraight extends CommandGroup {
 
     public TwoBallAutoStraight() {
-        addSequential(new WaitCommand(1));
+        //addSequential(new WaitCommand(1));
         //addSequential(new CheckForHotGoal(2.5));
         addSequential(new DriveForwardSpeed(1, 1, 0.5));
-        addSequential(new DriveForwardSpeed(0.65, 0.65, 4.5));
+        addSequential(new DriveForwardSpeed(0.5, 0.5, 2.5));
+        addSequential(new WaitCommand(0.5));
             //DriveForwardTimeout(time, distance, speed)
-        addSequential(new DriveForwardSpeed(-0.5, -0.6, 0.4));
+        addSequential(new DriveForwardSpeed(-0.5, -0.6, 0.3));
             //DriveForwart(distance, speed)
         addSequential(new WaitCommand(0.75));
         addSequential(new PrepareShootTruss());

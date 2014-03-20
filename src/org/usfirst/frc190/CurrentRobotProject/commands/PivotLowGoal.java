@@ -13,7 +13,8 @@ public class  PivotLowGoal extends Command {
         while(Robot.pivot.lowerLimitSwitchPressed()){
             System.out.println("Lower Limit");
             Robot.pivot.setMotor(0.5);
-        }while(Robot.pivot.topLimitSwitchPressed()){
+        }
+        while(Robot.pivot.topLimitSwitchPressed()){
             Robot.pivot.setMotor(-0.5);
         }
         System.out.println("Low Goal Position Init");

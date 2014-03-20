@@ -22,6 +22,6 @@ public class Fire extends CommandGroup {
         addSequential(new RetractLatch());
         addSequential(new WaitCommand(0.25));
         addSequential(new ExtendPiston1());
-        addSequential(new ExtendPiston2());
+        //addSequential(new ExtendPiston2());
     }
 }
