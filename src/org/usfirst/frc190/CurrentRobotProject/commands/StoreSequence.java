@@ -6,7 +6,6 @@ public class StoreSequence extends CommandGroup {
     
     public  StoreSequence() {
         addSequential(new CloseClaw());
-        addSequential(new LimitDriveSpeed(1));
         addSequential(new PivotStoredPosition());
     }
 }

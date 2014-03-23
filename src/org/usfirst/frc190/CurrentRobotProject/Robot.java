@@ -60,12 +60,13 @@ public class Robot extends IterativeRobot {
         autoChooser.addObject("Mobility Only", new AutoMobilityOnly());
         autoChooser.addObject("One Ball Auto Far", new OneBallAutoFar());
         autoChooser.addObject("One Ball Auto Close", new OneBallAutoClose());
-        autoChooser.addDefault("Two Ball Straight", new TwoBallAutoStraight());
+        autoChooser.addDefault("Two Ball New", new TwoBallAutoNew());
+        autoChooser.addObject("Two Ball Old", new TwoBallAutoOld());
         SmartDashboard.putData("Auto Mode", autoChooser);
         Robot.pneumatics.startCompressor(); //Start the compressor working.
+        Robot.pneumatics.setArduinoSignal(true);
     }
     public void autonomousInit() {
-        pneumatics.setArduinoSignal(false);
         Command auto = (Command) autoChooser.getSelected();
         auto.start();
     }
@@ -75,7 +76,6 @@ public class Robot extends IterativeRobot {
         Robot.pneumatics.writePressure();
     } 
     public void teleopInit() {
-        pneumatics.setArduinoSignal(false);
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
@@ -94,11 +94,9 @@ public class Robot extends IterativeRobot {
     }
     //This function called periodically during test mode
     public void testPeriodic() {
-        pneumatics.setArduinoSignal(false);
         LiveWindow.run();
     }
     
     public void disabledInit(){
-        pneumatics.setArduinoSignal(true);
     }
 }

@@ -15,6 +15,8 @@ public class OneBallAutoClose extends CommandGroup {
         addSequential(new ExtendPiston1());
         addSequential(new ExtendPiston2());
         addSequential(new PivotAutoClose());
+        addSequential(new OpenClaw());
+        addSequential(new WaitToFire());
         addSequential(new Fire());
         //addSequential(new DriveForward(25));
         addSequential(new PivotStoredPosition());

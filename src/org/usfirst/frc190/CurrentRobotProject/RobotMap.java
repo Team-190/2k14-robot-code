@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.DigitalOutput;
+import edu.wpi.first.wpilibj.Relay;
 //The RobotMap is a mapping from the ports sensors and actuators are wired into
 //to a variable name. This provides flexibility changing wiring, makes checking
 //the wiring easier and significantly reduces the number of magic numbers
@@ -42,7 +43,7 @@ public class RobotMap {
     public static DigitalInput shooterPiston1ReedSwitchBack;
     public static AnalogChannel pneumaticsPressureSensor;
     public static Compressor pneumaticsCompressor;
-    public static DigitalOutput pneumaticsArduinoSignal;
+    public static Relay pneumaticsArduinoSignal;
     public static DigitalInput pivotUpperLimitSwitch;
     public static DigitalInput pivotLowerLimitSwitch;
     public static AnalogChannel pivotPot;
@@ -125,8 +126,8 @@ public class RobotMap {
         pneumaticsCompressor = new Compressor(1, 14, 1, 8);
 	
         
-        pneumaticsArduinoSignal = new DigitalOutput(1, 8);
-	
+        pneumaticsArduinoSignal = new Relay(1, 7);
+	LiveWindow.addActuator("Pneumatics", "Arduino Signal", pneumaticsArduinoSignal);
         
         pivotUpperLimitSwitch = new DigitalInput(1, 13);
 	LiveWindow.addSensor("Pivot", "Upper Limit Switch", pivotUpperLimitSwitch);

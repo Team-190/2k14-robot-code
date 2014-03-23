@@ -29,7 +29,7 @@ public class PivotStoredPosition extends Command {
     }
     protected boolean isFinished() {
         return (Robot.pivot.onTarget() || Robot.pivot.lowerLimitSwitchPressed() 
-                || Robot.pivot.topLimitSwitchPressed());
+                || Robot.pivot.topLimitSwitchPressed()||Robot.oi.boomButton.get());
     }
     protected void end() {
         Robot.pivot.disable();

@@ -19,6 +19,8 @@ public class OneBallAutoFar extends CommandGroup {
             //If hot goal is detected, the command ends
             //If hot goal is not detected, the command ends after a timeout.
         addSequential(new PrepareShootFar());
+        addSequential(new OpenClaw());
+        addSequential(new WaitToFire());
         addSequential(new Fire());
         addSequential(new DriveForward());
         addSequential(new RollersInThenStop(4));

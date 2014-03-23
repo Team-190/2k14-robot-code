@@ -86,9 +86,8 @@ public class OI {
         // SmartDashboard Buttons
         SmartDashboard.putData("Send Message to Arduino", new SendMessagetoArduino());
         SmartDashboard.putData("Auto Mobility Only", new AutoMobilityOnly());
-        SmartDashboard.putData("One Ball Auto Far", new OneBallAutoFar());
         SmartDashboard.putData("One Ball Auto Close", new OneBallAutoClose());
-        SmartDashboard.putData("Two Ball Auto Straight", new TwoBallAutoStraight());
+        SmartDashboard.putData("Two Ball Auto Old", new TwoBallAutoOld());
         SmartDashboard.putData("Check For Hot Goal", new CheckForHotGoal());
         SmartDashboard.putData("Wait For Collection", new WaitForCollection());
         SmartDashboard.putData("Wait For Extended", new WaitForExtended());
@@ -135,8 +134,6 @@ public class OI {
         SmartDashboard.putData("Drive Distance", new DriveDistance());
         SmartDashboard.putData("Human Player Collect", new HumanPlayerCollect());
         SmartDashboard.putData("Collect Stored Position", new CollectStoredPosition());
-        SmartDashboard.putData("Advanced Teleop Shot", new AdvancedTeleopShot());
-        SmartDashboard.putData("Limit Drive Speed", new LimitDriveSpeed());
         SmartDashboard.putData("Wait For Bannersensor", new WaitForBannersensor());
         SmartDashboard.putData("Store Sequence", new StoreSequence());
         SmartDashboard.putData("Do Nothing", new DoNothing());
