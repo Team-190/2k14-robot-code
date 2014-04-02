@@ -14,6 +14,7 @@ public class  RollersInThenStop extends Command {
         setTimeout(time);
     }
     protected void initialize() {
+        Robot.I2CComm.sendMessage((byte) 5);
         if(!Robot.collector.isCollected()){
             Robot.collector.setRollerSpeed(1);
         } else {

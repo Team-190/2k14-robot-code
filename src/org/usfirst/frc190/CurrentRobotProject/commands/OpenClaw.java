@@ -11,6 +11,7 @@ public class OpenClaw extends Command {
     }
     
     protected void initialize() {
+        Robot.I2CComm.sendMessage((byte) 14);
         Robot.collector.openClaw();
     }
     

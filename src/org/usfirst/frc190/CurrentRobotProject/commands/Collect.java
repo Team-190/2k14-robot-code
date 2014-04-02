@@ -8,10 +8,11 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
-
+import org.usfirst.frc190.CurrentRobotProject.Robot;
 public class Collect extends CommandGroup {
 
     public Collect() {
+        Robot.I2CComm.sendMessage((byte) 2);
         addSequential(new CloseClaw());
         addSequential(new RollersForward());
         addSequential(new PivotDownPosition());

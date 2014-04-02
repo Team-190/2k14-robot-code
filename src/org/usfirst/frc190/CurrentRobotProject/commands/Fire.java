@@ -4,10 +4,12 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
+import org.usfirst.frc190.CurrentRobotProject.Robot;
 
 public class Fire extends CommandGroup {
     
     public  Fire() {
+        Robot.I2CComm.sendMessage((byte) 7);
         setInterruptible(false);
         //None of the sequences for the pneumatics system need addParallel.
         //The commands take so little time there is no need.
@@ -23,6 +25,7 @@ public class Fire extends CommandGroup {
         addSequential(new RetractLatch());
         addSequential(new WaitCommand(0.25));
         addSequential(new ExtendPiston1());
+        Robot.I2CComm.sendMessage((byte) 8);
         //addSequential(new ExtendPiston2());
     }
 }
