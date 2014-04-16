@@ -3,11 +3,12 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
+import org.usfirst.frc190.CurrentRobotProject.ArduinoMessages;
 
 public class ShootTrussSequence extends CommandGroup {
     
     public  ShootTrussSequence() {
-        Robot.I2CComm.sendMessage((byte) 11);
+        Robot.I2CComm.sendMessage(ArduinoMessages.PREPARING_FOR_TRUSS);
         addSequential(new PrepareShootTruss());
         //addSequential(new WaitForPressure());
         addSequential(new WaitForBoomButton());

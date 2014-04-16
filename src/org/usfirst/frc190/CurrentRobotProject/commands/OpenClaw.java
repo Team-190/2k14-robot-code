@@ -12,7 +12,7 @@ public class OpenClaw extends Command {
     }
     
     protected void initialize() {
-        Robot.I2CComm.sendMessage(ArduinoMessages.OPENING_CLAW.value);
+        Robot.I2CComm.sendMessage(ArduinoMessages.OPENING_CLAW);
         Robot.collector.openClaw();
     }
     

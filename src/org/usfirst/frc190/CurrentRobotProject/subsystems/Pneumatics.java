@@ -34,9 +34,9 @@ public class Pneumatics extends Subsystem {
     
     public void setArduinoSignal(boolean signal) {
         if(signal){
-            arduinoComm.sendMessage((byte) 1);
+            //arduinoComm.sendMessage((byte) 1);
         } else {
-            arduinoComm.sendMessage((byte) 0);
+            //arduinoComm.sendMessage((byte) 0);
         }
     }
 }

@@ -10,12 +10,10 @@ import edu.wpi.first.wpilibj.I2C;
  */
 public class ArduinoComm {
     
-    protected I2C i2c;
     private final byte[] toSend = new byte[1];
     private static ArduinoComm instance = null;
     
     private ArduinoComm() {
-        i2c = DigitalModule.getInstance(1).getI2C(168);
     }
     
     public static ArduinoComm getInstance() {
@@ -25,8 +23,11 @@ public class ArduinoComm {
         return instance;
     }
     
-    public static void sendMessage(byte message){
-        Robot.I2CComm.sendMessage(message);
+    public static void sendMessage(ArduinoMessages message){
+        I2C i2c = DigitalModule.getInstance(1).getI2C(168);
+        byte[] toSend = new byte[1];
+        toSend[0] = message.value;
+        i2c.transaction(toSend, 1, null, 0);
         //toSend[0] = message;
         //i2c.transaction(toSend, 1, null, 0);
     }

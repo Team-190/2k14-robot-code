@@ -3,11 +3,12 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
+import org.usfirst.frc190.CurrentRobotProject.ArduinoMessages;
 
 public class ShootFarSequence extends CommandGroup {
     
     public  ShootFarSequence() {
-        Robot.I2CComm.sendMessage((byte) 12);
+        Robot.I2CComm.sendMessage(ArduinoMessages.PREPARING_FOR_FAR);
         addSequential(new PrepareShootFar());
         //addSequential(new WaitForPressure());
         addSequential(new WaitForBoomButton());
