@@ -2,6 +2,7 @@
 package org.usfirst.frc190.CurrentRobotProject.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
+import org.usfirst.frc190.CurrentRobotProject.ArduinoMessages;
 public class OpenClaw extends Command {
     
     public OpenClaw() {
@@ -11,7 +12,7 @@ public class OpenClaw extends Command {
     }
     
     protected void initialize() {
-        Robot.I2CComm.sendMessage((byte) 14);
+        Robot.I2CComm.sendMessage(ArduinoMessages.OPENING_CLAW.value);
         Robot.collector.openClaw();
     }
     

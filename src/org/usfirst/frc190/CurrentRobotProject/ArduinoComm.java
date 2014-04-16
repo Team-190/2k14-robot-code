@@ -25,8 +25,9 @@ public class ArduinoComm {
         return instance;
     }
     
-    public void sendMessage(byte message){
-        toSend[0] = message;
-        i2c.transaction(toSend, 1, null, 0);
+    public static void sendMessage(byte message){
+        Robot.I2CComm.sendMessage(message);
+        //toSend[0] = message;
+        //i2c.transaction(toSend, 1, null, 0);
     }
 }
