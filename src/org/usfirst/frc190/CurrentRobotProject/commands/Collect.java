@@ -17,6 +17,7 @@ public class Collect extends CommandGroup {
         ArduinoComm.sendMessage(ArduinoMessages.COLLECTING);
         addSequential(new CloseClaw());
         addSequential(new RollersForward());
+        //addSequential(new PivotLower(0.1));
         addSequential(new PivotDownPosition());
         addSequential(new WaitForCollection());
         addSequential(new RollersStop());

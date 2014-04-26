@@ -34,7 +34,8 @@ public class  PivotFarPosition extends Command {
     protected void execute() {
     }
     protected boolean isFinished() {
-        return (Robot.pivot.onTarget()||Robot.pivot.lowerLimitSwitchPressed()||Robot.pivot.topLimitSwitchPressed());
+        return (Robot.pivot.onTarget()||Robot.pivot.lowerLimitSwitchPressed()||
+                    Robot.pivot.topLimitSwitchPressed()||Robot.oi.boomButton.get());
     }
     protected void end() {
         if(Robot.pivot.lowerLimitSwitchPressed()||Robot.pivot.topLimitSwitchPressed()) {

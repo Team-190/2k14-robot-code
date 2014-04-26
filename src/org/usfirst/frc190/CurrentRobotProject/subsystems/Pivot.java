@@ -20,9 +20,9 @@ public class Pivot extends PIDSubsystem {
     private final double lowGoalValue = 2.734 - 0.071 + 0.015 + potSlip;
     private final double verticalValue = 2.062 + 0.015 + potSlip;
     private final double horizontalValue = 2.627 + 0.015 + potSlip;
-    private final double farPosition = 2.267; //2.375 or 2.425-toomuch or 2.325
-    private final double closePosition = 2.21; //should be 2.323 or 2.21 or 2.26
-    private final double autoClosePosition = 2.29; //different from far position
+    private final double farPosition = 2.32; //2.375 or 2.425-toomuch or 2.325 or 2.267
+    private final double closePosition = 2.27; //should be 2.323 or 2.21 or 2.26 or 2.24
+    private final double autoClosePosition = 2.24; //was 2.29
         //note autoclose is farposition + 0.075
     
     public Pivot() {

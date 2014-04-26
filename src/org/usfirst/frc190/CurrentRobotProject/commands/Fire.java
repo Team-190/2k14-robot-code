@@ -17,15 +17,21 @@ public class Fire extends CommandGroup {
         
         //addSequential(new OpenClaw());
         //addSequential(new WaitToFire());
-        addSequential(new ExtendLatch());
+        /*addSequential(new ExtendLatch());
         addSequential(new WaitForExtended(1));
+        addSequential(new CloseClaw());
         addSequential(new RetractPiston2());
         addSequential(new RetractPiston1());
-        addSequential(new WaitForRetracted(1));
-        addSequential(new CloseClaw());
+        addSequential(new WaitForRetracted());
         addSequential(new RetractLatch());
         addSequential(new WaitCommand(0.25));
-        addSequential(new ExtendPiston1());
+        addSequential(new ExtendPiston1());*/
+        addSequential(new ExtendLatch());
+        addSequential(new WaitForExtended(0.4));
+        addSequential(new RetractPiston2());
+        addSequential(new RetractPiston1());
+        addSequential(new CloseClaw());
+        
         Robot.I2CComm.sendMessage(ArduinoMessages.BOOM_TRIPLE_THREAT);
         //addSequential(new ExtendPiston2());
     }
