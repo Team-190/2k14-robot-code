@@ -18,11 +18,15 @@ public class  PivotLower extends Command {
     }
     
     protected void initialize() {
+        if(Robot.oi.manualSwitch.get()){
         Robot.I2CComm.sendMessage(ArduinoMessages.LOWERING_PIVOT);
         Robot.pivot.disable();
+        }
     }
     protected void execute() {
+        if(Robot.oi.manualSwitch.get()){
         Robot.pivot.setMotor(-motorSpeed);
+        }
     }
     protected boolean isFinished() {
         return Robot.pivot.lowerLimitSwitchPressed()||isTimedOut();

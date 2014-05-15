@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class OneBallAutoTeleop extends CommandGroup {
     
     public  OneBallAutoTeleop() {
-        addSequential(new DriveForward(2.25));
+        addSequential(new DriveForward(0.8, 0.8, 2.25, false));
         addSequential(new PrepareShootFar());
         addSequential(new OpenClaw());
         addSequential(new WaitToFire());

@@ -116,10 +116,10 @@ public class RobotMap {
 	LiveWindow.addActuator("Shooter", "Latch Piston", shooterLatchPiston);
         
         shooterPiston1ReedSwitchFront = new DigitalInput(1, 9);
-	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch Front ", shooterPiston1ReedSwitchFront);
+	LiveWindow.addSensor("Shooter", "Piston1 Reed Extended ", shooterPiston1ReedSwitchFront);
         
         shooterPiston1ReedSwitchBack = new DigitalInput(1, 11);
-	LiveWindow.addSensor("Shooter", "Piston1 Reed Switch Back ", shooterPiston1ReedSwitchBack);
+	LiveWindow.addSensor("Shooter", "Piston1 Reed Retracted ", shooterPiston1ReedSwitchBack);
         
         pneumaticsPressureSensor = new AnalogChannel(1, 3);
 	LiveWindow.addSensor("Pneumatics", "Pressure Sensor", pneumaticsPressureSensor);

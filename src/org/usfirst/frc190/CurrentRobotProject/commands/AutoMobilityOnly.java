@@ -11,7 +11,7 @@ public class AutoMobilityOnly extends CommandGroup {
     private final double finalSpinAngle = 180;  //angle for the final spin
     
     public  AutoMobilityOnly() {
-        addSequential(new DriveForward());
+        addSequential(new DriveForward(maxSpeed, maxSpeed, mobilityDist, false));
         //addSequential(new DriveSpin());
     }
 }

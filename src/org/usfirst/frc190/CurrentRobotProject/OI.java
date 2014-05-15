@@ -16,13 +16,13 @@ public class OI {
     public JoystickButton piston1RetractButton;
     public JoystickButton piston2ExtendButton;
     public JoystickButton piston2RetractButton;
-    public JoystickButton autonomoustoManualControls;
+    public JoystickButton manualSwitch;
     public JoystickButton clawOpen;
     public JoystickButton clawClosed;
     public Joystick oIJoystick;
     public JoystickButton shootFarSequenceButton;
     public JoystickButton trussSequenceButton;
-    public JoystickButton lowGoalShot_PassButton;
+    public JoystickButton PassButton;
     public JoystickButton storeSequenceButton;
     public JoystickButton boomButton;
     public JoystickButton rollersInButton;
@@ -50,20 +50,21 @@ public class OI {
         boomButton.whenPressed(new WaitForBoomButton());
         storeSequenceButton = new JoystickButton(oIJoystick2, 8);
         storeSequenceButton.whenPressed(new StoreSequence());
-        lowGoalShot_PassButton = new JoystickButton(oIJoystick2, 9);
-        lowGoalShot_PassButton.whenPressed(new LowGoalShot());
         trussSequenceButton = new JoystickButton(oIJoystick2, 10);
         trussSequenceButton.whenPressed(new ShootTrussSequence());
         shootFarSequenceButton = new JoystickButton(oIJoystick2, 11);
         shootFarSequenceButton.whenPressed(new ShootFarSequence());
         oIJoystick = new Joystick(3);
         
+        PassButton = new JoystickButton(oIJoystick2, 9);
+        PassButton.whenPressed(new PassSequence());
+        manualSwitch = new JoystickButton(oIJoystick, 8);
+        manualSwitch.whenPressed(new DoNothing());
+        
         clawClosed = new JoystickButton(oIJoystick, 7);
         clawClosed.whenPressed(new CloseClaw());
         clawOpen = new JoystickButton(oIJoystick, 6);
         clawOpen.whenPressed(new OpenClaw());
-        autonomoustoManualControls = new JoystickButton(oIJoystick, 9);
-        autonomoustoManualControls.whileHeld(new SwitchtoManualControlMode());
         piston2RetractButton = new JoystickButton(oIJoystick, 5);
         piston2RetractButton.whenPressed(new RetractPiston2());
         piston2ExtendButton = new JoystickButton(oIJoystick, 3);
@@ -94,9 +95,7 @@ public class OI {
         SmartDashboard.putData("Wait For Retracted", new WaitForRetracted());
         SmartDashboard.putData("Drive Spin", new DriveSpin());
         SmartDashboard.putData("Drive Forward", new DriveForward());
-        SmartDashboard.putData("Switch Drive Mode", new SwitchDriveMode());
         SmartDashboard.putData("Collect", new Collect());
-        SmartDashboard.putData("Collect With Timeout", new CollectWithTimeout());
         SmartDashboard.putData("Fire", new Fire());
         SmartDashboard.putData("Prepare Shoot Far", new PrepareShootFar());
         SmartDashboard.putData("Prepare Shoot Truss", new PrepareShootTruss());
@@ -122,29 +121,20 @@ public class OI {
         SmartDashboard.putData("Wait For Boom Button", new WaitForBoomButton());
         SmartDashboard.putData("Shoot Far Sequence", new ShootFarSequence());
         SmartDashboard.putData("Pass Sequence", new PassSequence());
-        SmartDashboard.putData("Set Control Mode Auto", new SetControlModeAuto());
-        SmartDashboard.putData("Set Control Mode Manual", new SetControlModeManual());
-        SmartDashboard.putData("Switch to Auto Control Mode", new SwitchtoAutoControlMode());
-        SmartDashboard.putData("Switch to Manual Control Mode", new SwitchtoManualControlMode());
-        SmartDashboard.putData("Switch OI Control Mode", new SwitchOIControlMode());
-        SmartDashboard.putData("Switch Drive Inputs", new SwitchDriveInputs());
         SmartDashboard.putData("RollersInThenStop", new RollersInThenStop());
         SmartDashboard.putData("RollersOutThenStop", new RollersOutThenStop());
         SmartDashboard.putData("Toggle Latch", new ToggleLatch());
         SmartDashboard.putData("Drive Distance", new DriveDistance());
         SmartDashboard.putData("Human Player Collect", new HumanPlayerCollect());
-        SmartDashboard.putData("Collect Stored Position", new CollectStoredPosition());
         SmartDashboard.putData("Wait For Bannersensor", new WaitForBannersensor());
         SmartDashboard.putData("Store Sequence", new StoreSequence());
         SmartDashboard.putData("Do Nothing", new DoNothing());
         SmartDashboard.putData("Wait To Fire", new WaitToFire());
-        SmartDashboard.putData("One Ball Auto Teleop", new OneBallAutoTeleop());
         SmartDashboard.putData("Pivot Low Goal", new PivotLowGoal());
-        SmartDashboard.putData("Low Goal Shot", new LowGoalShot());
         SmartDashboard.putData("Wait For Boom Release", new WaitForBoomRelease());
         SmartDashboard.putData("Pivot Auto Close", new PivotAutoClose());
         SmartDashboard.putData("Drive Forward Timeout", new DriveForwardTimeout());
-        SmartDashboard.putData("Drive Forward Speed", new DriveForwardSpeed());
+        SmartDashboard.putData("Drive Forward Speed", new DriveForward());
     // END AUTOGENERATED CODE, SOURCE=ROBOTBUILDER ID=CONSTRUCTORS
     }
     // BEGIN AUTOGENERATED CODE, SOURCE=ROBOTBUILDER ID=FUNCTIONS

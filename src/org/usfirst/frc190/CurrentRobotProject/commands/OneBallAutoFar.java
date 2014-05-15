@@ -37,11 +37,11 @@ public class OneBallAutoFar extends CommandGroup {
         addSequential(new ExtendPiston1());
         addSequential(new RetractPiston2());
         addSequential(new PivotAutoClose(1));
-        addSequential(new DriveForwardSpeed(1, 1, 1.25, false));
+        addSequential(new DriveForward(1, 1, 1.25, false));
         addSequential(new OpenClaw());
         addSequential(new WaitToFire());
         addSequential(new Fire());
-        addSequential(new DriveForwardSpeed(-0.5, -0.5, 0.3 , false));
+        addSequential(new DriveForward(-0.5, -0.5, 0.3 , false));
         addSequential(new PivotStoredPosition());
         addSequential(new RollersInThenStop(3));
     }

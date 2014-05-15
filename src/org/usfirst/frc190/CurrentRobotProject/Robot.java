@@ -60,6 +60,7 @@ public class Robot extends IterativeRobot {
         autoChooser.addObject("Mobility", new AutoMobilityOnly());
         autoChooser.addDefault("Old: One Ball Low Goal", new OneBallAutoClose());
         autoChooser.addObject("New: One Ball Moving Shot", new OneBallAutoFar());
+        autoChooser.addObject("Test Two Ball", new TwoBallAutoOld());
         SmartDashboard.putData("Auto Mode", autoChooser);
         Robot.pneumatics.startCompressor(); //Start the compressor working.
         Robot.pneumatics.setArduinoSignal(true);
@@ -91,6 +92,7 @@ public class Robot extends IterativeRobot {
         Robot.pneumatics.writePressure();
         SmartDashboard.putNumber("Pivot Pot Value", Robot.pivot.getPotValue());
         SmartDashboard.putNumber("Right Encoder Distance", Robot.drivetrain.getEncoderDistanceRight());
+        //SmartDashboard.putBoolean("Manual Button Pressed", Robot.oi.manualSwitch.get());
     }
     //This function called periodically during test mode
     public void testPeriodic() {
@@ -105,5 +107,9 @@ public class Robot extends IterativeRobot {
     public void disabledPeriodic(){
         Robot.pneumatics.checkPressureLights();
         
+    }
+    
+    public boolean getManualSwitch(){
+        return oi.manualSwitch.get();
     }
 }

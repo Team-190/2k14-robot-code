@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc190.CurrentRobotProject.Robot;
 public class  DriveSpin extends Command {
     
-    private double turnSpeed = 0.5;
+    private double turnSpeed = 1;
     private double spinAngle = 180;
     private final double tolerance = 10;
     private double error;
@@ -13,6 +13,11 @@ public class  DriveSpin extends Command {
     
     public DriveSpin(){
         requires(Robot.drivetrain);
+    }
+    
+    public DriveSpin(double angle){
+        requires(Robot.drivetrain);
+        spinAngle = angle;
     }
     
     protected void initialize() {
