@@ -17,7 +17,7 @@ public class Pivot extends PIDSubsystem {
     private final double potSlip = 0.015; //compensation for pot slipage
     private final double collectValue = 2.705 + 0.015 + potSlip; //was 2.69
     private final double storeValue = 2.16;
-    private final double lowGoalValue = 2.734 - 0.071 + 0.015 + potSlip;
+    private final double lowGoalValue = 2.24; //2.734 - 0.071 + 0.015 + potSlip;
     private final double verticalValue = 2.062 + 0.015 + potSlip;
     private final double horizontalValue = 2.627 + 0.015 + potSlip;
     private final double farPosition = 2.32; //2.375 or 2.425-toomuch or 2.325 or 2.267

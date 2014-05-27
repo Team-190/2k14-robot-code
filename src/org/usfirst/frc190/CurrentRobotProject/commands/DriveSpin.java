@@ -9,7 +9,7 @@ public class  DriveSpin extends Command {
     private double spinAngle = 180;
     private final double tolerance = 10;
     private double error;
-    private final double Kp = -1.0/90.0;
+    private final double Kp = -2/90.0;
     
     public DriveSpin(){
         requires(Robot.drivetrain);

@@ -16,7 +16,7 @@ public class PassSequence extends CommandGroup {
         
         addSequential(new RetractPiston1());
         addSequential(new RetractPiston2());
-        addSequential(new PivotFarPosition());
+        addSequential(new PivotLowGoal());
         addSequential(new WaitCommand(0.5));
         addSequential(new ExtendLatch());
         addSequential(new WaitForBoomButton());
