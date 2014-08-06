@@ -39,11 +39,11 @@ public class OI {
         collectSequenceButton = new JoystickButton(oIJoystick2, 7);
         collectSequenceButton.whenPressed(new Collect());
         pivotLowerButton = new JoystickButton(oIJoystick2, 5);
-        pivotLowerButton.whileHeld(new PivotLower());
+        pivotLowerButton.whileHeld(new PivotLower(true));
         pivotRaiseButton = new JoystickButton(oIJoystick2, 4);
-        pivotRaiseButton.whileHeld(new PivotRaise());
+        pivotRaiseButton.whileHeld(new PivotRaise(true));
         rollersOutButton = new JoystickButton(oIJoystick2, 2);
-        rollersOutButton.whileHeld(new RollersOutThenStop());
+        rollersOutButton.whileHeld(new RollersOutThenStop(true));
         rollersInButton = new JoystickButton(oIJoystick2, 3);
         rollersInButton.whileHeld(new RollersInThenStop());
         boomButton = new JoystickButton(oIJoystick2, 6);
@@ -62,19 +62,19 @@ public class OI {
         manualSwitch.whenPressed(new DoNothing());
         
         clawClosed = new JoystickButton(oIJoystick, 7);
-        clawClosed.whenPressed(new CloseClaw());
+        clawClosed.whenPressed(new CloseClaw(true));
         clawOpen = new JoystickButton(oIJoystick, 6);
-        clawOpen.whenPressed(new OpenClaw());
+        clawOpen.whenPressed(new OpenClaw(true));
         piston2RetractButton = new JoystickButton(oIJoystick, 5);
-        piston2RetractButton.whenPressed(new RetractPiston2());
+        piston2RetractButton.whenPressed(new RetractPiston2(true));
         piston2ExtendButton = new JoystickButton(oIJoystick, 3);
-        piston2ExtendButton.whenPressed(new ExtendPiston2());
+        piston2ExtendButton.whenPressed(new ExtendPiston2(true));
         piston1RetractButton = new JoystickButton(oIJoystick, 4);
-        piston1RetractButton.whenPressed(new RetractPiston1());
+        piston1RetractButton.whenPressed(new RetractPiston1(true));
         piston1ExtendButton = new JoystickButton(oIJoystick, 2);
-        piston1ExtendButton.whenPressed(new ExtendPiston1());
+        piston1ExtendButton.whenPressed(new ExtendPiston1(true));
         toggleLatchButton = new JoystickButton(oIJoystick, 1);
-        toggleLatchButton.whenPressed(new ToggleLatch());
+        toggleLatchButton.whenPressed(new ToggleLatch(true));
         rightJoystick = new Joystick(2);
         
         autoAbortButton = new JoystickButton(rightJoystick, 8);
