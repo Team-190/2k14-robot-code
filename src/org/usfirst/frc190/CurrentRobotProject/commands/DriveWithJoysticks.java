@@ -16,7 +16,7 @@ public class DriveWithJoysticks extends Command {
         //This slows the robot down for demos
         //Full speed is turned on when the manual switch is flipped up
         if(!Robot.oi.manualSwitch.get()){
-            Robot.drivetrain.tankDrive(Robot.oi.leftJoystick, Robot.oi.rightJoystick, 0.5);
+            Robot.drivetrain.tankDrive(Robot.oi.leftJoystick, Robot.oi.rightJoystick, 1);
         } else {
             Robot.drivetrain.tankDrive(Robot.oi.leftJoystick, Robot.oi.rightJoystick, 1);
         }

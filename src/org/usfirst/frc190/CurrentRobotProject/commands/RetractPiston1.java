@@ -19,6 +19,7 @@ public class RetractPiston1 extends Command {
         if(Robot.oi.manualSwitch.get()||!isManual){
         Robot.shooter.retract1();
         }
+        Robot.shooter.retract1();
     }
     protected void execute() {
     }

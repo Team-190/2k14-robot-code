@@ -28,7 +28,7 @@ public class Shooter extends Subsystem {
     public void extend1() {
         piston1.set(DoubleSolenoid.Value.kForward);
     }
-    public void retract1() {
+public void retract1() {
         piston1.set(DoubleSolenoid.Value.kReverse);
     }
     

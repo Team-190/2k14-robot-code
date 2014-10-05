@@ -1170,6 +1170,54 @@ Children:
           name: When to Run
           validators: null
           value: whenPressed
+    - Name: PassButton
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id036
+          value: Do Nothing
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id037
+          default: '1'
+          name: Button
+          validators: null
+          value: '9'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick 2}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id038
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
+    - Name: manualSwitch
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id036
+          value: Do Nothing
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id037
+          default: '1'
+          name: Button
+          validators: null
+          value: '8'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: OI Joystick 2}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id038
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
         choices: *id039
@@ -1697,6 +1745,12 @@ Children:
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Drivetrain}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Simple Demo Auto
+    Base: Command Group
+    Children: []
+    Properties:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}

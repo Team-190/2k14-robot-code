@@ -21,6 +21,8 @@ public class  WaitToFire extends Command {
     protected boolean isFinished() {
         return (((Robot.collector.isClawOpen() && Robot.collector.isCollected()) || Robot.oi.boomButton.get())&&checkForBall)
                 ||(Robot.collector.isClawOpen()&&(!checkForBall));
+        
+        //return (Robot.collector.isClawOpen()&&(Robot.collector.isCollected()||((!Robot.oi.manualSwitch.get())&&(!checkForBall))));
     }
     protected void end() {
     }

@@ -12,11 +12,11 @@ public class ToggleLatch extends Command {
         requires(Robot.shooter);
         isManual = true;
     }
-
     protected void initialize() {
         if(Robot.oi.manualSwitch.get()||!isManual){
         Robot.shooter.toggleLatchPosition();
         }
+        Robot.shooter.toggleLatchPosition();
     }
     protected void execute() {
     }
